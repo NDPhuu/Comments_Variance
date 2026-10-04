@@ -59,6 +59,7 @@ KhoaLuan/  (= repo Comments_Variance)
 
 | # | Quyết định | Ngày |
 |---|---|---|
+| 27 | **Chương 1 draft 2**: văn phong formal; mở đầu kết hợp ngành BĐS KCN + làn sóng GenAI với **nguồn sơ cấp CBRE Figures Q2/2026** (2 PDF trong `materials/` — bản quyền, đã gitignore `materials/*.pdf`) + Gartner 2025; Hình 1.1 (mermaid, điểm đứt gãy kiểm chứng); 7 nguồn đã verify (docs/02 §3.7–3.8). Còn ⟦anecdote⟧ chờ tác giả | 04/10 |
 | 26 | **BỎ DSRM/TTF hoàn toàn** — khóa luận định vị là **NGHIÊN CỨU ỨNG DỤNG** (giải quyết vấn đề doanh nghiệp bằng kiến thức RAG/NLP học ở trường); phương pháp C3 = quy trình 4 bước: khảo sát vấn đề → xác định yêu cầu → thiết kế & xây dựng → đánh giá thực nghiệm. Đã gỡ refs DSR/TTF/TAM khỏi kho nguồn; KHÔNG đề xuất lại | 04/10 |
 | 25 | Đánh giá theo **convention của literature RAG/NLP**: bảng metric + mean ± SD trên k=3 lần chạy + Cohen's κ cho máy chấm. **BỎ kiểm định kinh tế lượng** (bootstrap/Wilcoxon/McNemar) — không thuộc chuẩn mực dòng bài này; xác nhận cách hiểu tiêu chí rubric với GVHD | 04/10 |
 | 24 | **Chương 1 draft 1 đã viết** (`thesis/chuong1.md`, tiếng Việt, Harvard, có H1–H3) — còn 1 chỗ ⟦chờ anecdote⟧. Người thực hiện chọn BỎ QUA bước đề cương sơ bộ riêng (rủi ro ghi tại `docs/quy_dinh_vien.md` §5) | 04/10 |

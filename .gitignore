@@ -254,3 +254,6 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 design.md
+
+# Bao cao ban quyen (CBRE...) - khong redistribute
+materials/*.pdf

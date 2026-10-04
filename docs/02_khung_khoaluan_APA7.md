@@ -92,6 +92,18 @@ Nguyên tắc trình bày quan trọng với hội đồng:
 - Narrative/commentary generation từ dữ liệu bảng: từ khóa `data-to-text generation financial`, `table-to-text faithfulness`.
 - Nếu giữ hướng trust/verification: `human-AI trust verification`, `appropriate reliance on AI`.
 
+### 3.7. Nguồn số liệu thực tiễn cho Chương 1 (✓ = đã verify 04/10/2026; khi đưa vào luận reformat theo mẫu Harvard điện tử của Viện)
+- ✓ CBRE Việt Nam (2026), *Hanoi Real Estate Market Figures Q2 2026*, CBRE Research — **nguồn sơ cấp**, bản PDF trong `materials/` (bản quyền CBRE, không công bố lại file). Số dùng: GDP 6T/2026 +8,18%; FDI 34,65 tỷ USD (+61%); hấp thụ đất KCN miền Bắc 217 ha Q2; lấp đầy 81,3%; RBF 82,7%, 5,1 USD/m²/tháng.
+- ✓ CBRE Việt Nam (2026), *Ho Chi Minh City Real Estate Market Figures Q2 2026*, CBRE Research — nguồn sơ cấp, PDF trong `materials/`. Số dùng: hấp thụ đất KCN miền Nam H1 124 ha (+125% y-o-y); RBF 91%, 5,2 USD/m²/tháng.
+- ✓ Gartner (2025), *Gartner Survey Shows Finance AI Adoption Remains Steady in 2025*, truy cập ngày 04/10/2026, <https://www.gartner.com/en/newsroom/press-releases/2025-11-18-gartner-survey-shows-finance-ai-adoption-remains-steady-in-2025>. Số dùng: 59% (2025) ← 58% (2024) ← 37% (2023), n = 183 CFO.
+- (Dự phòng) McKinsey & Company (2025), *The state of AI*, truy cập ngày 04/10/2026, <https://www.mckinsey.com/featured-insights/charts/ai-at-work-but-not-at-scale>.
+
+### 3.8. Trạng thái verify 4 nguồn học thuật đang dùng ở Chương 1 (04/10/2026)
+- ✓ Parasuraman & Riley (1997) — *Human Factors*, 39(2), 230–253.
+- ✓ Lee & See (2004) — *Human Factors*, 46(1), 50–80, <https://journals.sagepub.com/doi/10.1518/hfes.46.1.50_30392>.
+- ✓ Chen et al. (2021) FinQA — <https://aclanthology.org/2021.emnlp-main.300>.
+- ✓ Zhu et al. (2021) TAT-QA — <https://aclanthology.org/2021.acl-long.254>.
+
 ## 4. Chiến lược review literature (3 dòng, mỗi dòng trả lời 1 câu)
 
 1. **Dòng domain (FP&A/variance):** variance analysis là bài toán gì, quy trình chuẩn ra sao, đã được tự động hóa đến đâu → để chứng minh vấn đề có thật và gap nằm ở khâu giải trình.
