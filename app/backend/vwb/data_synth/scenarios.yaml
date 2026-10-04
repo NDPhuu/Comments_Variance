@@ -1,0 +1,72 @@
+# Catalogue kich ban gieo vao du lieu gia lap.
+# Nguyen tac: moi kich ban phai tuong ung mot loai nguyen nhan CO THAT,
+# doi chieu taxonomy rut tu comments thuc T1-T8 (docs/house_style.md muc 3).
+# n = so case gieo. Trap = kich ban danh bay de do abstention / loc metadata.
+
+revenue:                          # trong tam — domain leasing (house_style muc 3, nhom leasing)
+  - id: early_termination
+    n: 3
+    effect: "tenant lon cham dut som: actual rent = 0 tu thang hieu luc; budget van gia dinh thue tiep"
+    evidence: [termination_notice]
+    gold_cause: early_termination
+  - id: handover_delay
+    n: 2
+    effect: "lease moi trong budget bat dau thang M; thuc te doi ban giao M+2 -> hut doanh thu"
+    evidence: [handover_minutes]
+    gold_cause: handover_delay
+  - id: rent_escalation_unbudgeted
+    n: 2
+    effect: "don gia tang 5-8% theo hop dong nhung budget lap theo gia cu (thuong la OFFSET favorable)"
+    evidence: [contract_annex]
+    gold_cause: rent_escalation
+  - id: new_lease_early
+    n: 1
+    effect: "tenant moi vao som 1 thang so voi budget (favorable)"
+    evidence: [handover_minutes]
+    gold_cause: new_lease_early
+
+cost:                             # doi chieu taxonomy that: timing nhieu nhat
+  - id: timing_fee_delay
+    n: 3
+    effect: "phi tu van/penalty trong budget thang nay nhung chua book, doi sang ky sau (favorable)"
+    evidence: [approval_email]
+    gold_cause: timing_difference
+  - id: one_off_repair
+    n: 3
+    effect: "sua chua dot xuat ngoai budget (unfavorable, 1-2 txn lon)"
+    evidence: [work_order, vendor_invoice]
+    gold_cause: one_off_event
+  - id: utilities_rate_change
+    n: 2
+    effect: "don gia dien/nuoc tang tu thang M theo thong bao nha cung cap"
+    evidence: [rate_notice]
+    gold_cause: rate_change
+  - id: accounting_capitalization
+    n: 1
+    effect: "mot phan chi phi duoc von hoa thay vi expense -> cost thap hon budget (favorable)"
+    evidence: [accounting_memo]
+    gold_cause: accounting_treatment
+
+corp:                             # cac dong cap cong ty, khop pattern comment that
+  - id: refinancing_gap_interest
+    n: 2
+    effect: "khoang trong giua tra no va tai cap von -> khong co khoan tiet kiem lai nhu budget"
+    evidence: [loan_memo]
+    gold_cause: financing_event
+  - id: one_off_insurance_gain
+    n: 1
+    effect: "boi thuong bao hiem thien tai ghi vao Other income (favorable one-off)"
+    evidence: [insurance_letter]
+    gold_cause: one_off_event
+
+traps:
+  - id: missing_evidence
+    n: 3
+    effect: "chi phi vuot nguong nhung KHONG co tai lieu nao trong kho -> he thong phai TU CHOI neu nguyen nhan"
+    evidence: []
+    gold_cause: abstain
+  - id: keyword_trap
+    n: 2
+    effect: "khong phai case — chi them tai lieu nhieu (cung tu khoa, SAI property) vao kho de thu metadata filter"
+    evidence: [distractor_memo]
+    gold_cause: n/a

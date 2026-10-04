@@ -1,0 +1,457 @@
+property,month,amount,pl_line
+PROP-A,2026-01,426000.0,Leasing revenue
+PROP-A,2026-02,426000.0,Leasing revenue
+PROP-A,2026-03,426000.0,Leasing revenue
+PROP-A,2026-04,426000.0,Leasing revenue
+PROP-A,2026-05,462000.0,Leasing revenue
+PROP-A,2026-06,462000.0,Leasing revenue
+PROP-A,2026-07,462000.0,Leasing revenue
+PROP-A,2026-08,462000.0,Leasing revenue
+PROP-A,2026-09,462000.0,Leasing revenue
+PROP-A,2026-10,462000.0,Leasing revenue
+PROP-A,2026-11,462000.0,Leasing revenue
+PROP-A,2026-12,462000.0,Leasing revenue
+PROP-B,2026-01,445000.0,Leasing revenue
+PROP-B,2026-02,445000.0,Leasing revenue
+PROP-B,2026-03,445000.0,Leasing revenue
+PROP-B,2026-04,445000.0,Leasing revenue
+PROP-B,2026-05,445000.0,Leasing revenue
+PROP-B,2026-06,445000.0,Leasing revenue
+PROP-B,2026-07,478000.0,Leasing revenue
+PROP-B,2026-08,478000.0,Leasing revenue
+PROP-B,2026-09,419000.0,Leasing revenue
+PROP-B,2026-10,419000.0,Leasing revenue
+PROP-B,2026-11,419000.0,Leasing revenue
+PROP-B,2026-12,419000.0,Leasing revenue
+PROP-C,2026-01,370000.0,Leasing revenue
+PROP-C,2026-02,370000.0,Leasing revenue
+PROP-C,2026-03,370000.0,Leasing revenue
+PROP-C,2026-04,370000.0,Leasing revenue
+PROP-C,2026-05,370000.0,Leasing revenue
+PROP-C,2026-06,370000.0,Leasing revenue
+PROP-C,2026-07,370000.0,Leasing revenue
+PROP-C,2026-08,312500.0,Leasing revenue
+PROP-C,2026-09,312500.0,Leasing revenue
+PROP-C,2026-10,312500.0,Leasing revenue
+PROP-C,2026-11,312500.0,Leasing revenue
+PROP-C,2026-12,312500.0,Leasing revenue
+PROP-D,2026-01,458000.0,Leasing revenue
+PROP-D,2026-02,458000.0,Leasing revenue
+PROP-D,2026-03,458000.0,Leasing revenue
+PROP-D,2026-04,458000.0,Leasing revenue
+PROP-D,2026-05,458000.0,Leasing revenue
+PROP-D,2026-06,458000.0,Leasing revenue
+PROP-D,2026-07,458000.0,Leasing revenue
+PROP-D,2026-08,487000.0,Leasing revenue
+PROP-D,2026-09,487000.0,Leasing revenue
+PROP-D,2026-10,487000.0,Leasing revenue
+PROP-D,2026-11,487000.0,Leasing revenue
+PROP-D,2026-12,487000.0,Leasing revenue
+PROP-E,2026-01,455000.0,Leasing revenue
+PROP-E,2026-02,455000.0,Leasing revenue
+PROP-E,2026-03,455000.0,Leasing revenue
+PROP-E,2026-04,455000.0,Leasing revenue
+PROP-E,2026-05,455000.0,Leasing revenue
+PROP-E,2026-06,455000.0,Leasing revenue
+PROP-E,2026-07,455000.0,Leasing revenue
+PROP-E,2026-08,409480.0,Leasing revenue
+PROP-E,2026-09,409480.0,Leasing revenue
+PROP-E,2026-10,409480.0,Leasing revenue
+PROP-E,2026-11,409480.0,Leasing revenue
+PROP-E,2026-12,409480.0,Leasing revenue
+PROP-A,2026-01,114449.0,Repair & Maintenance
+PROP-A,2026-02,119171.0,Repair & Maintenance
+PROP-A,2026-03,118721.0,Repair & Maintenance
+PROP-A,2026-04,123012.0,Repair & Maintenance
+PROP-A,2026-05,128985.0,Repair & Maintenance
+PROP-A,2026-06,125853.0,Repair & Maintenance
+PROP-A,2026-07,114644.0,Repair & Maintenance
+PROP-A,2026-08,119224.0,Repair & Maintenance
+PROP-A,2026-09,119262.0,Repair & Maintenance
+PROP-A,2026-10,125604.0,Repair & Maintenance
+PROP-A,2026-11,127138.0,Repair & Maintenance
+PROP-A,2026-12,128585.0,Repair & Maintenance
+PROP-A,2026-01,116726.0,Utilities
+PROP-A,2026-02,114254.0,Utilities
+PROP-A,2026-03,115589.0,Utilities
+PROP-A,2026-04,113699.0,Utilities
+PROP-A,2026-05,119898.0,Utilities
+PROP-A,2026-06,123176.0,Utilities
+PROP-A,2026-07,138886.0,Utilities
+PROP-A,2026-08,117220.0,Utilities
+PROP-A,2026-09,112014.0,Utilities
+PROP-A,2026-10,116365.0,Utilities
+PROP-A,2026-11,116278.0,Utilities
+PROP-A,2026-12,117445.0,Utilities
+PROP-A,2026-01,58358.0,Security & cleaning
+PROP-A,2026-02,59275.0,Security & cleaning
+PROP-A,2026-03,59335.0,Security & cleaning
+PROP-A,2026-04,59862.0,Security & cleaning
+PROP-A,2026-05,60028.0,Security & cleaning
+PROP-A,2026-06,59121.0,Security & cleaning
+PROP-A,2026-07,55211.0,Security & cleaning
+PROP-A,2026-08,56215.0,Security & cleaning
+PROP-A,2026-09,58608.0,Security & cleaning
+PROP-A,2026-10,59301.0,Security & cleaning
+PROP-A,2026-11,58071.0,Security & cleaning
+PROP-A,2026-12,59492.0,Security & cleaning
+PROP-A,2026-01,32019.0,Marketing
+PROP-A,2026-02,32350.0,Marketing
+PROP-A,2026-03,32820.0,Marketing
+PROP-A,2026-04,33382.0,Marketing
+PROP-A,2026-05,33433.0,Marketing
+PROP-A,2026-06,35649.0,Marketing
+PROP-A,2026-07,31824.0,Marketing
+PROP-A,2026-08,32551.0,Marketing
+PROP-A,2026-09,0.0,Marketing
+PROP-A,2026-10,34452.0,Marketing
+PROP-A,2026-11,35091.0,Marketing
+PROP-A,2026-12,36239.0,Marketing
+PROP-A,2026-01,19200.0,Insurance
+PROP-A,2026-02,19710.0,Insurance
+PROP-A,2026-03,19353.0,Insurance
+PROP-A,2026-04,19784.0,Insurance
+PROP-A,2026-05,20444.0,Insurance
+PROP-A,2026-06,20611.0,Insurance
+PROP-A,2026-07,19735.0,Insurance
+PROP-A,2026-08,19906.0,Insurance
+PROP-A,2026-09,19644.0,Insurance
+PROP-A,2026-10,20525.0,Insurance
+PROP-A,2026-11,20792.0,Insurance
+PROP-A,2026-12,20967.0,Insurance
+PROP-A,2026-01,70840.0,Management fee
+PROP-A,2026-02,72175.0,Management fee
+PROP-A,2026-03,71402.0,Management fee
+PROP-A,2026-04,74579.0,Management fee
+PROP-A,2026-05,73146.0,Management fee
+PROP-A,2026-06,77493.0,Management fee
+PROP-A,2026-07,69268.0,Management fee
+PROP-A,2026-08,73375.0,Management fee
+PROP-A,2026-09,70260.0,Management fee
+PROP-A,2026-10,75146.0,Management fee
+PROP-A,2026-11,76919.0,Management fee
+PROP-A,2026-12,78062.0,Management fee
+PROP-B,2026-01,90563.0,Repair & Maintenance
+PROP-B,2026-02,90019.0,Repair & Maintenance
+PROP-B,2026-03,92302.0,Repair & Maintenance
+PROP-B,2026-04,93943.0,Repair & Maintenance
+PROP-B,2026-05,97864.0,Repair & Maintenance
+PROP-B,2026-06,95591.0,Repair & Maintenance
+PROP-B,2026-07,91796.0,Repair & Maintenance
+PROP-B,2026-08,91697.0,Repair & Maintenance
+PROP-B,2026-09,93717.0,Repair & Maintenance
+PROP-B,2026-10,91470.0,Repair & Maintenance
+PROP-B,2026-11,96003.0,Repair & Maintenance
+PROP-B,2026-12,97304.0,Repair & Maintenance
+PROP-B,2026-01,108606.0,Utilities
+PROP-B,2026-02,109843.0,Utilities
+PROP-B,2026-03,114852.0,Utilities
+PROP-B,2026-04,114473.0,Utilities
+PROP-B,2026-05,117630.0,Utilities
+PROP-B,2026-06,116860.0,Utilities
+PROP-B,2026-07,107616.0,Utilities
+PROP-B,2026-08,113917.0,Utilities
+PROP-B,2026-09,112723.0,Utilities
+PROP-B,2026-10,113327.0,Utilities
+PROP-B,2026-11,116178.0,Utilities
+PROP-B,2026-12,116275.0,Utilities
+PROP-B,2026-01,61890.0,Security & cleaning
+PROP-B,2026-02,63465.0,Security & cleaning
+PROP-B,2026-03,62661.0,Security & cleaning
+PROP-B,2026-04,65249.0,Security & cleaning
+PROP-B,2026-05,92770.0,Security & cleaning
+PROP-B,2026-06,66549.0,Security & cleaning
+PROP-B,2026-07,62775.0,Security & cleaning
+PROP-B,2026-08,64896.0,Security & cleaning
+PROP-B,2026-09,63332.0,Security & cleaning
+PROP-B,2026-10,66944.0,Security & cleaning
+PROP-B,2026-11,66593.0,Security & cleaning
+PROP-B,2026-12,66167.0,Security & cleaning
+PROP-B,2026-01,40167.0,Marketing
+PROP-B,2026-02,38799.0,Marketing
+PROP-B,2026-03,40913.0,Marketing
+PROP-B,2026-04,39769.0,Marketing
+PROP-B,2026-05,68500.0,Marketing
+PROP-B,2026-06,41909.0,Marketing
+PROP-B,2026-07,39469.0,Marketing
+PROP-B,2026-08,40933.0,Marketing
+PROP-B,2026-09,40168.0,Marketing
+PROP-B,2026-10,41669.0,Marketing
+PROP-B,2026-11,40528.0,Marketing
+PROP-B,2026-12,43106.0,Marketing
+PROP-B,2026-01,26357.0,Insurance
+PROP-B,2026-02,25700.0,Insurance
+PROP-B,2026-03,26655.0,Insurance
+PROP-B,2026-04,27182.0,Insurance
+PROP-B,2026-05,26976.0,Insurance
+PROP-B,2026-06,27913.0,Insurance
+PROP-B,2026-07,25342.0,Insurance
+PROP-B,2026-08,26015.0,Insurance
+PROP-B,2026-09,26585.0,Insurance
+PROP-B,2026-10,27682.0,Insurance
+PROP-B,2026-11,27579.0,Insurance
+PROP-B,2026-12,27293.0,Insurance
+PROP-B,2026-01,71664.0,Management fee
+PROP-B,2026-02,71858.0,Management fee
+PROP-B,2026-03,73671.0,Management fee
+PROP-B,2026-04,77481.0,Management fee
+PROP-B,2026-05,76271.0,Management fee
+PROP-B,2026-06,77653.0,Management fee
+PROP-B,2026-07,71660.0,Management fee
+PROP-B,2026-08,72327.0,Management fee
+PROP-B,2026-09,75695.0,Management fee
+PROP-B,2026-10,73705.0,Management fee
+PROP-B,2026-11,75657.0,Management fee
+PROP-B,2026-12,78993.0,Management fee
+PROP-C,2026-01,100855.0,Repair & Maintenance
+PROP-C,2026-02,99056.0,Repair & Maintenance
+PROP-C,2026-03,101180.0,Repair & Maintenance
+PROP-C,2026-04,103850.0,Repair & Maintenance
+PROP-C,2026-05,103253.0,Repair & Maintenance
+PROP-C,2026-06,108215.0,Repair & Maintenance
+PROP-C,2026-07,99833.0,Repair & Maintenance
+PROP-C,2026-08,103286.0,Repair & Maintenance
+PROP-C,2026-09,104879.0,Repair & Maintenance
+PROP-C,2026-10,105066.0,Repair & Maintenance
+PROP-C,2026-11,109429.0,Repair & Maintenance
+PROP-C,2026-12,108188.0,Repair & Maintenance
+PROP-C,2026-01,95722.0,Utilities
+PROP-C,2026-02,95858.0,Utilities
+PROP-C,2026-03,99774.0,Utilities
+PROP-C,2026-04,102268.0,Utilities
+PROP-C,2026-05,101548.0,Utilities
+PROP-C,2026-06,103467.0,Utilities
+PROP-C,2026-07,95094.0,Utilities
+PROP-C,2026-08,98385.0,Utilities
+PROP-C,2026-09,102501.0,Utilities
+PROP-C,2026-10,99890.0,Utilities
+PROP-C,2026-11,99770.0,Utilities
+PROP-C,2026-12,107158.0,Utilities
+PROP-C,2026-01,55578.0,Security & cleaning
+PROP-C,2026-02,58973.0,Security & cleaning
+PROP-C,2026-03,57216.0,Security & cleaning
+PROP-C,2026-04,59872.0,Security & cleaning
+PROP-C,2026-05,59130.0,Security & cleaning
+PROP-C,2026-06,61096.0,Security & cleaning
+PROP-C,2026-07,55848.0,Security & cleaning
+PROP-C,2026-08,57766.0,Security & cleaning
+PROP-C,2026-09,58376.0,Security & cleaning
+PROP-C,2026-10,59988.0,Security & cleaning
+PROP-C,2026-11,59814.0,Security & cleaning
+PROP-C,2026-12,58699.0,Security & cleaning
+PROP-C,2026-01,47028.0,Marketing
+PROP-C,2026-02,48849.0,Marketing
+PROP-C,2026-03,48952.0,Marketing
+PROP-C,2026-04,49027.0,Marketing
+PROP-C,2026-05,49398.0,Marketing
+PROP-C,2026-06,50256.0,Marketing
+PROP-C,2026-07,49551.0,Marketing
+PROP-C,2026-08,47903.0,Marketing
+PROP-C,2026-09,49527.0,Marketing
+PROP-C,2026-10,50192.0,Marketing
+PROP-C,2026-11,51589.0,Marketing
+PROP-C,2026-12,51126.0,Marketing
+PROP-C,2026-01,19107.0,Insurance
+PROP-C,2026-02,19708.0,Insurance
+PROP-C,2026-03,20205.0,Insurance
+PROP-C,2026-04,20282.0,Insurance
+PROP-C,2026-05,20256.0,Insurance
+PROP-C,2026-06,19945.0,Insurance
+PROP-C,2026-07,18995.0,Insurance
+PROP-C,2026-08,19015.0,Insurance
+PROP-C,2026-09,20011.0,Insurance
+PROP-C,2026-10,20237.0,Insurance
+PROP-C,2026-11,20132.0,Insurance
+PROP-C,2026-12,20132.0,Insurance
+PROP-C,2026-01,49399.0,Management fee
+PROP-C,2026-02,49478.0,Management fee
+PROP-C,2026-03,50427.0,Management fee
+PROP-C,2026-04,50879.0,Management fee
+PROP-C,2026-05,52162.0,Management fee
+PROP-C,2026-06,52018.0,Management fee
+PROP-C,2026-07,49738.0,Management fee
+PROP-C,2026-08,49592.0,Management fee
+PROP-C,2026-09,22850.0,Management fee
+PROP-C,2026-10,49961.0,Management fee
+PROP-C,2026-11,53244.0,Management fee
+PROP-C,2026-12,54039.0,Management fee
+PROP-D,2026-01,135932.0,Repair & Maintenance
+PROP-D,2026-02,132763.0,Repair & Maintenance
+PROP-D,2026-03,137205.0,Repair & Maintenance
+PROP-D,2026-04,137507.0,Repair & Maintenance
+PROP-D,2026-05,218662.0,Repair & Maintenance
+PROP-D,2026-06,147840.0,Repair & Maintenance
+PROP-D,2026-07,136838.0,Repair & Maintenance
+PROP-D,2026-08,133542.0,Repair & Maintenance
+PROP-D,2026-09,135694.0,Repair & Maintenance
+PROP-D,2026-10,205952.0,Repair & Maintenance
+PROP-D,2026-11,138370.0,Repair & Maintenance
+PROP-D,2026-12,139164.0,Repair & Maintenance
+PROP-D,2026-01,114805.0,Utilities
+PROP-D,2026-02,115065.0,Utilities
+PROP-D,2026-03,114137.0,Utilities
+PROP-D,2026-04,118933.0,Utilities
+PROP-D,2026-05,116788.0,Utilities
+PROP-D,2026-06,118720.0,Utilities
+PROP-D,2026-07,113544.0,Utilities
+PROP-D,2026-08,113846.0,Utilities
+PROP-D,2026-09,115719.0,Utilities
+PROP-D,2026-10,118553.0,Utilities
+PROP-D,2026-11,120232.0,Utilities
+PROP-D,2026-12,117914.0,Utilities
+PROP-D,2026-01,57318.0,Security & cleaning
+PROP-D,2026-02,59651.0,Security & cleaning
+PROP-D,2026-03,61352.0,Security & cleaning
+PROP-D,2026-04,61760.0,Security & cleaning
+PROP-D,2026-05,63642.0,Security & cleaning
+PROP-D,2026-06,63981.0,Security & cleaning
+PROP-D,2026-07,57981.0,Security & cleaning
+PROP-D,2026-08,58512.0,Security & cleaning
+PROP-D,2026-09,60641.0,Security & cleaning
+PROP-D,2026-10,60092.0,Security & cleaning
+PROP-D,2026-11,62530.0,Security & cleaning
+PROP-D,2026-12,63616.0,Security & cleaning
+PROP-D,2026-01,50660.0,Marketing
+PROP-D,2026-02,52679.0,Marketing
+PROP-D,2026-03,50719.0,Marketing
+PROP-D,2026-04,52680.0,Marketing
+PROP-D,2026-05,55250.0,Marketing
+PROP-D,2026-06,55985.0,Marketing
+PROP-D,2026-07,8341.0,Marketing
+PROP-D,2026-08,52729.0,Marketing
+PROP-D,2026-09,53871.0,Marketing
+PROP-D,2026-10,52968.0,Marketing
+PROP-D,2026-11,53479.0,Marketing
+PROP-D,2026-12,54533.0,Marketing
+PROP-D,2026-01,27410.0,Insurance
+PROP-D,2026-02,28960.0,Insurance
+PROP-D,2026-03,27912.0,Insurance
+PROP-D,2026-04,29635.0,Insurance
+PROP-D,2026-05,29852.0,Insurance
+PROP-D,2026-06,29044.0,Insurance
+PROP-D,2026-07,28017.0,Insurance
+PROP-D,2026-08,27798.0,Insurance
+PROP-D,2026-09,28796.0,Insurance
+PROP-D,2026-10,29564.0,Insurance
+PROP-D,2026-11,28750.0,Insurance
+PROP-D,2026-12,28854.0,Insurance
+PROP-D,2026-01,61065.0,Management fee
+PROP-D,2026-02,61278.0,Management fee
+PROP-D,2026-03,59792.0,Management fee
+PROP-D,2026-04,62251.0,Management fee
+PROP-D,2026-05,60763.0,Management fee
+PROP-D,2026-06,63342.0,Management fee
+PROP-D,2026-07,58015.0,Management fee
+PROP-D,2026-08,61097.0,Management fee
+PROP-D,2026-09,60389.0,Management fee
+PROP-D,2026-10,60926.0,Management fee
+PROP-D,2026-11,62300.0,Management fee
+PROP-D,2026-12,63806.0,Management fee
+PROP-E,2026-01,140335.0,Repair & Maintenance
+PROP-E,2026-02,140629.0,Repair & Maintenance
+PROP-E,2026-03,147275.0,Repair & Maintenance
+PROP-E,2026-04,142826.0,Repair & Maintenance
+PROP-E,2026-05,146472.0,Repair & Maintenance
+PROP-E,2026-06,210785.0,Repair & Maintenance
+PROP-E,2026-07,97269.0,Repair & Maintenance
+PROP-E,2026-08,144762.0,Repair & Maintenance
+PROP-E,2026-09,143344.0,Repair & Maintenance
+PROP-E,2026-10,146272.0,Repair & Maintenance
+PROP-E,2026-11,148315.0,Repair & Maintenance
+PROP-E,2026-12,148298.0,Repair & Maintenance
+PROP-E,2026-01,105086.0,Utilities
+PROP-E,2026-02,104815.0,Utilities
+PROP-E,2026-03,105679.0,Utilities
+PROP-E,2026-04,109737.0,Utilities
+PROP-E,2026-05,106944.0,Utilities
+PROP-E,2026-06,113112.0,Utilities
+PROP-E,2026-07,103337.0,Utilities
+PROP-E,2026-08,130485.0,Utilities
+PROP-E,2026-09,104835.0,Utilities
+PROP-E,2026-10,108494.0,Utilities
+PROP-E,2026-11,109374.0,Utilities
+PROP-E,2026-12,107092.0,Utilities
+PROP-E,2026-01,54117.0,Security & cleaning
+PROP-E,2026-02,52532.0,Security & cleaning
+PROP-E,2026-03,55504.0,Security & cleaning
+PROP-E,2026-04,54567.0,Security & cleaning
+PROP-E,2026-05,55829.0,Security & cleaning
+PROP-E,2026-06,57766.0,Security & cleaning
+PROP-E,2026-07,54948.0,Security & cleaning
+PROP-E,2026-08,55459.0,Security & cleaning
+PROP-E,2026-09,55355.0,Security & cleaning
+PROP-E,2026-10,55706.0,Security & cleaning
+PROP-E,2026-11,55567.0,Security & cleaning
+PROP-E,2026-12,56232.0,Security & cleaning
+PROP-E,2026-01,32037.0,Marketing
+PROP-E,2026-02,32864.0,Marketing
+PROP-E,2026-03,32473.0,Marketing
+PROP-E,2026-04,33571.0,Marketing
+PROP-E,2026-05,33705.0,Marketing
+PROP-E,2026-06,34635.0,Marketing
+PROP-E,2026-07,55673.0,Marketing
+PROP-E,2026-08,32778.0,Marketing
+PROP-E,2026-09,32149.0,Marketing
+PROP-E,2026-10,32645.0,Marketing
+PROP-E,2026-11,33983.0,Marketing
+PROP-E,2026-12,34408.0,Marketing
+PROP-E,2026-01,25920.0,Insurance
+PROP-E,2026-02,27212.0,Insurance
+PROP-E,2026-03,27635.0,Insurance
+PROP-E,2026-04,27306.0,Insurance
+PROP-E,2026-05,28636.0,Insurance
+PROP-E,2026-06,28784.0,Insurance
+PROP-E,2026-07,27123.0,Insurance
+PROP-E,2026-08,26487.0,Insurance
+PROP-E,2026-09,26861.0,Insurance
+PROP-E,2026-10,28499.0,Insurance
+PROP-E,2026-11,28932.0,Insurance
+PROP-E,2026-12,27986.0,Insurance
+PROP-E,2026-01,59337.0,Management fee
+PROP-E,2026-02,56737.0,Management fee
+PROP-E,2026-03,59173.0,Management fee
+PROP-E,2026-04,59995.0,Management fee
+PROP-E,2026-05,60620.0,Management fee
+PROP-E,2026-06,63455.0,Management fee
+PROP-E,2026-07,56520.0,Management fee
+PROP-E,2026-08,58608.0,Management fee
+PROP-E,2026-09,57544.0,Management fee
+PROP-E,2026-10,59473.0,Management fee
+PROP-E,2026-11,61058.0,Management fee
+PROP-E,2026-12,60581.0,Management fee
+CORP,2026-01,5388648.0,Financial expenses
+CORP,2026-02,5397881.0,Financial expenses
+CORP,2026-03,5408711.0,Financial expenses
+CORP,2026-04,5383471.0,Financial expenses
+CORP,2026-05,5692022.0,Financial expenses
+CORP,2026-06,5374753.0,Financial expenses
+CORP,2026-07,5362913.0,Financial expenses
+CORP,2026-08,5429099.0,Financial expenses
+CORP,2026-09,5371223.0,Financial expenses
+CORP,2026-10,5570064.0,Financial expenses
+CORP,2026-11,5381090.0,Financial expenses
+CORP,2026-12,5396035.0,Financial expenses
+CORP,2026-01,150279.0,Financial income
+CORP,2026-02,150873.0,Financial income
+CORP,2026-03,149072.0,Financial income
+CORP,2026-04,149943.0,Financial income
+CORP,2026-05,149147.0,Financial income
+CORP,2026-06,149369.0,Financial income
+CORP,2026-07,149024.0,Financial income
+CORP,2026-08,149017.0,Financial income
+CORP,2026-09,150546.0,Financial income
+CORP,2026-10,150504.0,Financial income
+CORP,2026-11,150351.0,Financial income
+CORP,2026-12,151291.0,Financial income
+CORP,2026-01,60371.0,Other income
+CORP,2026-02,60415.0,Other income
+CORP,2026-03,60144.0,Other income
+CORP,2026-04,59939.0,Other income
+CORP,2026-05,60089.0,Other income
+CORP,2026-06,60296.0,Other income
+CORP,2026-07,60132.0,Other income
+CORP,2026-08,360333.0,Other income
+CORP,2026-09,60195.0,Other income
+CORP,2026-10,59795.0,Other income
+CORP,2026-11,60351.0,Other income
+CORP,2026-12,59363.0,Other income

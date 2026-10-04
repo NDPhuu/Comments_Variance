@@ -1,0 +1,1104 @@
+[
+ {
+  "case_id": "2026-05_CORP_Financial_expenses",
+  "month": "2026-05",
+  "property": "CORP",
+  "pl_line": "Financial expenses",
+  "side": "corp",
+  "budget": 5403335.0,
+  "actual": 5692022.0,
+  "variance": 288687.0,
+  "variance_pct": 0.0534,
+  "direction": "unfavorable",
+  "material": true,
+  "materiality_rule": "|var|>=100,000 OR |pct|>=10%",
+  "contributors": [
+   {
+    "key": "GL-01774",
+    "kind": "transaction",
+    "party": "VND-132",
+    "memo": "Financial expenses services 2026-05",
+    "delta": 2846011.0,
+    "share_of_actual": 0.5
+   },
+   {
+    "key": "GL-01775",
+    "kind": "transaction",
+    "party": "VND-152",
+    "memo": "Financial expenses services 2026-05",
+    "delta": 2846011.0,
+    "share_of_actual": 0.5
+   }
+  ]
+ },
+ {
+  "case_id": "2026-05_PROP-D_Repair_and_Maintenance",
+  "month": "2026-05",
+  "property": "PROP-D",
+  "pl_line": "Repair & Maintenance",
+  "side": "cost",
+  "budget": 140484.0,
+  "actual": 218662.0,
+  "variance": 78178.0,
+  "variance_pct": 0.5565,
+  "direction": "unfavorable",
+  "material": true,
+  "materiality_rule": "|var|>=30,000 OR |pct|>=15%",
+  "contributors": [
+   {
+    "key": "GL-01356",
+    "kind": "transaction",
+    "party": "VND-018",
+    "memo": "road surface repair - PROP-D",
+    "delta": 80000.0,
+    "share_of_actual": 0.3659
+   },
+   {
+    "key": "GL-01357",
+    "kind": "transaction",
+    "party": "VND-109",
+    "memo": "Repair & Maintenance services 2026-05",
+    "delta": 46221.0,
+    "share_of_actual": 0.2114
+   },
+   {
+    "key": "GL-01358",
+    "kind": "transaction",
+    "party": "VND-130",
+    "memo": "Repair & Maintenance services 2026-05",
+    "delta": 46221.0,
+    "share_of_actual": 0.2114
+   },
+   {
+    "key": "GL-01359",
+    "kind": "transaction",
+    "party": "VND-144",
+    "memo": "Repair & Maintenance services 2026-05",
+    "delta": 46221.0,
+    "share_of_actual": 0.2114
+   }
+  ]
+ },
+ {
+  "case_id": "2026-05_PROP-A_Leasing_revenue",
+  "month": "2026-05",
+  "property": "PROP-A",
+  "pl_line": "Leasing revenue",
+  "side": "revenue",
+  "budget": 426000.0,
+  "actual": 462000.0,
+  "variance": 36000.0,
+  "variance_pct": 0.0845,
+  "direction": "favorable",
+  "material": true,
+  "materiality_rule": "|var|>=50,000 OR |pct|>=5%",
+  "contributors": [
+   {
+    "key": "TEN-060",
+    "kind": "tenant",
+    "delta": 36000.0,
+    "share_of_variance": 1.0
+   }
+  ]
+ },
+ {
+  "case_id": "2026-05_PROP-B_Leasing_revenue",
+  "month": "2026-05",
+  "property": "PROP-B",
+  "pl_line": "Leasing revenue",
+  "side": "revenue",
+  "budget": 478000.0,
+  "actual": 445000.0,
+  "variance": -33000.0,
+  "variance_pct": -0.069,
+  "direction": "unfavorable",
+  "material": true,
+  "materiality_rule": "|var|>=50,000 OR |pct|>=5%",
+  "contributors": [
+   {
+    "key": "TEN-059",
+    "kind": "tenant",
+    "delta": -33000.0,
+    "share_of_variance": 1.0
+   }
+  ]
+ },
+ {
+  "case_id": "2026-05_PROP-B_Marketing",
+  "month": "2026-05",
+  "property": "PROP-B",
+  "pl_line": "Marketing",
+  "side": "cost",
+  "budget": 41844.0,
+  "actual": 68500.0,
+  "variance": 26656.0,
+  "variance_pct": 0.637,
+  "direction": "unfavorable",
+  "material": true,
+  "materiality_rule": "|var|>=30,000 OR |pct|>=15%",
+  "contributors": [
+   {
+    "key": "GL-01025",
+    "kind": "transaction",
+    "party": "VND-072",
+    "memo": "sundry services",
+    "delta": 27000.0,
+    "share_of_actual": 0.3942
+   },
+   {
+    "key": "GL-01026",
+    "kind": "transaction",
+    "party": "VND-143",
+    "memo": "Marketing services 2026-05",
+    "delta": 20750.0,
+    "share_of_actual": 0.3029
+   },
+   {
+    "key": "GL-01027",
+    "kind": "transaction",
+    "party": "VND-138",
+    "memo": "Marketing services 2026-05",
+    "delta": 20750.0,
+    "share_of_actual": 0.3029
+   }
+  ]
+ },
+ {
+  "case_id": "2026-05_PROP-B_Security_and_cleaning",
+  "month": "2026-05",
+  "property": "PROP-B",
+  "pl_line": "Security & cleaning",
+  "side": "cost",
+  "budget": 66236.0,
+  "actual": 92770.0,
+  "variance": 26534.0,
+  "variance_pct": 0.4006,
+  "direction": "unfavorable",
+  "material": true,
+  "materiality_rule": "|var|>=30,000 OR |pct|>=15%",
+  "contributors": [
+   {
+    "key": "GL-00989",
+    "kind": "transaction",
+    "party": "VND-147",
+    "memo": "Security & cleaning services 2026-05",
+    "delta": 32385.0,
+    "share_of_actual": 0.3491
+   },
+   {
+    "key": "GL-00990",
+    "kind": "transaction",
+    "party": "VND-118",
+    "memo": "Security & cleaning services 2026-05",
+    "delta": 32385.0,
+    "share_of_actual": 0.3491
+   },
+   {
+    "key": "GL-00988",
+    "kind": "transaction",
+    "party": "VND-075",
+    "memo": "sundry services",
+    "delta": 28000.0,
+    "share_of_actual": 0.3018
+   }
+  ]
+ },
+ {
+  "case_id": "2026-06_PROP-E_Repair_and_Maintenance",
+  "month": "2026-06",
+  "property": "PROP-E",
+  "pl_line": "Repair & Maintenance",
+  "side": "cost",
+  "budget": 147141.0,
+  "actual": 210785.0,
+  "variance": 63644.0,
+  "variance_pct": 0.4325,
+  "direction": "unfavorable",
+  "material": true,
+  "materiality_rule": "|var|>=30,000 OR |pct|>=15%",
+  "contributors": [
+   {
+    "key": "GL-01563",
+    "kind": "transaction",
+    "party": "VND-042",
+    "memo": "fire pump overhaul - PROP-E",
+    "delta": 62000.0,
+    "share_of_actual": 0.2941
+   },
+   {
+    "key": "GL-01564",
+    "kind": "transaction",
+    "party": "VND-123",
+    "memo": "Repair & Maintenance services 2026-06",
+    "delta": 37196.0,
+    "share_of_actual": 0.1765
+   },
+   {
+    "key": "GL-01565",
+    "kind": "transaction",
+    "party": "VND-156",
+    "memo": "Repair & Maintenance services 2026-06",
+    "delta": 37196.0,
+    "share_of_actual": 0.1765
+   },
+   {
+    "key": "GL-01566",
+    "kind": "transaction",
+    "party": "VND-173",
+    "memo": "Repair & Maintenance services 2026-06",
+    "delta": 37196.0,
+    "share_of_actual": 0.1765
+   },
+   {
+    "key": "GL-01567",
+    "kind": "transaction",
+    "party": "VND-152",
+    "memo": "Repair & Maintenance services 2026-06",
+    "delta": 37196.0,
+    "share_of_actual": 0.1765
+   }
+  ]
+ },
+ {
+  "case_id": "2026-06_PROP-B_Leasing_revenue",
+  "month": "2026-06",
+  "property": "PROP-B",
+  "pl_line": "Leasing revenue",
+  "side": "revenue",
+  "budget": 478000.0,
+  "actual": 445000.0,
+  "variance": -33000.0,
+  "variance_pct": -0.069,
+  "direction": "unfavorable",
+  "material": true,
+  "materiality_rule": "|var|>=50,000 OR |pct|>=5%",
+  "contributors": [
+   {
+    "key": "TEN-059",
+    "kind": "tenant",
+    "delta": -33000.0,
+    "share_of_variance": 1.0
+   }
+  ]
+ },
+ {
+  "case_id": "2026-06_PROP-D_Leasing_revenue",
+  "month": "2026-06",
+  "property": "PROP-D",
+  "pl_line": "Leasing revenue",
+  "side": "revenue",
+  "budget": 487000.0,
+  "actual": 458000.0,
+  "variance": -29000.0,
+  "variance_pct": -0.0595,
+  "direction": "unfavorable",
+  "material": true,
+  "materiality_rule": "|var|>=50,000 OR |pct|>=5%",
+  "contributors": [
+   {
+    "key": "TEN-058",
+    "kind": "tenant",
+    "delta": -29000.0,
+    "share_of_variance": 1.0
+   }
+  ]
+ },
+ {
+  "case_id": "2026-07_PROP-D_Marketing",
+  "month": "2026-07",
+  "property": "PROP-D",
+  "pl_line": "Marketing",
+  "side": "cost",
+  "budget": 51230.0,
+  "actual": 8341.0,
+  "variance": -42889.0,
+  "variance_pct": -0.8372,
+  "direction": "favorable",
+  "material": true,
+  "materiality_rule": "|var|>=30,000 OR |pct|>=15%",
+  "contributors": [
+   {
+    "key": "GL-01463",
+    "kind": "transaction",
+    "party": "VND-146",
+    "memo": "Marketing services 2026-07",
+    "delta": 2085.0,
+    "share_of_actual": 0.25
+   },
+   {
+    "key": "GL-01464",
+    "kind": "transaction",
+    "party": "VND-155",
+    "memo": "Marketing services 2026-07",
+    "delta": 2085.0,
+    "share_of_actual": 0.25
+   },
+   {
+    "key": "GL-01465",
+    "kind": "transaction",
+    "party": "VND-109",
+    "memo": "Marketing services 2026-07",
+    "delta": 2085.0,
+    "share_of_actual": 0.25
+   },
+   {
+    "key": "GL-01466",
+    "kind": "transaction",
+    "party": "VND-138",
+    "memo": "Marketing services 2026-07",
+    "delta": 2085.0,
+    "share_of_actual": 0.25
+   }
+  ]
+ },
+ {
+  "case_id": "2026-07_PROP-E_Repair_and_Maintenance",
+  "month": "2026-07",
+  "property": "PROP-E",
+  "pl_line": "Repair & Maintenance",
+  "side": "cost",
+  "budget": 138062.0,
+  "actual": 97269.0,
+  "variance": -40793.0,
+  "variance_pct": -0.2955,
+  "direction": "favorable",
+  "material": true,
+  "materiality_rule": "|var|>=30,000 OR |pct|>=15%",
+  "contributors": [
+   {
+    "key": "GL-01568",
+    "kind": "transaction",
+    "party": "VND-117",
+    "memo": "Repair & Maintenance services 2026-07",
+    "delta": 24317.0,
+    "share_of_actual": 0.25
+   },
+   {
+    "key": "GL-01569",
+    "kind": "transaction",
+    "party": "VND-133",
+    "memo": "Repair & Maintenance services 2026-07",
+    "delta": 24317.0,
+    "share_of_actual": 0.25
+   },
+   {
+    "key": "GL-01570",
+    "kind": "transaction",
+    "party": "VND-128",
+    "memo": "Repair & Maintenance services 2026-07",
+    "delta": 24317.0,
+    "share_of_actual": 0.25
+   },
+   {
+    "key": "GL-01571",
+    "kind": "transaction",
+    "party": "VND-157",
+    "memo": "Repair & Maintenance services 2026-07",
+    "delta": 24317.0,
+    "share_of_actual": 0.25
+   }
+  ]
+ },
+ {
+  "case_id": "2026-07_PROP-D_Leasing_revenue",
+  "month": "2026-07",
+  "property": "PROP-D",
+  "pl_line": "Leasing revenue",
+  "side": "revenue",
+  "budget": 487000.0,
+  "actual": 458000.0,
+  "variance": -29000.0,
+  "variance_pct": -0.0595,
+  "direction": "unfavorable",
+  "material": true,
+  "materiality_rule": "|var|>=50,000 OR |pct|>=5%",
+  "contributors": [
+   {
+    "key": "TEN-058",
+    "kind": "tenant",
+    "delta": -29000.0,
+    "share_of_variance": 1.0
+   }
+  ]
+ },
+ {
+  "case_id": "2026-07_PROP-A_Utilities",
+  "month": "2026-07",
+  "property": "PROP-A",
+  "pl_line": "Utilities",
+  "side": "cost",
+  "budget": 114002.0,
+  "actual": 138886.0,
+  "variance": 24884.0,
+  "variance_pct": 0.2183,
+  "direction": "unfavorable",
+  "material": true,
+  "materiality_rule": "|var|>=30,000 OR |pct|>=15%",
+  "contributors": [
+   {
+    "key": "GL-00742",
+    "kind": "transaction",
+    "party": "VND-175",
+    "memo": "Utilities services 2026-07",
+    "delta": 46295.0,
+    "share_of_actual": 0.3333
+   },
+   {
+    "key": "GL-00743",
+    "kind": "transaction",
+    "party": "VND-169",
+    "memo": "Utilities services 2026-07",
+    "delta": 46295.0,
+    "share_of_actual": 0.3333
+   },
+   {
+    "key": "GL-00744",
+    "kind": "transaction",
+    "party": "VND-135",
+    "memo": "Utilities services 2026-07",
+    "delta": 46295.0,
+    "share_of_actual": 0.3333
+   }
+  ]
+ },
+ {
+  "case_id": "2026-07_PROP-E_Marketing",
+  "month": "2026-07",
+  "property": "PROP-E",
+  "pl_line": "Marketing",
+  "side": "cost",
+  "budget": 31874.0,
+  "actual": 55673.0,
+  "variance": 23799.0,
+  "variance_pct": 0.7467,
+  "direction": "unfavorable",
+  "material": true,
+  "materiality_rule": "|var|>=30,000 OR |pct|>=15%",
+  "contributors": [
+   {
+    "key": "GL-01674",
+    "kind": "transaction",
+    "party": "VND-083",
+    "memo": "sundry services",
+    "delta": 23000.0,
+    "share_of_actual": 0.4131
+   },
+   {
+    "key": "GL-01675",
+    "kind": "transaction",
+    "party": "VND-172",
+    "memo": "Marketing services 2026-07",
+    "delta": 10891.0,
+    "share_of_actual": 0.1956
+   },
+   {
+    "key": "GL-01676",
+    "kind": "transaction",
+    "party": "VND-136",
+    "memo": "Marketing services 2026-07",
+    "delta": 10891.0,
+    "share_of_actual": 0.1956
+   },
+   {
+    "key": "GL-01677",
+    "kind": "transaction",
+    "party": "VND-179",
+    "memo": "Marketing services 2026-07",
+    "delta": 10891.0,
+    "share_of_actual": 0.1956
+   }
+  ]
+ },
+ {
+  "case_id": "2026-08_CORP_Other_income",
+  "month": "2026-08",
+  "property": "CORP",
+  "pl_line": "Other income",
+  "side": "corp",
+  "budget": 60215.0,
+  "actual": 360333.0,
+  "variance": 300118.0,
+  "variance_pct": 4.9841,
+  "direction": "favorable",
+  "material": true,
+  "materiality_rule": "|var|>=100,000 OR |pct|>=10%",
+  "contributors": [
+   {
+    "key": "GL-01850",
+    "kind": "transaction",
+    "party": "VND-175",
+    "memo": "Other income services 2026-08",
+    "delta": 120111.0,
+    "share_of_actual": 0.3333
+   },
+   {
+    "key": "GL-01851",
+    "kind": "transaction",
+    "party": "VND-155",
+    "memo": "Other income services 2026-08",
+    "delta": 120111.0,
+    "share_of_actual": 0.3333
+   },
+   {
+    "key": "GL-01852",
+    "kind": "transaction",
+    "party": "VND-165",
+    "memo": "Other income services 2026-08",
+    "delta": 120111.0,
+    "share_of_actual": 0.3333
+   }
+  ]
+ },
+ {
+  "case_id": "2026-08_PROP-C_Leasing_revenue",
+  "month": "2026-08",
+  "property": "PROP-C",
+  "pl_line": "Leasing revenue",
+  "side": "revenue",
+  "budget": 370000.0,
+  "actual": 312500.0,
+  "variance": -57500.0,
+  "variance_pct": -0.1554,
+  "direction": "unfavorable",
+  "material": true,
+  "materiality_rule": "|var|>=50,000 OR |pct|>=5%",
+  "contributors": [
+   {
+    "key": "TEN-027",
+    "kind": "tenant",
+    "delta": -60000.0,
+    "share_of_variance": 1.0435
+   },
+   {
+    "key": "TEN-025",
+    "kind": "tenant",
+    "delta": 2500.0,
+    "share_of_variance": -0.0435
+   }
+  ]
+ },
+ {
+  "case_id": "2026-08_PROP-E_Leasing_revenue",
+  "month": "2026-08",
+  "property": "PROP-E",
+  "pl_line": "Leasing revenue",
+  "side": "revenue",
+  "budget": 455000.0,
+  "actual": 409480.0,
+  "variance": -45520.0,
+  "variance_pct": -0.1,
+  "direction": "unfavorable",
+  "material": true,
+  "materiality_rule": "|var|>=50,000 OR |pct|>=5%",
+  "contributors": [
+   {
+    "key": "TEN-057",
+    "kind": "tenant",
+    "delta": -50000.0,
+    "share_of_variance": 1.0984
+   },
+   {
+    "key": "TEN-049",
+    "kind": "tenant",
+    "delta": 4480.0,
+    "share_of_variance": -0.0984
+   }
+  ]
+ },
+ {
+  "case_id": "2026-08_PROP-E_Utilities",
+  "month": "2026-08",
+  "property": "PROP-E",
+  "pl_line": "Utilities",
+  "side": "cost",
+  "budget": 104161.0,
+  "actual": 130485.0,
+  "variance": 26324.0,
+  "variance_pct": 0.2527,
+  "direction": "unfavorable",
+  "material": true,
+  "materiality_rule": "|var|>=30,000 OR |pct|>=15%",
+  "contributors": [
+   {
+    "key": "GL-01603",
+    "kind": "transaction",
+    "party": "VND-104",
+    "memo": "Utilities services 2026-08",
+    "delta": 65242.0,
+    "share_of_actual": 0.5
+   },
+   {
+    "key": "GL-01604",
+    "kind": "transaction",
+    "party": "VND-122",
+    "memo": "Utilities services 2026-08",
+    "delta": 65242.0,
+    "share_of_actual": 0.5
+   }
+  ]
+ },
+ {
+  "case_id": "2026-09_PROP-B_Leasing_revenue",
+  "month": "2026-09",
+  "property": "PROP-B",
+  "pl_line": "Leasing revenue",
+  "side": "revenue",
+  "budget": 478000.0,
+  "actual": 419000.0,
+  "variance": -59000.0,
+  "variance_pct": -0.1234,
+  "direction": "unfavorable",
+  "material": true,
+  "materiality_rule": "|var|>=50,000 OR |pct|>=5%",
+  "contributors": [
+   {
+    "key": "TEN-015",
+    "kind": "tenant",
+    "delta": -59000.0,
+    "share_of_variance": 1.0
+   }
+  ]
+ },
+ {
+  "case_id": "2026-09_PROP-C_Leasing_revenue",
+  "month": "2026-09",
+  "property": "PROP-C",
+  "pl_line": "Leasing revenue",
+  "side": "revenue",
+  "budget": 370000.0,
+  "actual": 312500.0,
+  "variance": -57500.0,
+  "variance_pct": -0.1554,
+  "direction": "unfavorable",
+  "material": true,
+  "materiality_rule": "|var|>=50,000 OR |pct|>=5%",
+  "contributors": [
+   {
+    "key": "TEN-027",
+    "kind": "tenant",
+    "delta": -60000.0,
+    "share_of_variance": 1.0435
+   },
+   {
+    "key": "TEN-025",
+    "kind": "tenant",
+    "delta": 2500.0,
+    "share_of_variance": -0.0435
+   }
+  ]
+ },
+ {
+  "case_id": "2026-09_PROP-E_Leasing_revenue",
+  "month": "2026-09",
+  "property": "PROP-E",
+  "pl_line": "Leasing revenue",
+  "side": "revenue",
+  "budget": 455000.0,
+  "actual": 409480.0,
+  "variance": -45520.0,
+  "variance_pct": -0.1,
+  "direction": "unfavorable",
+  "material": true,
+  "materiality_rule": "|var|>=50,000 OR |pct|>=5%",
+  "contributors": [
+   {
+    "key": "TEN-057",
+    "kind": "tenant",
+    "delta": -50000.0,
+    "share_of_variance": 1.0984
+   },
+   {
+    "key": "TEN-049",
+    "kind": "tenant",
+    "delta": 4480.0,
+    "share_of_variance": -0.0984
+   }
+  ]
+ },
+ {
+  "case_id": "2026-09_PROP-A_Marketing",
+  "month": "2026-09",
+  "property": "PROP-A",
+  "pl_line": "Marketing",
+  "side": "cost",
+  "budget": 33704.0,
+  "actual": 0.0,
+  "variance": -33704.0,
+  "variance_pct": -1.0,
+  "direction": "favorable",
+  "material": true,
+  "materiality_rule": "|var|>=30,000 OR |pct|>=15%",
+  "contributors": [
+   {
+    "key": "GL-00822",
+    "kind": "transaction",
+    "party": "VND-173",
+    "memo": "Marketing services 2026-09",
+    "delta": 0.0,
+    "share_of_actual": null
+   },
+   {
+    "key": "GL-00823",
+    "kind": "transaction",
+    "party": "VND-115",
+    "memo": "Marketing services 2026-09",
+    "delta": 0.0,
+    "share_of_actual": null
+   },
+   {
+    "key": "GL-00824",
+    "kind": "transaction",
+    "party": "VND-174",
+    "memo": "Marketing services 2026-09",
+    "delta": 0.0,
+    "share_of_actual": null
+   }
+  ]
+ },
+ {
+  "case_id": "2026-09_PROP-C_Management_fee",
+  "month": "2026-09",
+  "property": "PROP-C",
+  "pl_line": "Management fee",
+  "side": "cost",
+  "budget": 50335.0,
+  "actual": 22850.0,
+  "variance": -27485.0,
+  "variance_pct": -0.546,
+  "direction": "favorable",
+  "material": true,
+  "materiality_rule": "|var|>=30,000 OR |pct|>=15%",
+  "contributors": [
+   {
+    "key": "GL-01333",
+    "kind": "transaction",
+    "party": "VND-101",
+    "memo": "Management fee services 2026-09",
+    "delta": 11425.0,
+    "share_of_actual": 0.5
+   },
+   {
+    "key": "GL-01334",
+    "kind": "transaction",
+    "party": "VND-102",
+    "memo": "Management fee services 2026-09",
+    "delta": 11425.0,
+    "share_of_actual": 0.5
+   }
+  ]
+ },
+ {
+  "case_id": "2026-10_CORP_Financial_expenses",
+  "month": "2026-10",
+  "property": "CORP",
+  "pl_line": "Financial expenses",
+  "side": "corp",
+  "budget": 5384448.0,
+  "actual": 5570064.0,
+  "variance": 185616.0,
+  "variance_pct": 0.0345,
+  "direction": "unfavorable",
+  "material": true,
+  "materiality_rule": "|var|>=100,000 OR |pct|>=10%",
+  "contributors": [
+   {
+    "key": "GL-01787",
+    "kind": "transaction",
+    "party": "VND-125",
+    "memo": "Financial expenses services 2026-10",
+    "delta": 2785032.0,
+    "share_of_actual": 0.5
+   },
+   {
+    "key": "GL-01788",
+    "kind": "transaction",
+    "party": "VND-150",
+    "memo": "Financial expenses services 2026-10",
+    "delta": 2785032.0,
+    "share_of_actual": 0.5
+   }
+  ]
+ },
+ {
+  "case_id": "2026-10_PROP-D_Repair_and_Maintenance",
+  "month": "2026-10",
+  "property": "PROP-D",
+  "pl_line": "Repair & Maintenance",
+  "side": "cost",
+  "budget": 138741.0,
+  "actual": 205952.0,
+  "variance": 67211.0,
+  "variance_pct": 0.4844,
+  "direction": "unfavorable",
+  "material": true,
+  "materiality_rule": "|var|>=30,000 OR |pct|>=15%",
+  "contributors": [
+   {
+    "key": "GL-01369",
+    "kind": "transaction",
+    "party": "VND-032",
+    "memo": "fire pump overhaul - PROP-D",
+    "delta": 71000.0,
+    "share_of_actual": 0.3447
+   },
+   {
+    "key": "GL-01370",
+    "kind": "transaction",
+    "party": "VND-177",
+    "memo": "Repair & Maintenance services 2026-10",
+    "delta": 44984.0,
+    "share_of_actual": 0.2184
+   },
+   {
+    "key": "GL-01371",
+    "kind": "transaction",
+    "party": "VND-159",
+    "memo": "Repair & Maintenance services 2026-10",
+    "delta": 44984.0,
+    "share_of_actual": 0.2184
+   },
+   {
+    "key": "GL-01372",
+    "kind": "transaction",
+    "party": "VND-104",
+    "memo": "Repair & Maintenance services 2026-10",
+    "delta": 44984.0,
+    "share_of_actual": 0.2184
+   }
+  ]
+ },
+ {
+  "case_id": "2026-10_PROP-B_Leasing_revenue",
+  "month": "2026-10",
+  "property": "PROP-B",
+  "pl_line": "Leasing revenue",
+  "side": "revenue",
+  "budget": 478000.0,
+  "actual": 419000.0,
+  "variance": -59000.0,
+  "variance_pct": -0.1234,
+  "direction": "unfavorable",
+  "material": true,
+  "materiality_rule": "|var|>=50,000 OR |pct|>=5%",
+  "contributors": [
+   {
+    "key": "TEN-015",
+    "kind": "tenant",
+    "delta": -59000.0,
+    "share_of_variance": 1.0
+   }
+  ]
+ },
+ {
+  "case_id": "2026-10_PROP-C_Leasing_revenue",
+  "month": "2026-10",
+  "property": "PROP-C",
+  "pl_line": "Leasing revenue",
+  "side": "revenue",
+  "budget": 370000.0,
+  "actual": 312500.0,
+  "variance": -57500.0,
+  "variance_pct": -0.1554,
+  "direction": "unfavorable",
+  "material": true,
+  "materiality_rule": "|var|>=50,000 OR |pct|>=5%",
+  "contributors": [
+   {
+    "key": "TEN-027",
+    "kind": "tenant",
+    "delta": -60000.0,
+    "share_of_variance": 1.0435
+   },
+   {
+    "key": "TEN-025",
+    "kind": "tenant",
+    "delta": 2500.0,
+    "share_of_variance": -0.0435
+   }
+  ]
+ },
+ {
+  "case_id": "2026-10_PROP-E_Leasing_revenue",
+  "month": "2026-10",
+  "property": "PROP-E",
+  "pl_line": "Leasing revenue",
+  "side": "revenue",
+  "budget": 455000.0,
+  "actual": 409480.0,
+  "variance": -45520.0,
+  "variance_pct": -0.1,
+  "direction": "unfavorable",
+  "material": true,
+  "materiality_rule": "|var|>=50,000 OR |pct|>=5%",
+  "contributors": [
+   {
+    "key": "TEN-057",
+    "kind": "tenant",
+    "delta": -50000.0,
+    "share_of_variance": 1.0984
+   },
+   {
+    "key": "TEN-049",
+    "kind": "tenant",
+    "delta": 4480.0,
+    "share_of_variance": -0.0984
+   }
+  ]
+ },
+ {
+  "case_id": "2026-11_PROP-B_Leasing_revenue",
+  "month": "2026-11",
+  "property": "PROP-B",
+  "pl_line": "Leasing revenue",
+  "side": "revenue",
+  "budget": 478000.0,
+  "actual": 419000.0,
+  "variance": -59000.0,
+  "variance_pct": -0.1234,
+  "direction": "unfavorable",
+  "material": true,
+  "materiality_rule": "|var|>=50,000 OR |pct|>=5%",
+  "contributors": [
+   {
+    "key": "TEN-015",
+    "kind": "tenant",
+    "delta": -59000.0,
+    "share_of_variance": 1.0
+   }
+  ]
+ },
+ {
+  "case_id": "2026-11_PROP-C_Leasing_revenue",
+  "month": "2026-11",
+  "property": "PROP-C",
+  "pl_line": "Leasing revenue",
+  "side": "revenue",
+  "budget": 370000.0,
+  "actual": 312500.0,
+  "variance": -57500.0,
+  "variance_pct": -0.1554,
+  "direction": "unfavorable",
+  "material": true,
+  "materiality_rule": "|var|>=50,000 OR |pct|>=5%",
+  "contributors": [
+   {
+    "key": "TEN-027",
+    "kind": "tenant",
+    "delta": -60000.0,
+    "share_of_variance": 1.0435
+   },
+   {
+    "key": "TEN-025",
+    "kind": "tenant",
+    "delta": 2500.0,
+    "share_of_variance": -0.0435
+   }
+  ]
+ },
+ {
+  "case_id": "2026-11_PROP-E_Leasing_revenue",
+  "month": "2026-11",
+  "property": "PROP-E",
+  "pl_line": "Leasing revenue",
+  "side": "revenue",
+  "budget": 455000.0,
+  "actual": 409480.0,
+  "variance": -45520.0,
+  "variance_pct": -0.1,
+  "direction": "unfavorable",
+  "material": true,
+  "materiality_rule": "|var|>=50,000 OR |pct|>=5%",
+  "contributors": [
+   {
+    "key": "TEN-057",
+    "kind": "tenant",
+    "delta": -50000.0,
+    "share_of_variance": 1.0984
+   },
+   {
+    "key": "TEN-049",
+    "kind": "tenant",
+    "delta": 4480.0,
+    "share_of_variance": -0.0984
+   }
+  ]
+ },
+ {
+  "case_id": "2026-12_PROP-B_Leasing_revenue",
+  "month": "2026-12",
+  "property": "PROP-B",
+  "pl_line": "Leasing revenue",
+  "side": "revenue",
+  "budget": 478000.0,
+  "actual": 419000.0,
+  "variance": -59000.0,
+  "variance_pct": -0.1234,
+  "direction": "unfavorable",
+  "material": true,
+  "materiality_rule": "|var|>=50,000 OR |pct|>=5%",
+  "contributors": [
+   {
+    "key": "TEN-015",
+    "kind": "tenant",
+    "delta": -59000.0,
+    "share_of_variance": 1.0
+   }
+  ]
+ },
+ {
+  "case_id": "2026-12_PROP-C_Leasing_revenue",
+  "month": "2026-12",
+  "property": "PROP-C",
+  "pl_line": "Leasing revenue",
+  "side": "revenue",
+  "budget": 370000.0,
+  "actual": 312500.0,
+  "variance": -57500.0,
+  "variance_pct": -0.1554,
+  "direction": "unfavorable",
+  "material": true,
+  "materiality_rule": "|var|>=50,000 OR |pct|>=5%",
+  "contributors": [
+   {
+    "key": "TEN-027",
+    "kind": "tenant",
+    "delta": -60000.0,
+    "share_of_variance": 1.0435
+   },
+   {
+    "key": "TEN-025",
+    "kind": "tenant",
+    "delta": 2500.0,
+    "share_of_variance": -0.0435
+   }
+  ]
+ },
+ {
+  "case_id": "2026-12_PROP-E_Leasing_revenue",
+  "month": "2026-12",
+  "property": "PROP-E",
+  "pl_line": "Leasing revenue",
+  "side": "revenue",
+  "budget": 455000.0,
+  "actual": 409480.0,
+  "variance": -45520.0,
+  "variance_pct": -0.1,
+  "direction": "unfavorable",
+  "material": true,
+  "materiality_rule": "|var|>=50,000 OR |pct|>=5%",
+  "contributors": [
+   {
+    "key": "TEN-057",
+    "kind": "tenant",
+    "delta": -50000.0,
+    "share_of_variance": 1.0984
+   },
+   {
+    "key": "TEN-049",
+    "kind": "tenant",
+    "delta": 4480.0,
+    "share_of_variance": -0.0984
+   }
+  ]
+ }
+]

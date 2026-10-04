@@ -1,0 +1,869 @@
+{
+ "2026-08_PROP-C_Leasing_revenue": {
+  "case_id": "2026-08_PROP-C_Leasing_revenue",
+  "month": "2026-08",
+  "property": "PROP-C",
+  "pl_line": "Leasing revenue",
+  "facts": {
+   "budget": 370000.0,
+   "actual": 312500.0,
+   "variance": -57500.0
+  },
+  "material": true,
+  "gold_causes": [
+   "early_termination",
+   "rent_escalation"
+  ],
+  "gold_evidence": [
+   "EV-101",
+   "EV-106"
+  ],
+  "prohibited_claims": [
+   "leasing market slowdown",
+   "tenant payment default"
+  ],
+  "abstain": false,
+  "notes": [
+   "termination fee $30k expected in 2026-09 (Other income)"
+  ]
+ },
+ "2026-09_PROP-C_Leasing_revenue": {
+  "case_id": "2026-09_PROP-C_Leasing_revenue",
+  "month": "2026-09",
+  "property": "PROP-C",
+  "pl_line": "Leasing revenue",
+  "facts": {
+   "budget": 370000.0,
+   "actual": 312500.0,
+   "variance": -57500.0
+  },
+  "material": true,
+  "gold_causes": [
+   "early_termination",
+   "rent_escalation"
+  ],
+  "gold_evidence": [
+   "EV-101",
+   "EV-106"
+  ],
+  "prohibited_claims": [
+   "leasing market slowdown",
+   "tenant payment default"
+  ],
+  "abstain": false,
+  "notes": [
+   "termination fee $30k expected in 2026-09 (Other income)"
+  ]
+ },
+ "2026-10_PROP-C_Leasing_revenue": {
+  "case_id": "2026-10_PROP-C_Leasing_revenue",
+  "month": "2026-10",
+  "property": "PROP-C",
+  "pl_line": "Leasing revenue",
+  "facts": {
+   "budget": 370000.0,
+   "actual": 312500.0,
+   "variance": -57500.0
+  },
+  "material": true,
+  "gold_causes": [
+   "early_termination",
+   "rent_escalation"
+  ],
+  "gold_evidence": [
+   "EV-101",
+   "EV-106"
+  ],
+  "prohibited_claims": [
+   "leasing market slowdown",
+   "tenant payment default"
+  ],
+  "abstain": false,
+  "notes": [
+   "termination fee $30k expected in 2026-09 (Other income)"
+  ]
+ },
+ "2026-11_PROP-C_Leasing_revenue": {
+  "case_id": "2026-11_PROP-C_Leasing_revenue",
+  "month": "2026-11",
+  "property": "PROP-C",
+  "pl_line": "Leasing revenue",
+  "facts": {
+   "budget": 370000.0,
+   "actual": 312500.0,
+   "variance": -57500.0
+  },
+  "material": true,
+  "gold_causes": [
+   "early_termination",
+   "rent_escalation"
+  ],
+  "gold_evidence": [
+   "EV-101",
+   "EV-106"
+  ],
+  "prohibited_claims": [
+   "leasing market slowdown",
+   "tenant payment default"
+  ],
+  "abstain": false,
+  "notes": [
+   "termination fee $30k expected in 2026-09 (Other income)"
+  ]
+ },
+ "2026-12_PROP-C_Leasing_revenue": {
+  "case_id": "2026-12_PROP-C_Leasing_revenue",
+  "month": "2026-12",
+  "property": "PROP-C",
+  "pl_line": "Leasing revenue",
+  "facts": {
+   "budget": 370000.0,
+   "actual": 312500.0,
+   "variance": -57500.0
+  },
+  "material": true,
+  "gold_causes": [
+   "early_termination",
+   "rent_escalation"
+  ],
+  "gold_evidence": [
+   "EV-101",
+   "EV-106"
+  ],
+  "prohibited_claims": [
+   "leasing market slowdown",
+   "tenant payment default"
+  ],
+  "abstain": false,
+  "notes": [
+   "termination fee $30k expected in 2026-09 (Other income)"
+  ]
+ },
+ "2026-08_PROP-E_Leasing_revenue": {
+  "case_id": "2026-08_PROP-E_Leasing_revenue",
+  "month": "2026-08",
+  "property": "PROP-E",
+  "pl_line": "Leasing revenue",
+  "facts": {
+   "budget": 455000.0,
+   "actual": 409480.0,
+   "variance": -45520.0
+  },
+  "material": true,
+  "gold_causes": [
+   "early_termination",
+   "rent_escalation"
+  ],
+  "gold_evidence": [
+   "EV-102",
+   "EV-107"
+  ],
+  "prohibited_claims": [
+   "leasing market slowdown",
+   "tenant payment default"
+  ],
+  "abstain": false,
+  "notes": [
+   "termination fee $25k expected in 2026-09 (Other income)"
+  ]
+ },
+ "2026-09_PROP-E_Leasing_revenue": {
+  "case_id": "2026-09_PROP-E_Leasing_revenue",
+  "month": "2026-09",
+  "property": "PROP-E",
+  "pl_line": "Leasing revenue",
+  "facts": {
+   "budget": 455000.0,
+   "actual": 409480.0,
+   "variance": -45520.0
+  },
+  "material": true,
+  "gold_causes": [
+   "early_termination",
+   "rent_escalation"
+  ],
+  "gold_evidence": [
+   "EV-102",
+   "EV-107"
+  ],
+  "prohibited_claims": [
+   "leasing market slowdown",
+   "tenant payment default"
+  ],
+  "abstain": false,
+  "notes": [
+   "termination fee $25k expected in 2026-09 (Other income)"
+  ]
+ },
+ "2026-10_PROP-E_Leasing_revenue": {
+  "case_id": "2026-10_PROP-E_Leasing_revenue",
+  "month": "2026-10",
+  "property": "PROP-E",
+  "pl_line": "Leasing revenue",
+  "facts": {
+   "budget": 455000.0,
+   "actual": 409480.0,
+   "variance": -45520.0
+  },
+  "material": true,
+  "gold_causes": [
+   "early_termination",
+   "rent_escalation"
+  ],
+  "gold_evidence": [
+   "EV-102",
+   "EV-107"
+  ],
+  "prohibited_claims": [
+   "leasing market slowdown",
+   "tenant payment default"
+  ],
+  "abstain": false,
+  "notes": [
+   "termination fee $25k expected in 2026-09 (Other income)"
+  ]
+ },
+ "2026-11_PROP-E_Leasing_revenue": {
+  "case_id": "2026-11_PROP-E_Leasing_revenue",
+  "month": "2026-11",
+  "property": "PROP-E",
+  "pl_line": "Leasing revenue",
+  "facts": {
+   "budget": 455000.0,
+   "actual": 409480.0,
+   "variance": -45520.0
+  },
+  "material": true,
+  "gold_causes": [
+   "early_termination",
+   "rent_escalation"
+  ],
+  "gold_evidence": [
+   "EV-102",
+   "EV-107"
+  ],
+  "prohibited_claims": [
+   "leasing market slowdown",
+   "tenant payment default"
+  ],
+  "abstain": false,
+  "notes": [
+   "termination fee $25k expected in 2026-09 (Other income)"
+  ]
+ },
+ "2026-12_PROP-E_Leasing_revenue": {
+  "case_id": "2026-12_PROP-E_Leasing_revenue",
+  "month": "2026-12",
+  "property": "PROP-E",
+  "pl_line": "Leasing revenue",
+  "facts": {
+   "budget": 455000.0,
+   "actual": 409480.0,
+   "variance": -45520.0
+  },
+  "material": true,
+  "gold_causes": [
+   "early_termination",
+   "rent_escalation"
+  ],
+  "gold_evidence": [
+   "EV-102",
+   "EV-107"
+  ],
+  "prohibited_claims": [
+   "leasing market slowdown",
+   "tenant payment default"
+  ],
+  "abstain": false,
+  "notes": [
+   "termination fee $25k expected in 2026-09 (Other income)"
+  ]
+ },
+ "2026-09_PROP-B_Leasing_revenue": {
+  "case_id": "2026-09_PROP-B_Leasing_revenue",
+  "month": "2026-09",
+  "property": "PROP-B",
+  "pl_line": "Leasing revenue",
+  "facts": {
+   "budget": 478000.0,
+   "actual": 419000.0,
+   "variance": -59000.0
+  },
+  "material": true,
+  "gold_causes": [
+   "early_termination"
+  ],
+  "gold_evidence": [
+   "EV-103"
+  ],
+  "prohibited_claims": [
+   "leasing market slowdown",
+   "tenant payment default"
+  ],
+  "abstain": false,
+  "notes": [
+   "termination fee $30k expected in 2026-10 (Other income)"
+  ]
+ },
+ "2026-10_PROP-B_Leasing_revenue": {
+  "case_id": "2026-10_PROP-B_Leasing_revenue",
+  "month": "2026-10",
+  "property": "PROP-B",
+  "pl_line": "Leasing revenue",
+  "facts": {
+   "budget": 478000.0,
+   "actual": 419000.0,
+   "variance": -59000.0
+  },
+  "material": true,
+  "gold_causes": [
+   "early_termination"
+  ],
+  "gold_evidence": [
+   "EV-103"
+  ],
+  "prohibited_claims": [
+   "leasing market slowdown",
+   "tenant payment default"
+  ],
+  "abstain": false,
+  "notes": [
+   "termination fee $30k expected in 2026-10 (Other income)"
+  ]
+ },
+ "2026-11_PROP-B_Leasing_revenue": {
+  "case_id": "2026-11_PROP-B_Leasing_revenue",
+  "month": "2026-11",
+  "property": "PROP-B",
+  "pl_line": "Leasing revenue",
+  "facts": {
+   "budget": 478000.0,
+   "actual": 419000.0,
+   "variance": -59000.0
+  },
+  "material": true,
+  "gold_causes": [
+   "early_termination"
+  ],
+  "gold_evidence": [
+   "EV-103"
+  ],
+  "prohibited_claims": [
+   "leasing market slowdown",
+   "tenant payment default"
+  ],
+  "abstain": false,
+  "notes": [
+   "termination fee $30k expected in 2026-10 (Other income)"
+  ]
+ },
+ "2026-12_PROP-B_Leasing_revenue": {
+  "case_id": "2026-12_PROP-B_Leasing_revenue",
+  "month": "2026-12",
+  "property": "PROP-B",
+  "pl_line": "Leasing revenue",
+  "facts": {
+   "budget": 478000.0,
+   "actual": 419000.0,
+   "variance": -59000.0
+  },
+  "material": true,
+  "gold_causes": [
+   "early_termination"
+  ],
+  "gold_evidence": [
+   "EV-103"
+  ],
+  "prohibited_claims": [
+   "leasing market slowdown",
+   "tenant payment default"
+  ],
+  "abstain": false,
+  "notes": [
+   "termination fee $30k expected in 2026-10 (Other income)"
+  ]
+ },
+ "2026-06_PROP-D_Leasing_revenue": {
+  "case_id": "2026-06_PROP-D_Leasing_revenue",
+  "month": "2026-06",
+  "property": "PROP-D",
+  "pl_line": "Leasing revenue",
+  "facts": {
+   "budget": 487000.0,
+   "actual": 458000.0,
+   "variance": -29000.0
+  },
+  "material": true,
+  "gold_causes": [
+   "handover_delay"
+  ],
+  "gold_evidence": [
+   "EV-104"
+  ],
+  "prohibited_claims": [
+   "leasing market slowdown",
+   "tenant payment default"
+  ],
+  "abstain": false,
+  "notes": []
+ },
+ "2026-07_PROP-D_Leasing_revenue": {
+  "case_id": "2026-07_PROP-D_Leasing_revenue",
+  "month": "2026-07",
+  "property": "PROP-D",
+  "pl_line": "Leasing revenue",
+  "facts": {
+   "budget": 487000.0,
+   "actual": 458000.0,
+   "variance": -29000.0
+  },
+  "material": true,
+  "gold_causes": [
+   "handover_delay"
+  ],
+  "gold_evidence": [
+   "EV-104"
+  ],
+  "prohibited_claims": [
+   "leasing market slowdown",
+   "tenant payment default"
+  ],
+  "abstain": false,
+  "notes": []
+ },
+ "2026-05_PROP-B_Leasing_revenue": {
+  "case_id": "2026-05_PROP-B_Leasing_revenue",
+  "month": "2026-05",
+  "property": "PROP-B",
+  "pl_line": "Leasing revenue",
+  "facts": {
+   "budget": 478000.0,
+   "actual": 445000.0,
+   "variance": -33000.0
+  },
+  "material": true,
+  "gold_causes": [
+   "handover_delay"
+  ],
+  "gold_evidence": [
+   "EV-105"
+  ],
+  "prohibited_claims": [
+   "leasing market slowdown",
+   "tenant payment default"
+  ],
+  "abstain": false,
+  "notes": []
+ },
+ "2026-06_PROP-B_Leasing_revenue": {
+  "case_id": "2026-06_PROP-B_Leasing_revenue",
+  "month": "2026-06",
+  "property": "PROP-B",
+  "pl_line": "Leasing revenue",
+  "facts": {
+   "budget": 478000.0,
+   "actual": 445000.0,
+   "variance": -33000.0
+  },
+  "material": true,
+  "gold_causes": [
+   "handover_delay"
+  ],
+  "gold_evidence": [
+   "EV-105"
+  ],
+  "prohibited_claims": [
+   "leasing market slowdown",
+   "tenant payment default"
+  ],
+  "abstain": false,
+  "notes": []
+ },
+ "2026-05_PROP-A_Leasing_revenue": {
+  "case_id": "2026-05_PROP-A_Leasing_revenue",
+  "month": "2026-05",
+  "property": "PROP-A",
+  "pl_line": "Leasing revenue",
+  "facts": {
+   "budget": 426000.0,
+   "actual": 462000.0,
+   "variance": 36000.0
+  },
+  "material": true,
+  "gold_causes": [
+   "new_lease_early"
+  ],
+  "gold_evidence": [
+   "EV-108"
+  ],
+  "prohibited_claims": [
+   "leasing market slowdown",
+   "tenant payment default"
+  ],
+  "abstain": false,
+  "notes": []
+ },
+ "2026-09_PROP-C_Management_fee": {
+  "case_id": "2026-09_PROP-C_Management_fee",
+  "month": "2026-09",
+  "property": "PROP-C",
+  "pl_line": "Management fee",
+  "facts": {
+   "budget": 50335.0,
+   "actual": 22850.0,
+   "variance": -27485.0
+  },
+  "material": true,
+  "gold_causes": [
+   "timing_difference"
+  ],
+  "gold_evidence": [
+   "EV-109"
+  ],
+  "prohibited_claims": [
+   "general inflation",
+   "market price increase"
+  ],
+  "abstain": false,
+  "notes": [
+   "$28k to be recorded in 2026-10"
+  ]
+ },
+ "2026-07_PROP-D_Marketing": {
+  "case_id": "2026-07_PROP-D_Marketing",
+  "month": "2026-07",
+  "property": "PROP-D",
+  "pl_line": "Marketing",
+  "facts": {
+   "budget": 51230.0,
+   "actual": 8341.0,
+   "variance": -42889.0
+  },
+  "material": true,
+  "gold_causes": [
+   "timing_difference"
+  ],
+  "gold_evidence": [
+   "EV-110"
+  ],
+  "prohibited_claims": [
+   "general inflation",
+   "market price increase"
+  ],
+  "abstain": false,
+  "notes": [
+   "$44k to be recorded in 2026-08"
+  ]
+ },
+ "2026-09_PROP-A_Marketing": {
+  "case_id": "2026-09_PROP-A_Marketing",
+  "month": "2026-09",
+  "property": "PROP-A",
+  "pl_line": "Marketing",
+  "facts": {
+   "budget": 33704.0,
+   "actual": 0.0,
+   "variance": -33704.0
+  },
+  "material": true,
+  "gold_causes": [
+   "timing_difference"
+  ],
+  "gold_evidence": [
+   "EV-111"
+  ],
+  "prohibited_claims": [
+   "general inflation",
+   "market price increase"
+  ],
+  "abstain": false,
+  "notes": [
+   "$38k to be recorded in 2026-10"
+  ]
+ },
+ "2026-05_PROP-D_Repair_and_Maintenance": {
+  "case_id": "2026-05_PROP-D_Repair_and_Maintenance",
+  "month": "2026-05",
+  "property": "PROP-D",
+  "pl_line": "Repair & Maintenance",
+  "facts": {
+   "budget": 140484.0,
+   "actual": 218662.0,
+   "variance": 78178.0
+  },
+  "material": true,
+  "gold_causes": [
+   "one_off_event"
+  ],
+  "gold_evidence": [
+   "EV-112",
+   "EV-113"
+  ],
+  "prohibited_claims": [
+   "general inflation",
+   "market price increase"
+  ],
+  "abstain": false,
+  "notes": []
+ },
+ "2026-10_PROP-D_Repair_and_Maintenance": {
+  "case_id": "2026-10_PROP-D_Repair_and_Maintenance",
+  "month": "2026-10",
+  "property": "PROP-D",
+  "pl_line": "Repair & Maintenance",
+  "facts": {
+   "budget": 138741.0,
+   "actual": 205952.0,
+   "variance": 67211.0
+  },
+  "material": true,
+  "gold_causes": [
+   "one_off_event"
+  ],
+  "gold_evidence": [
+   "EV-114",
+   "EV-115"
+  ],
+  "prohibited_claims": [
+   "general inflation",
+   "market price increase"
+  ],
+  "abstain": false,
+  "notes": []
+ },
+ "2026-06_PROP-E_Repair_and_Maintenance": {
+  "case_id": "2026-06_PROP-E_Repair_and_Maintenance",
+  "month": "2026-06",
+  "property": "PROP-E",
+  "pl_line": "Repair & Maintenance",
+  "facts": {
+   "budget": 147141.0,
+   "actual": 210785.0,
+   "variance": 63644.0
+  },
+  "material": true,
+  "gold_causes": [
+   "one_off_event"
+  ],
+  "gold_evidence": [
+   "EV-116",
+   "EV-117"
+  ],
+  "prohibited_claims": [
+   "general inflation",
+   "market price increase"
+  ],
+  "abstain": false,
+  "notes": []
+ },
+ "2026-07_PROP-A_Utilities": {
+  "case_id": "2026-07_PROP-A_Utilities",
+  "month": "2026-07",
+  "property": "PROP-A",
+  "pl_line": "Utilities",
+  "facts": {
+   "budget": 114002.0,
+   "actual": 138886.0,
+   "variance": 24884.0
+  },
+  "material": true,
+  "gold_causes": [
+   "rate_change"
+  ],
+  "gold_evidence": [
+   "EV-118"
+  ],
+  "prohibited_claims": [
+   "general inflation",
+   "market price increase"
+  ],
+  "abstain": false,
+  "notes": []
+ },
+ "2026-08_PROP-E_Utilities": {
+  "case_id": "2026-08_PROP-E_Utilities",
+  "month": "2026-08",
+  "property": "PROP-E",
+  "pl_line": "Utilities",
+  "facts": {
+   "budget": 104161.0,
+   "actual": 130485.0,
+   "variance": 26324.0
+  },
+  "material": true,
+  "gold_causes": [
+   "rate_change"
+  ],
+  "gold_evidence": [
+   "EV-119"
+  ],
+  "prohibited_claims": [
+   "general inflation",
+   "market price increase"
+  ],
+  "abstain": false,
+  "notes": []
+ },
+ "2026-07_PROP-E_Repair_and_Maintenance": {
+  "case_id": "2026-07_PROP-E_Repair_and_Maintenance",
+  "month": "2026-07",
+  "property": "PROP-E",
+  "pl_line": "Repair & Maintenance",
+  "facts": {
+   "budget": 138062.0,
+   "actual": 97269.0,
+   "variance": -40793.0
+  },
+  "material": true,
+  "gold_causes": [
+   "accounting_treatment"
+  ],
+  "gold_evidence": [
+   "EV-120"
+  ],
+  "prohibited_claims": [
+   "general inflation",
+   "market price increase"
+  ],
+  "abstain": false,
+  "notes": []
+ },
+ "2026-05_CORP_Financial_expenses": {
+  "case_id": "2026-05_CORP_Financial_expenses",
+  "month": "2026-05",
+  "property": "CORP",
+  "pl_line": "Financial expenses",
+  "facts": {
+   "budget": 5403335.0,
+   "actual": 5692022.0,
+   "variance": 288687.0
+  },
+  "material": true,
+  "gold_causes": [
+   "financing_event"
+  ],
+  "gold_evidence": [
+   "EV-121"
+  ],
+  "prohibited_claims": [
+   "base rate increase"
+  ],
+  "abstain": false,
+  "notes": []
+ },
+ "2026-10_CORP_Financial_expenses": {
+  "case_id": "2026-10_CORP_Financial_expenses",
+  "month": "2026-10",
+  "property": "CORP",
+  "pl_line": "Financial expenses",
+  "facts": {
+   "budget": 5384448.0,
+   "actual": 5570064.0,
+   "variance": 185616.0
+  },
+  "material": true,
+  "gold_causes": [
+   "financing_event"
+  ],
+  "gold_evidence": [
+   "EV-122"
+  ],
+  "prohibited_claims": [
+   "base rate increase"
+  ],
+  "abstain": false,
+  "notes": []
+ },
+ "2026-08_CORP_Other_income": {
+  "case_id": "2026-08_CORP_Other_income",
+  "month": "2026-08",
+  "property": "CORP",
+  "pl_line": "Other income",
+  "facts": {
+   "budget": 60215.0,
+   "actual": 360333.0,
+   "variance": 300118.0
+  },
+  "material": true,
+  "gold_causes": [
+   "one_off_event"
+  ],
+  "gold_evidence": [
+   "EV-123"
+  ],
+  "prohibited_claims": [
+   "revaluation gain"
+  ],
+  "abstain": false,
+  "notes": []
+ },
+ "2026-07_PROP-E_Marketing": {
+  "case_id": "2026-07_PROP-E_Marketing",
+  "month": "2026-07",
+  "property": "PROP-E",
+  "pl_line": "Marketing",
+  "facts": {
+   "budget": 31874.0,
+   "actual": 55673.0,
+   "variance": 23799.0
+  },
+  "material": true,
+  "gold_causes": [
+   "unknown"
+  ],
+  "gold_evidence": [],
+  "prohibited_claims": [
+   "general inflation",
+   "market price increase",
+   "one-off campaign"
+  ],
+  "abstain": true,
+  "notes": []
+ },
+ "2026-05_PROP-B_Security_and_cleaning": {
+  "case_id": "2026-05_PROP-B_Security_and_cleaning",
+  "month": "2026-05",
+  "property": "PROP-B",
+  "pl_line": "Security & cleaning",
+  "facts": {
+   "budget": 66236.0,
+   "actual": 92770.0,
+   "variance": 26534.0
+  },
+  "material": true,
+  "gold_causes": [
+   "unknown"
+  ],
+  "gold_evidence": [],
+  "prohibited_claims": [
+   "general inflation",
+   "market price increase",
+   "one-off campaign"
+  ],
+  "abstain": true,
+  "notes": []
+ },
+ "2026-05_PROP-B_Marketing": {
+  "case_id": "2026-05_PROP-B_Marketing",
+  "month": "2026-05",
+  "property": "PROP-B",
+  "pl_line": "Marketing",
+  "facts": {
+   "budget": 41844.0,
+   "actual": 68500.0,
+   "variance": 26656.0
+  },
+  "material": true,
+  "gold_causes": [
+   "unknown"
+  ],
+  "gold_evidence": [],
+  "prohibited_claims": [
+   "general inflation",
+   "market price increase",
+   "one-off campaign"
+  ],
+  "abstain": true,
+  "notes": []
+ }
+}

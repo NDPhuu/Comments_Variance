@@ -1,7 +1,7 @@
 # Handoff TỔNG — Khóa luận: Glass-Box Variance Commentary System
 
 > **Cập nhật:** 2026-10-04 · **Deadline toàn bộ (code + deploy + 5 chương): 18/10/2026**
-> **Trạng thái:** Kiến trúc + kế hoạch 5 phase đã chốt. Đang ở **Phase 1** (`phases/phase1_data_engine.md`).
+> **Trạng thái:** **Phase 1 BUILD XONG 04/10 (sớm 3 ngày)** — house style rút từ 17 comments thật; dataset_v1 đóng băng (34 case = 34 gold, khớp 100%); engine + 5/5 tests pass. Còn nợ Phase 1: writing track (C1 draft, C3 outline). Kế tiếp: **Phase 2** (`phases/phase2_rag_generation.md`).
 > **Repo:** https://github.com/NDPhuu/Comments_Variance.git
 > **Phiên mới:** đọc `CLAUDE.md` → file này → file phase đang mở.
 
