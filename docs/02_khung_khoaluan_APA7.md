@@ -1,22 +1,21 @@
 # Khung trình bày khóa luận + Danh mục tài liệu tham khảo (APA 7th)
 
-> **Trạng thái:** bản khởi điểm, sẽ tinh chỉnh sau khi chốt scope ở Round 1–2.
+> **Trạng thái:** cập nhật 04/10 — khung 5 chương (quyết định #7), bổ sung metric học thuật cho chương đánh giá và dòng trust/XAI.
 > **Cảnh báo trích dẫn:** các mục tham khảo dưới đây được ghi từ trí nhớ của Claude — các bài kinh điển có độ tin cao, nhưng **bắt buộc đối chiếu lại DOI/số trang/năm trên Google Scholar hoặc trang nhà xuất bản trước khi đưa vào khóa luận**. Tuyệt đối không cite bài chưa tự mở ra đọc ít nhất abstract + phần liên quan.
 
 ---
 
 ## 1. Khung chương khóa luận (mapping với DSRM)
 
-Khóa luận dạng Design Science Research trình bày tự nhiên theo 6 hoạt động của DSRM (Peffers et al., 2007). Khung 6 chương chuẩn:
+Khóa luận dạng Design Science Research trình bày theo 6 hoạt động của DSRM (Peffers et al., 2007), gói trong **khung 5 chương chuẩn nghiên cứu** (đã chốt — quyết định #7):
 
-| Chương | Nội dung | Hoạt động DSRM tương ứng |
-|---|---|---|
-| **1. Giới thiệu** | Bối cảnh FP&A; vấn đề nghiên cứu (định nghĩa bằng chi phí/thời gian/lỗi, không phải "chưa có AI"); mục tiêu; câu hỏi nghiên cứu; phạm vi; đóng góp dự kiến; cấu trúc khóa luận | Problem identification & motivation |
-| **2. Cơ sở lý thuyết & Tổng quan nghiên cứu** | (a) Variance analysis trong kế toán quản trị & quy trình FP&A; (b) LLM, grounding, hallucination; RAG và các biến thể; numerical reasoning trên dữ liệu tài chính; (c) DSR và TTF làm khung; (d) **research gap** — kết thúc chương bằng gap statement 1 đoạn | (nền cho mọi bước) |
-| **3. Phương pháp nghiên cứu** | DSRM 6 bước → mapping sang hoạt động cụ thể của đề tài; chiến lược đánh giá (FEDS — Venable et al., 2016); thiết kế dữ liệu (synthetic + doanh nghiệp ẩn danh); đạo đức & bảo mật dữ liệu | Objectives of a solution |
-| **4. Thiết kế và xây dựng Artifact** | Yêu cầu thiết kế (từ chẩn đoán quy trình); kiến trúc; design principles (dạng "nếu muốn X trong bối cảnh Y thì thiết kế Z vì W"); implementation; ví dụ walkthrough một Variance Case | Design & development + Demonstration |
-| **5. Đánh giá** | Technical evaluation (benchmark, metrics tự động); expert evaluation (chấm mù); kết quả case study; phân tích robustness; thảo luận — đối chiếu lại RQ và literature | Evaluation |
-| **6. Kết luận** | Đóng góp học thuật & thực tiễn; hạn chế (nói thật: n nhỏ, một doanh nghiệp, synthetic bias); hướng phát triển | Communication |
+| Chương | Nội dung | Hoạt động DSRM tương ứng | Viết draft ở |
+|---|---|---|---|
+| **1. Mở đầu** | Bối cảnh FP&A; vấn đề (hộp đen — theo `objectives.md`); mục tiêu; câu hỏi nghiên cứu; phạm vi; đóng góp; cấu trúc khóa luận | Problem identification & motivation | Phase 1 |
+| **2. Cơ sở lý thuyết & Tổng quan nghiên cứu** | (a) Variance analysis & quy trình FP&A; (b) LLM, hallucination, RAG, numerical reasoning tài chính; (c) DSR, TTF, trust in automation/XAI; (d) **gap statement** 1 đoạn kết chương | (nền cho mọi bước) | Phase 2 |
+| **3. Phương pháp nghiên cứu** | DSRM 6 bước → hoạt động cụ thể; thiết kế hệ thống (từ `docs/architecture.md`); thiết kế dữ liệu synthetic + gold labels; **evaluation protocol với metric học thuật có trích dẫn** (xem §3.5) + quy trình khách quan (chấm mù, Cohen's κ, ngưỡng đăng ký trước); đạo đức & bảo mật | Objectives + Design & development | Phase 1–2 |
+| **4. Kết quả & Thảo luận** | Artifact hoàn chỉnh (walkthrough + screenshots); kết quả thực nghiệm 3 chế độ (bảng/hình sinh tự động); robustness theo kịch bản; thảo luận đối chiếu RQ và literature | Demonstration + Evaluation | Phase 3–4 |
+| **5. Kết luận & Khuyến nghị** | Trả lời từng RQ; đóng góp học thuật & thực tiễn; hạn chế nói thật (synthetic, một bối cảnh, n nhỏ); khuyến nghị triển khai (gom kho bằng chứng); hướng phát triển | Communication | Phase 4–5 |
 
 Nguyên tắc trình bày quan trọng với hội đồng:
 - **Mỗi claim trong chương 5–6 phải trace về một con số hoặc một quan sát ở chương 5.** Khóa luận về "hệ thống chống unsupported claim" mà tự mình overclaim là tự bắn vào chân.
@@ -52,6 +51,11 @@ Nguyên tắc trình bày quan trọng với hội đồng:
 - Goodhue, D. L., & Thompson, R. L. (1995). Task-technology fit and individual performance. *MIS Quarterly, 19*(2), 213–236. https://doi.org/10.2307/249689
 - Venkatesh, V., Morris, M. G., Davis, G. B., & Davis, F. D. (2003). User acceptance of information technology: Toward a unified view. *MIS Quarterly, 27*(3), 425–478. https://doi.org/10.2307/30036540
 
+### 3.2b. Trust, automation và XAI (trục "hộp đen → hộp kính")
+- Doshi-Velez, F., & Kim, B. (2017). *Towards a rigorous science of interpretable machine learning* (arXiv:1702.08608). arXiv. https://doi.org/10.48550/arXiv.1702.08608
+- Lee, J. D., & See, K. A. (2004). Trust in automation: Designing for appropriate reliance. *Human Factors, 46*(1), 50–80. https://doi.org/10.1518/hfes.46.1.50_30392
+- Parasuraman, R., & Riley, V. (1997). Humans and automation: Use, misuse, disuse, abuse. *Human Factors, 39*(2), 230–253. https://doi.org/10.1518/001872097778543886
+
 ### 3.3. LLM, RAG và grounding
 - Asai, A., Wu, Z., Wang, Y., Sil, A., & Hajishirzi, H. (2024). Self-RAG: Learning to retrieve, generate, and critique through self-reflection. In *The Twelfth International Conference on Learning Representations (ICLR)*. (bản arXiv:2310.11511)
 - Gao, Y., Xiong, Y., Gao, X., Jia, K., Pan, J., Bi, Y., Dai, Y., Sun, J., Wang, M., & Wang, H. (2023). *Retrieval-augmented generation for large language models: A survey* (arXiv:2312.10997). arXiv. https://doi.org/10.48550/arXiv.2312.10997
@@ -64,7 +68,25 @@ Nguyên tắc trình bày quan trọng với hội đồng:
 - Chen, Z., Chen, W., Smiley, C., Shah, S., Borova, I., Langdon, D., Moussa, R., Beane, M., Huang, T.-H., Routledge, B., & Wang, W. Y. (2021). FinQA: A dataset of numerical reasoning over financial data. In *Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing* (pp. 3697–3711). Association for Computational Linguistics. https://doi.org/10.18653/v1/2021.emnlp-main.300
 - Zhu, F., Lei, W., Huang, Y., Wang, C., Zhang, S., Lv, J., Feng, F., & Chua, T.-S. (2021). TAT-QA: A question answering benchmark on a hybrid of tabular and textual content in finance. In *Proceedings of ACL-IJCNLP 2021* (pp. 3277–3287). Association for Computational Linguistics. https://doi.org/10.18653/v1/2021.acl-long.254
 
-### 3.5. Đánh giá hệ thống sinh văn bản
+### 3.5. Đánh giá hệ thống sinh văn bản — METRIC HỌC THUẬT CHO CHƯƠNG ĐÁNH GIÁ
+
+> Mỗi chỉ số của đề tài phải được định nghĩa theo một chuẩn đã công bố, KHÔNG tự chế. Bảng mapping:
+>
+> | Chỉ số của đề tài | Tên học thuật | Nguồn định nghĩa |
+> |---|---|---|
+> | Số khớp sổ | Numerical exact match (EM) | FinQA (Chen et al., 2021); TAT-QA (Zhu et al., 2021) |
+> | Trích dẫn đúng tài liệu | Citation precision / citation recall | ALCE (Gao, Yen, et al., 2023) |
+> | Câu có căn cứ | Attribution / AIS; faithfulness; atomic-fact precision | Rashkin et al. (2023); RAGAS (Es et al., 2024); FActScore (Min et al., 2023) |
+> | Tìm đúng tài liệu | Precision@k, Recall@k, MRR, nDCG | Manning et al. (2008) |
+> | Từ chối đúng lúc | Answerability / selective prediction | SQuAD 2.0 (Rajpurkar et al., 2018); Kamath et al. (2020) |
+> | Độ tin của máy chấm | Cohen's κ (đồng thuận máy–người) | Cohen (1960) |
+
+- Cohen, J. (1960). A coefficient of agreement for nominal scales. *Educational and Psychological Measurement, 20*(1), 37–46. https://doi.org/10.1177/001316446002000104
+- Gao, T., Yen, H., Yu, J., & Chen, D. (2023). Enabling large language models to generate text with citations. In *Proceedings of EMNLP 2023* (pp. 6465–6488). Association for Computational Linguistics.
+- Kamath, A., Jia, R., & Liang, P. (2020). Selective question answering under domain shift. In *Proceedings of ACL 2020* (pp. 5684–5696). Association for Computational Linguistics.
+- Manning, C. D., Raghavan, P., & Schütze, H. (2008). *Introduction to information retrieval*. Cambridge University Press.
+- Rajpurkar, P., Jia, R., & Liang, P. (2018). Know what you don't know: Unanswerable questions for SQuAD. In *Proceedings of ACL 2018* (pp. 784–789). Association for Computational Linguistics.
+- Rashkin, H., Nikolaev, D., Lamm, M., Aroyo, L., Collins, M., Das, D., Petrov, S., Tomar, G. S., Turc, I., & Reitter, D. (2023). Measuring attribution in natural language generation models. *Computational Linguistics, 49*(4), 777–840. https://doi.org/10.1162/coli_a_00486
 - Es, S., James, J., Espinosa-Anke, L., & Schockaert, S. (2024). RAGAs: Automated evaluation of retrieval augmented generation. In *Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics: System Demonstrations* (pp. 150–158). Association for Computational Linguistics.
 - Min, S., Krishna, K., Lyu, X., Lewis, M., Yih, W., Koh, P. W., Iyyer, M., Zettlemoyer, L., & Hajishirzi, H. (2023). FActScore: Fine-grained atomic evaluation of factual precision in long form text generation. In *Proceedings of EMNLP 2023* (pp. 12076–12100). Association for Computational Linguistics.
 - Zheng, L., Chiang, W.-L., Sheng, Y., Zhuang, S., Wu, Z., Zhuang, Y., Lin, Z., Li, Z., Li, D., Xing, E. P., Zhang, H., Gonzalez, J. E., & Stoica, I. (2023). Judging LLM-as-a-judge with MT-Bench and Chatbot Arena. In *Advances in Neural Information Processing Systems 36*.

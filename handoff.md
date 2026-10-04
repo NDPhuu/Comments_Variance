@@ -59,6 +59,8 @@ KhoaLuan/  (= repo Comments_Variance)
 
 | # | Quyết định | Ngày |
 |---|---|---|
+| 21 | Demo = **engine sống**, không phải slide: app không chứa hộp giải thích; demo có hành động thật (quét P&L, generate gọi LLM thật, chỉnh ngưỡng materiality → queue đổi ngay, panel JSON thô); giảng viên chọn case bất kỳ. Mock chỉ là wireframe bố cục | 04/10 |
+| 20 | Đánh giá dùng **metric học thuật có trích dẫn** (EM — FinQA/TAT-QA; citation P/R — ALCE; attribution — AIS/FActScore; P@k/MRR — IR chuẩn; abstention — SQuAD 2.0/selective prediction; Cohen's κ cho máy chấm) + quy trình khách quan: đáp án đóng băng trước, chấm mù, κ ≥ 0.7, ngưỡng đăng ký trước, 5 held-out case do người khác gieo. Chi tiết: `phases/phase3_benchmark.md` | 04/10 |
 | 19 | Style web theo `design.md` (palette navy/cyan pitchbook, Be Vietnam Pro + Inter, không emoji/gradient) — KHÔNG gắn logo/tên công ty để giữ ẩn danh. 2 mock đã publish: app demo flow https://claude.ai/artifact/Vfzk4DSJLFJUDfzSocfCH9 · mock 5 phase https://claude.ai/artifact/M1ZrjDzkvKkwgq1mwLdngH | 04/10 |
 | 18 | Chống buzzword: `README.md` là cửa ngõ repo (vấn đề/giải pháp tiếng Việt thường + bảng thuật ngữ); mọi tài liệu mới: thuật ngữ xuất hiện lần đầu phải kèm giải thích một dòng | 04/10 |
 | 17 | LLM generation: **Gemini API (Google AI Studio, free tier)** qua wrapper trung lập provider (đổi model chỉ sửa config); model thống nhất cho cả 3 modes (đề xuất `gemini-2.5-flash`); CHỈ gửi dữ liệu synthetic lên API | 04/10 |

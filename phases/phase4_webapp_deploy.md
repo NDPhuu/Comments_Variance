@@ -8,6 +8,13 @@ Lớp "hộp kính" nhìn thấy được: UI provenance + deploy công khai. L�
 
 ## Việc phải làm
 
+### A0. Yêu cầu "ENGINE SỐNG" — app không được giống slide (phê bình đã tiếp thu 04/10)
+- **Không có hộp giải thích/"Điểm demo" trong app** — phần dẫn dắt nằm ở slide và lời nói; app chỉ là công cụ.
+- Demo phải có **hành động thật trước mắt hội đồng**: chọn kỳ → bấm "Quét P&L" (engine chạy thật, có trạng thái loading, số case hiện ra) → chọn **BẤT KỲ case nào** (không chỉ 1 case cứng) → bấm "Generate" gọi Gemini THẬT (spinner/stream vài giây) → cổng kiểm chạy, badge bật realtime.
+- **Settings chỉnh được ngưỡng materiality** → bấm áp dụng → hàng chờ thay đổi ngay. Đây là thứ slide không giả được.
+- Panel **"Xem JSON thô"** (engine output, retrieval scores, verdict) cho người kỹ thuật trong hội đồng mở ra xem — bằng chứng không có gì giấu.
+- Mock hiện tại (`docs/ui_mockup.html`) chỉ là **wireframe chốt bố cục**, không phải demo cuối.
+
 ### A. Backend hoàn thiện
 - [ ] Endpoints theo `docs/architecture.md` §4.6 + CORS + env (`ANTHROPIC_API_KEY`).
 - [ ] `GET /api/meta` trả dataset_version/model_id/prompt_version (hiện ở footer UI — tính minh bạch).
