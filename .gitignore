@@ -253,3 +253,4 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+design.md
