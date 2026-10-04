@@ -1,3 +1,38 @@
+# ===== DỮ LIỆU THẬT — TUYỆT ĐỐI KHÔNG COMMIT =====
+Sample_FP&A/
+local_data/
+*.xlsb
+*.xlsx
+*.xls
+*.xlsm
+
+# Secrets
+.env
+.env.*
+*.pem
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+*.egg-info/
+
+# Node / frontend
+node_modules/
+dist/
+build/
+.vite/
+
+# LLM raw outputs (chỉ commit summary)
+app/experiments/results/raw/
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+~$*
+*.sqlite-journal
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
