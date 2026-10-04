@@ -6,17 +6,17 @@
 
 ---
 
-## 1. Khung chương khóa luận (mapping với DSRM)
+## 1. Khung chương khóa luận
 
-Khóa luận dạng Design Science Research trình bày theo 6 hoạt động của DSRM (Peffers et al., 2007), gói trong **khung 5 chương chuẩn nghiên cứu** (đã chốt — quyết định #7):
+Khóa luận là **nghiên cứu ứng dụng**: vận dụng kiến thức RAG/NLP để giải quyết vấn đề của doanh nghiệp, theo quy trình 4 bước (khảo sát vấn đề → xác định yêu cầu → thiết kế & xây dựng → đánh giá thực nghiệm), trình bày trong **khung 5 chương** theo kết cấu bắt buộc của Viện:
 
-| Chương | Nội dung | Hoạt động DSRM tương ứng | Viết draft ở |
-|---|---|---|---|
-| **1. Mở đầu** | Bối cảnh FP&A; vấn đề (hộp đen — theo `objectives.md`); mục tiêu; câu hỏi nghiên cứu; phạm vi; đóng góp; cấu trúc khóa luận | Problem identification & motivation | Phase 1 |
-| **2. Cơ sở lý thuyết & Tổng quan nghiên cứu** | (a) Variance analysis & quy trình FP&A; (b) LLM, hallucination, RAG, numerical reasoning tài chính; (c) DSR, TTF, trust in automation/XAI; (d) **gap statement** 1 đoạn kết chương | (nền cho mọi bước) | Phase 2 |
-| **3. Phương pháp nghiên cứu** | DSRM 6 bước → hoạt động cụ thể; thiết kế hệ thống (từ `docs/architecture.md`); thiết kế dữ liệu synthetic + gold labels; **evaluation protocol với metric học thuật có trích dẫn** (xem §3.5) + quy trình khách quan (chấm mù, Cohen's κ, ngưỡng đăng ký trước); đạo đức & bảo mật | Objectives + Design & development | Phase 1–2 |
-| **4. Kết quả & Thảo luận** | Artifact hoàn chỉnh (walkthrough + screenshots); kết quả thực nghiệm 3 chế độ (bảng/hình sinh tự động); robustness theo kịch bản; thảo luận đối chiếu RQ và literature | Demonstration + Evaluation | Phase 3–4 |
-| **5. Kết luận & Khuyến nghị** | Trả lời từng RQ; đóng góp học thuật & thực tiễn; hạn chế nói thật (synthetic, một bối cảnh, n nhỏ); khuyến nghị triển khai (gom kho bằng chứng); hướng phát triển | Communication | Phase 4–5 |
+| Chương | Nội dung | Viết draft ở |
+|---|---|---|
+| **1. Giới thiệu** | Bối cảnh FP&A; vấn đề (hộp đen — theo `objectives.md`); mục tiêu; câu hỏi nghiên cứu + giả thuyết; phạm vi; đóng góp; cấu trúc khóa luận | Phase 1 ✔ |
+| **2. Tổng quan nghiên cứu** | (a) Variance analysis & quy trình FP&A; (b) LLM, hallucination, RAG, numerical reasoning tài chính; (c) trust in automation & XAI; (d) **gap statement** 1 đoạn kết chương | Phase 2 |
+| **3. Phương pháp nghiên cứu** | Quy trình ứng dụng 4 bước; thiết kế hệ thống (từ `docs/architecture.md`); thiết kế dữ liệu synthetic + gold labels; **evaluation protocol với metric học thuật có trích dẫn** (xem §3.5) + quy trình khách quan (chấm mù, Cohen's κ, ngưỡng đăng ký trước); đạo đức & bảo mật | Phase 1–2 |
+| **4. Kết quả & Thảo luận** | Hệ thống hoàn chỉnh (walkthrough + screenshots); kết quả thực nghiệm 3 chế độ (bảng/hình sinh tự động, mean ± SD trên k=3 lần chạy); robustness theo kịch bản; thảo luận đối chiếu RQ/giả thuyết và literature | Phase 3–4 |
+| **5. Kết luận & Khuyến nghị** | Trả lời từng RQ; đóng góp học thuật & thực tiễn; hạn chế nói thật (synthetic, một bối cảnh, n nhỏ); khuyến nghị triển khai cho doanh nghiệp (gom kho bằng chứng); hướng phát triển | Phase 4–5 |
 
 Nguyên tắc trình bày quan trọng với hội đồng:
 - **Mỗi claim trong chương 5–6 phải trace về một con số hoặc một quan sát ở chương 5.** Khóa luận về "hệ thống chống unsupported claim" mà tự mình overclaim là tự bắn vào chân.
@@ -26,10 +26,11 @@ Nguyên tắc trình bày quan trọng với hội đồng:
 ## 2. Quy tắc trích dẫn APA 7th — tóm tắt thực dụng
 
 **In-text:**
-- 1 tác giả: (Davis, 1989) hoặc "Davis (1989) cho rằng…"
-- 2 tác giả: (Goodhue & Thompson, 1995)
-- ≥3 tác giả: (Peffers et al., 2007) — dùng "et al." ngay từ lần cite đầu
-- Trích dẫn trực tiếp phải kèm số trang: (Hevner et al., 2004, p. 83)
+- 1 tác giả: (Cohen, 1960) hoặc "Cohen (1960) cho rằng…"
+- 2 tác giả: (Lee & See, 2004)
+- ≥3 tác giả: (Chen et al., 2021) — dùng "et al." ngay từ lần cite đầu
+- Trích dẫn trực tiếp phải kèm số trang: (Lee & See, 2004, p. 53)
+- ⚠ Trong BẢN NỘP tiếng Việt dùng mẫu Harvard của Viện: "và cộng sự" thay "et al.", "và" thay "&" (xem `docs/quy_dinh_vien.md` §3)
 
 **Reference list:** xếp alphabet theo họ tác giả đầu; hanging indent; tên journal và volume in nghiêng; có DOI thì luôn ghi dạng `https://doi.org/...`; bài arXiv chưa qua peer review ghi rõ là arXiv (và cân nhắc tìm bản đã công bố ở hội nghị để cite thay).
 
@@ -41,18 +42,7 @@ Nguyên tắc trình bày quan trọng với hội đồng:
 
 ## 3. Danh mục tài liệu khởi điểm (APA 7th) — theo dòng literature
 
-### 3.1. Phương pháp — Design Science Research
-- Gregor, S., & Hevner, A. R. (2013). Positioning and presenting design science research for maximum impact. *MIS Quarterly, 37*(2), 337–355. https://doi.org/10.25300/MISQ/2013/37.2.01
-- Hevner, A. R., March, S. T., Park, J., & Ram, S. (2004). Design science in information systems research. *MIS Quarterly, 28*(1), 75–105. https://doi.org/10.2307/25148625
-- Peffers, K., Tuunanen, T., Rothenberger, M. A., & Chatterjee, S. (2007). A design science research methodology for information systems research. *Journal of Management Information Systems, 24*(3), 45–77. https://doi.org/10.2753/MIS0742-1222240302
-- Venable, J., Pries-Heje, J., & Baskerville, R. (2016). FEDS: A framework for evaluation in design science research. *European Journal of Information Systems, 25*(1), 77–89. https://doi.org/10.1057/ejis.2014.36
-
-### 3.2. Khung chấp nhận & phù hợp công nghệ–tác vụ
-- Davis, F. D. (1989). Perceived usefulness, perceived ease of use, and user acceptance of information technology. *MIS Quarterly, 13*(3), 319–340. https://doi.org/10.2307/249008
-- Goodhue, D. L., & Thompson, R. L. (1995). Task-technology fit and individual performance. *MIS Quarterly, 19*(2), 213–236. https://doi.org/10.2307/249689
-- Venkatesh, V., Morris, M. G., Davis, G. B., & Davis, F. D. (2003). User acceptance of information technology: Toward a unified view. *MIS Quarterly, 27*(3), 425–478. https://doi.org/10.2307/30036540
-
-### 3.2b. Trust, automation và XAI (trục "hộp đen → hộp kính")
+### 3.1. Trust, automation và XAI (trục "hộp đen → hộp kính")
 - Doshi-Velez, F., & Kim, B. (2017). *Towards a rigorous science of interpretable machine learning* (arXiv:1702.08608). arXiv. https://doi.org/10.48550/arXiv.1702.08608
 - Lee, J. D., & See, K. A. (2004). Trust in automation: Designing for appropriate reliance. *Human Factors, 46*(1), 50–80. https://doi.org/10.1518/hfes.46.1.50_30392
 - Parasuraman, R., & Riley, V. (1997). Humans and automation: Use, misuse, disuse, abuse. *Human Factors, 39*(2), 230–253. https://doi.org/10.1518/001872097778543886
@@ -106,6 +96,6 @@ Nguyên tắc trình bày quan trọng với hội đồng:
 
 1. **Dòng domain (FP&A/variance):** variance analysis là bài toán gì, quy trình chuẩn ra sao, đã được tự động hóa đến đâu → để chứng minh vấn đề có thật và gap nằm ở khâu giải trình.
 2. **Dòng kỹ thuật (LLM/RAG/numerical reasoning):** vì sao LLM thuần không đáng tin với số liệu tài chính (FinQA/TAT-QA/PoT), các cơ chế grounding hiện có và hạn chế → để biện minh kiến trúc calculate-then-narrate + verification.
-3. **Dòng phương pháp & đánh giá (DSR/TTF/evaluation):** cách xây và đánh giá một artifact IS cho nghiêm túc → để khóa luận có xương sống học thuật thay vì chỉ là build log.
+3. **Dòng đánh giá hệ thống sinh văn bản (evaluation):** cách literature RAG/NLP đo grounding, citation và abstention (ALCE, AIS, FActScore, RAGAS) → để chương phương pháp và chương kết quả có chuẩn mực đo lường được thừa nhận, thay vì chỉ là build log.
 
 Research gap được phát biểu ở GIAO của 3 dòng: *các cơ chế grounding tổng quát chưa được thiết kế/đánh giá cho tác vụ sinh giải trình variance trong quy trình FP&A thực, nơi mọi con số phải khớp tuyệt đối với sổ sách và mọi nhận định nguyên nhân phải truy vết được về bằng chứng.*

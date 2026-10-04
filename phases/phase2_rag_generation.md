@@ -27,7 +27,7 @@ Pipeline sinh–kiểm hoàn chỉnh: evidence retrieval hybrid, generation theo
 - [ ] 1 case chạy end-to-end cả 3 modes, lưu output làm ví dụ minh họa Chương 4.
 
 ## Writing track
-- [ ] `thesis/chuong2.md` draft — 3 dòng literature (domain FP&A / LLM-grounding / DSR-TTF-trust) theo `docs/02_khung_khoaluan_APA7.md` + 3 refs trust ở cuối `objectives.md`; kết chương bằng gap statement.
+- [ ] `thesis/chuong2.md` draft — 3 dòng literature (domain FP&A / LLM-grounding / trust & XAI) theo `docs/02_khung_khoaluan_APA7.md`; kết chương bằng gap statement.
 - [ ] `thesis/chuong3.md` hoàn thiện phần thiết kế hệ thống (lấy từ `docs/architecture.md`).
 
 ## Cut line nếu trễ

@@ -13,7 +13,7 @@ Dự án khóa luận tốt nghiệp của người dùng (sinh viên FinTech, F
 - **Trục giá trị:** verifiability/trust — "từ hộp đen đến hộp kính". TUYỆT ĐỐI không dùng luận điểm "tiết kiệm thời gian" (thực tế: quy trình có AI chỉ ~1h/tháng).
 - **Kiến trúc** (`docs/architecture.md`): engine tất định tính số (LLM không tính số) + hybrid retrieval (RAG) + generation theo schema có citation + verification gates + abstention. 3 modes so sánh: M0 LLM-only / M1 vanilla RAG / M2 glass-box — cùng model, chỉ khác machinery.
 - **Stack:** FastAPI + React, backend-first; React UI = provenance viewer. Dữ liệu: synthetic 5 properties (PROP-A…E), schema theo `Sample_FP&A/`.
-- **Khóa luận:** 5 chương chuẩn nghiên cứu (C1 Mở đầu, C2 Cơ sở LT & tổng quan, C3 Phương pháp, C4 Kết quả & thảo luận, C5 Kết luận), DSRM, APA 7th — mọi citation phải verify trước khi chốt.
+- **Khóa luận:** NGHIÊN CỨU ỨNG DỤNG (giải vấn đề doanh nghiệp bằng kiến thức RAG/NLP; KHÔNG dùng khung DSRM/TTF — user đã bỏ, đừng đề xuất lại), quy trình 4 bước: khảo sát vấn đề → yêu cầu → xây dựng → đánh giá. 5 chương theo kết cấu Viện (C1 Giới thiệu, C2 Tổng quan, C3 Phương pháp, C4 Kết quả & thảo luận, C5 Kết luận). **Trích dẫn HARVARD theo Viện** (`docs/quy_dinh_vien.md` §3, "cộng sự" cho ≥4 tác giả) — KHÔNG phải APA; mọi citation verify trước khi chốt. Tiếng Việt.
 - **Cấu trúc thư mục** cố định trong `handoff.md` mục 2 — không tạo file ngoài cấu trúc, không file rác (file tạm → scratchpad hoặc `local_data/`).
 
 ## Git (BẮT BUỘC)

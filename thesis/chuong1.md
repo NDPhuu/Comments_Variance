@@ -24,7 +24,7 @@ Khoảng trống nghiên cứu sẽ được phân tích chi tiết ở Phần 2
 
 ## 1.3. Mục tiêu, câu hỏi và giả thuyết nghiên cứu
 
-Mục tiêu tổng quát của khóa luận là thiết kế và đánh giá một hệ thống sinh giải trình chênh lệch ngân sách **có thể kiểm chứng** — gọi là hệ thống *hộp kính (glass-box)*, đối lập với hộp đen — theo phương pháp nghiên cứu khoa học thiết kế DSRM (Peffers và cộng sự, 2007).
+Mục tiêu tổng quát của khóa luận là xây dựng và đánh giá một hệ thống sinh giải trình chênh lệch ngân sách **có thể kiểm chứng** — gọi là hệ thống *hộp kính (glass-box)*, đối lập với hộp đen. Khóa luận thuộc dạng nghiên cứu ứng dụng: vận dụng kiến thức về xử lý ngôn ngữ tự nhiên (NLP) và kỹ thuật sinh văn bản tăng cường truy xuất (RAG) để giải quyết một vấn đề cụ thể của doanh nghiệp, theo quy trình bốn bước — khảo sát vấn đề tại doanh nghiệp, xác định yêu cầu hệ thống, thiết kế và xây dựng, đánh giá thực nghiệm.
 
 Mục tiêu cụ thể gồm ba phần: (i) thiết kế kiến trúc tách phần tính toán (do chương trình tất định thực hiện) khỏi phần diễn đạt (do LLM thực hiện), trong đó nguyên nhân phải gắn với bằng chứng được truy xuất; (ii) xây dựng bộ dữ liệu mô phỏng có đáp án chuẩn để đánh giá khách quan; (iii) so sánh định lượng hệ thống đề xuất với hai cách dùng AI phổ biến hiện nay.
 
@@ -46,13 +46,13 @@ Ngoài phạm vi nghiên cứu: dự báo tài chính, tự động ra quyết �
 
 ## 1.5. Đóng góp dự kiến
 
-Về học thuật, khóa luận đóng góp: (i) một kiến trúc hệ thống cùng các nguyên tắc thiết kế cho bài toán sinh giải trình tài chính kiểm chứng được — dạng đóng góp được thừa nhận trong nghiên cứu khoa học thiết kế (Gregor và Hevner, 2013); (ii) một bộ dữ liệu đánh giá công khai có đáp án chuẩn cho tác vụ giải trình chênh lệch ngân sách — theo khảo sát của tác giả, chưa có bộ tương tự được công bố; (iii) bằng chứng định lượng về mức cải thiện của cơ chế kiểm chứng so với hai cách dùng AI phổ biến.
+Về học thuật, khóa luận đóng góp: (i) một kiến trúc hệ thống cùng các nguyên tắc thiết kế cho bài toán sinh giải trình tài chính kiểm chứng được; (ii) một bộ dữ liệu đánh giá công khai có đáp án chuẩn cho tác vụ giải trình chênh lệch ngân sách — theo khảo sát của tác giả, chưa có bộ tương tự được công bố; (iii) bằng chứng định lượng về mức cải thiện của cơ chế kiểm chứng so với hai cách dùng AI phổ biến.
 
 Về thực tiễn, khung đánh giá của khóa luận chính là công cụ một doanh nghiệp cần khi quyết định có nên cho AI tham gia quy trình báo cáo quản trị hay không: thay vì tin hay không tin theo cảm tính, doanh nghiệp đo được tỷ lệ sai số, tỷ lệ trích dẫn sai và khả năng từ chối của hệ thống trước khi sử dụng.
 
 ## 1.6. Cấu trúc khóa luận
 
-Phần còn lại của khóa luận gồm bốn phần. Phần 2 tổng quan ba dòng nghiên cứu liên quan — giải trình chênh lệch trong FP&A, mô hình ngôn ngữ lớn và cơ chế gắn kết bằng chứng, các khung đánh giá hệ thống thông tin — và chỉ ra khoảng trống. Phần 3 trình bày phương pháp: quy trình DSRM, thiết kế hệ thống, thiết kế dữ liệu mô phỏng và giao thức đánh giá. Phần 4 trình bày hệ thống hoàn chỉnh và kết quả thực nghiệm, đối chiếu với từng giả thuyết. Phần 5 kết luận, nêu đóng góp, hạn chế và hướng phát triển.
+Phần còn lại của khóa luận gồm bốn phần. Phần 2 tổng quan ba dòng nghiên cứu liên quan — giải trình chênh lệch trong FP&A, mô hình ngôn ngữ lớn và cơ chế gắn kết bằng chứng, các khung đánh giá hệ thống thông tin — và chỉ ra khoảng trống. Phần 3 trình bày phương pháp: quy trình nghiên cứu ứng dụng bốn bước, thiết kế hệ thống, thiết kế dữ liệu mô phỏng và giao thức đánh giá. Phần 4 trình bày hệ thống hoàn chỉnh và kết quả thực nghiệm, đối chiếu với từng giả thuyết. Phần 5 kết luận, nêu đóng góp, hạn chế và hướng phát triển.
 
 ---
 

@@ -62,7 +62,6 @@ Chấm điểm tự động: bao nhiêu **số sai**, bao nhiêu **trích dẫn 
 | **BM25** | Thuật toán tìm theo từ khóa — như Ctrl+F thông minh |
 | **Embedding / BGE-M3** | Cách máy "hiểu nghĩa" để tìm tài liệu gần nghĩa dù khác từ; BGE-M3 là model mã nguồn mở, miễn phí, chạy trên máy mình |
 | **Gold label** | Đáp án chuẩn gắn sẵn trong dữ liệu giả lập, dùng để chấm điểm hệ thống |
-| **DSRM** | Khung nghiên cứu "thiết kế sản phẩm rồi đánh giá bài bản" — xương sống phương pháp của khóa luận |
 
 ## Dữ liệu
 

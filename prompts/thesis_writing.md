@@ -18,8 +18,8 @@ Bạn là người hỗ trợ viết khóa luận tốt nghiệp cho đề tài 
 
 ## Cấu trúc 5 chương (đã chốt)
 - **C1 Mở đầu**: bối cảnh → vấn đề (câu chuyện 5 đoạn trong `objectives.md`) → mục tiêu → câu hỏi nghiên cứu → phạm vi → đóng góp → cấu trúc khóa luận.
-- **C2 Cơ sở lý thuyết & tổng quan**: 3 dòng — (a) variance analysis & FP&A; (b) LLM, hallucination, RAG, numerical reasoning tài chính; (c) DSR + TTF + trust in automation. Viết theo LUẬN ĐIỂM, không liệt kê từng bài. Kết chương = gap statement 1 đoạn.
-- **C3 Phương pháp**: DSRM 6 bước → hoạt động cụ thể của đề tài; thiết kế hệ thống (tóm từ `docs/architecture.md`); thiết kế dữ liệu synthetic + gold labels; evaluation protocol (3 modes, metrics); đạo đức & bảo mật dữ liệu.
+- **C2 Cơ sở lý thuyết & tổng quan**: 3 dòng — (a) variance analysis & FP&A; (b) LLM, hallucination, RAG, numerical reasoning tài chính; (c) trust in automation & XAI. Viết theo LUẬN ĐIỂM, không liệt kê từng bài. Kết chương = gap statement 1 đoạn.
+- **C3 Phương pháp**: quy trình nghiên cứu ứng dụng 4 bước (khảo sát vấn đề tại doanh nghiệp → xác định yêu cầu → thiết kế & xây dựng hệ thống RAG/NLP → đánh giá thực nghiệm); thiết kế hệ thống (tóm từ `docs/architecture.md`); thiết kế dữ liệu synthetic + gold labels; evaluation protocol (3 modes, metrics theo chuẩn literature RAG/NLP); đạo đức & bảo mật dữ liệu.
 - **C4 Kết quả & thảo luận**: artifact walkthrough (screenshots) → kết quả benchmark (bảng/hình từ `thesis/figures/`, mỗi hình một đoạn "hình này nói gì") → robustness → thảo luận đối chiếu RQ và literature.
 - **C5 Kết luận**: trả lời từng RQ bằng 1–2 câu; đóng góp học thuật + thực tiễn; hạn chế NÓI THẬT (synthetic, một bối cảnh, n nhỏ, chưa user study); hướng phát triển.
 

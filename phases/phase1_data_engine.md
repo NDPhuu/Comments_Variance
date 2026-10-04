@@ -26,7 +26,7 @@ Nền móng tất định: dữ liệu synthetic đóng băng được, engine t
 
 ## Writing track (song song, không chờ code)
 - [ ] `thesis/chuong1.md` draft — lấy từ `objectives.md` (câu chuyện 5 đoạn + pitch), viết theo `prompts/thesis_writing.md`.
-- [ ] `thesis/chuong3.md` outline (DSRM mapping + thiết kế dữ liệu + thiết kế đánh giá).
+- [ ] `thesis/chuong3.md` outline (quy trình nghiên cứu ứng dụng 4 bước + thiết kế dữ liệu + thiết kế đánh giá).
 
 ## Cut line nếu trễ
 Giảm kịch bản còn 6, corpus còn 40 docs. KHÔNG cắt: tests engine, gold labels, house_style.md.

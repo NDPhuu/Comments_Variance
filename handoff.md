@@ -59,6 +59,7 @@ KhoaLuan/  (= repo Comments_Variance)
 
 | # | Quyết định | Ngày |
 |---|---|---|
+| 26 | **BỎ DSRM/TTF hoàn toàn** — khóa luận định vị là **NGHIÊN CỨU ỨNG DỤNG** (giải quyết vấn đề doanh nghiệp bằng kiến thức RAG/NLP học ở trường); phương pháp C3 = quy trình 4 bước: khảo sát vấn đề → xác định yêu cầu → thiết kế & xây dựng → đánh giá thực nghiệm. Đã gỡ refs DSR/TTF/TAM khỏi kho nguồn; KHÔNG đề xuất lại | 04/10 |
 | 25 | Đánh giá theo **convention của literature RAG/NLP**: bảng metric + mean ± SD trên k=3 lần chạy + Cohen's κ cho máy chấm. **BỎ kiểm định kinh tế lượng** (bootstrap/Wilcoxon/McNemar) — không thuộc chuẩn mực dòng bài này; xác nhận cách hiểu tiêu chí rubric với GVHD | 04/10 |
 | 24 | **Chương 1 draft 1 đã viết** (`thesis/chuong1.md`, tiếng Việt, Harvard, có H1–H3) — còn 1 chỗ ⟦chờ anecdote⟧. Người thực hiện chọn BỎ QUA bước đề cương sơ bộ riêng (rủi ro ghi tại `docs/quy_dinh_vien.md` §5) | 04/10 |
 | 23 | **Ngôn ngữ khóa luận: TIẾNG VIỆT** (không cần mẫu GĐK tiếng Anh). Quy định Viện tóm tắt tại `docs/quy_dinh_vien.md`: kết cấu 5 phần (khớp khung đã chốt), ~50 trang, TNR 12–13 giãn 1,5, bảng/hình có tên+ĐVT+nguồn, số kiểu VN. Rubric có mục "kiểm định thống kê 2đ" → phase 3 thêm bootstrap CI + Wilcoxon/McNemar + k=3 lần chạy/case | 04/10 |
