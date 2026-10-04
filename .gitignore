@@ -6,6 +6,9 @@ local_data/
 *.xls
 *.xlsm
 
+thesis/
+
+
 # Secrets
 .env
 .env.*
@@ -257,3 +260,6 @@ design.md
 
 # Bao cao ban quyen (CBRE...) - khong redistribute
 materials/*.pdf
+
+# Bản thảo khóa luận - chỉ giữ local, không push
+thesis/
