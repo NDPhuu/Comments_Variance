@@ -35,7 +35,7 @@ Trang phụ trợ theo thứ tự: bìa chính (có SĐT, email SV) · bìa ph�
 | Tính mới, độ khó cao (1,5) | Hệ thống verifiable AI + benchmark gold-label đầu tiên cho variance commentary; khớp chủ đề gợi ý "ứng dụng công nghệ mới (AI) — case study doanh nghiệp" |
 | Khung lý thuyết + bằng chứng thực nghiệm (1,5) | 3 dòng literature (FP&A · LLM/RAG/grounding · DSR/TTF/trust) + gap statement |
 | Số liệu mẫu đủ lớn, tin cậy (1) | 34 case × 3 chế độ × **k lần chạy lặp** (xem phase 3); dataset đóng băng, seed, tái lập |
-| **Mô hình NC + kiểm định thống kê phù hợp (2)** | DSRM làm khung; metric học thuật; **bootstrap CI + kiểm định ghép cặp (Wilcoxon/McNemar) khi so M0/M1/M2; Cohen's κ máy–người** |
+| **Mô hình NC + kiểm định thống kê phù hợp (2)** | DSRM làm khung; bộ metric chuẩn của literature RAG/NLP (EM, citation P/R, attribution, P@k, abstention) báo cáo **mean ± SD trên k = 3 lần chạy/case**; **Cohen's κ** máy–người cho độ tin máy chấm. ⚠ Tiêu chí này soạn theo khuôn đề tài kinh tế lượng — người thực hiện chọn đánh giá theo convention RAG (quyết định 04/10); nên xác nhận cách hiểu với GVHD |
 | Phân tích gắn giả thuyết (2) | Giả thuyết H1–H3 phát biểu trước (C1/C3), C4 đối chiếu từng giả thuyết |
 | Văn phong + bảng biểu (1) | prompts/thesis_writing.md + quy định bảng/hình mục 2 |
 

@@ -27,9 +27,8 @@ Sinh toàn bộ bằng chứng định lượng của Chương 4 — bằng **me
 | Từ chối đúng lúc trên case không trả lời được | **Answerability / selective prediction accuracy** | SQuAD 2.0; Kamath et al. (2020) |
 | Máy chấm đáng tin không | **Cohen's κ** máy vs. người | Cohen (1960) |
 | (Phụ, nếu kịp) faithfulness qua thư viện bên thứ ba | **RAGAS** | Es et al. (2024) — nêu caveat LLM-judge |
-| So sánh M0/M1/M2 có ý nghĩa thống kê không | **Bootstrap CI (95%) + kiểm định ghép cặp** (Wilcoxon signed-rank cho metric liên tục; McNemar cho đúng/sai theo case) | đáp ứng tiêu chí rubric "kiểm định thống kê phù hợp" (2đ) — xem `docs/quy_dinh_vien.md` §4 |
 
-**Tăng cỡ mẫu quan sát:** mỗi case × mỗi mode chạy **k = 3 lần** (temperature cố định, ghi cả 3 output) → 34 case × 3 mode × 3 lần = 306 quan sát; vừa đo được độ dao động của LLM, vừa đủ n cho kiểm định ghép cặp theo case.
+**Cách báo cáo kết quả — theo đúng convention của các bài RAG/NLP (ALCE, FinQA, RAGAS):** bảng metric theo từng chế độ; mỗi case × mỗi mode chạy **k = 3 lần** (temperature cố định) và báo **mean ± độ lệch chuẩn** để thể hiện độ dao động của LLM; kèm bảng slice theo kịch bản. **KHÔNG dùng kiểm định kinh tế lượng** (bootstrap CI / Wilcoxon / McNemar — đã bỏ theo quyết định của người thực hiện 04/10: đánh giá theo chuẩn mực của literature RAG, không phải chuẩn đề tài kinh tế lượng).
 
 ## C. Việc phải làm
 
