@@ -27,6 +27,7 @@ Dự án khóa luận tốt nghiệp của người dùng (sinh viên FinTech, F
 - Brainstorm kiểu Socratic khi bàn ý tưởng: hỏi để sharpen, nêu rõ vì sao hỏi.
 - Phân biệt rành mạch fact / inference / recommendation.
 - Ngôn ngữ làm việc: tiếng Việt (thuật ngữ kỹ thuật giữ tiếng Anh). Văn khóa luận: đơn giản, dễ hiểu — chuẩn trong `prompts/thesis_writing.md`.
+- Chống buzzword: thuật ngữ xuất hiện lần đầu trong BẤT KỲ tài liệu nào phải kèm giải thích tiếng Việt một dòng; bảng thuật ngữ chuẩn nằm ở `README.md` — thêm từ mới vào đó thay vì giải thích lại rải rác.
 
 ## Bảo mật (nghiêm ngặt)
 

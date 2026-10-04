@@ -9,43 +9,31 @@ Toàn bộ **P&L Actual vs Budget** theo `PL line × property × tháng` — đ�
 
 ## 1. Sơ đồ tổng
 
+```mermaid
+flowchart TD
+    GL["Sổ cái GL<br>(thực thu / thực chi)"]
+    BUD["Budget · Rent roll<br>(kế hoạch, version 26B)"]
+    DOCS[("Kho bằng chứng<br>hợp đồng · termination notice<br>biên bản bàn giao · email duyệt")]
+    ENGINE["BƯỚC 2 · VARIANCE ENGINE<br>code Python thuần, không AI<br>Actual − Budget · lọc khoản trọng yếu<br>chỉ ra tenant / giao dịch gây lệch"]
+    RETR["BƯỚC 3 · TÌM BẰNG CHỨNG (module RAG)<br>lọc đúng property + kỳ<br>từ khóa (BM25) + ngữ nghĩa (BGE-M3)"]
+    LLM["BƯỚC 4 · LLM VIẾT COMMENT (Gemini)<br>chỉ viết văn từ số đã tính + tài liệu đã tìm<br>theo khung chuẩn, bắt buộc kèm trích dẫn"]
+    GATES{"BƯỚC 5 · CỔNG KIỂM — code thuần<br>số khớp engine? trích dẫn có thật?<br>câu nào thiếu căn cứ?"}
+    OK["✅ Verified"]
+    WARN["🟡 Cần xác nhận — ghi rõ hỏi ai"]
+    ABST["⛔ Từ chối — thiếu bằng chứng thì nói thiếu"]
+    UI["WEB APP · FastAPI + React<br>bấm số → ra dòng sổ · bấm nguyên nhân → ra tài liệu"]
+    GL --> ENGINE
+    BUD --> ENGINE
+    ENGINE -- "case: lệch bao nhiêu, do dòng nào" --> RETR
+    DOCS --> RETR
+    ENGINE -- "số đã kiểm" --> LLM
+    RETR -- "tài liệu liên quan nhất" --> LLM
+    LLM --> GATES
+    GATES --> OK & WARN & ABST
+    OK & WARN & ABST --> UI
 ```
-┌────────────────────── DATA LAYER (synthetic) ──────────────────────┐
-│ data_synth/generator.py  (seed cố định → tái lập được)             │
-│   → SQLite: properties, gl_transactions, budget, account_map,      │
-│             scenarios, gold_labels                                 │
-│   → evidence_docs: 60–100 tài liệu (contract clause, email         │
-│     phê duyệt, memo vận hành) + metadata + gold evidence IDs       │
-└───────────────┬────────────────────────────────────────────────────┘
-                ▼
-┌─────── VARIANCE ENGINE (tất định, pandas — KHÔNG LLM) ─────────────┐
-│ variance → materiality (config) → contribution → txn drill-down    │
-│ → VarianceCase JSON (nguồn sự thật duy nhất về SỐ)                 │
-└───────────────┬────────────────────────────────────────────────────┘
-                ▼
-┌─────── EVIDENCE RETRIEVAL (module RAG) ────────────────────────────┐
-│ metadata filter (property, period, doc type)                       │
-│ → BM25 + dense embeddings → fusion → top-k evidence pack           │
-└───────────────┬────────────────────────────────────────────────────┘
-                ▼
-┌─────── GENERATION (LLM) ───────────────────────────────────────────┐
-│ context package = engine facts + evidence pack + cause taxonomy    │
-│ + house-style schema → structured JSON output (comment + citations)│
-└───────────────┬────────────────────────────────────────────────────┘
-                ▼
-┌─────── VERIFICATION GATES (tất định) ──────────────────────────────┐
-│ numeric gate · citation gate · unsupported-claim flag · abstention │
-└───────────────┬────────────────────────────────────────────────────┘
-                ▼
-┌─ FastAPI ──────────────┐   ┌─ React UI (3 màn hình) ───────────────┐
-│ /cases /generate /verify│←→│ Queue → Investigation (provenance:    │
-│                         │   │ bấm số→GL rows, bấm driver→evidence) │
-│                         │   │ → Draft + verification badges        │
-└─────────────────────────┘   └──────────────────────────────────────┘
 
-experiments/run_benchmark.py (headless, KHÔNG cần UI):
-  chạy 3 modes trên frozen case set → results/summary.csv + figures
-```
+Ghi chú vận hành: `experiments/run_benchmark.py` chạy toàn bộ pipeline **headless** (không cần UI) trên frozen case set → `results/summary.csv` + hình cho Chương 4. Dữ liệu nguồn do `data_synth/generator.py` sinh với seed cố định (tái lập được): SQLite (properties, gl_transactions, budget, account_map, scenarios, gold_labels) + 60–100 evidence docs kèm metadata và gold evidence IDs.
 
 ## 2. Ba chế độ thí nghiệm (trục so sánh của khóa luận)
 
@@ -56,6 +44,16 @@ experiments/run_benchmark.py (headless, KHÔNG cần UI):
 | **M2 — Glass-box** | Engine facts package + hybrid retrieval + taxonomy | Schema bắt buộc + verification gates + abstention |
 
 **Fairness:** cả 3 modes dùng CÙNG model, temperature, case set; chỉ khác machinery. Mỗi run ghi lại: `model_id`, `prompt_version`, `dataset_version`, `seed`, timestamp.
+
+```mermaid
+flowchart LR
+    CASE["Cùng một bộ case<br>(có đáp án gắn sẵn)"] --> M0["M0 · AI trần<br>chỉ bước 4"]
+    CASE --> M1["M1 · Vanilla RAG<br>bước 3 thô + bước 4"]
+    CASE --> M2["M2 · Glass-box<br>đủ bước 2→5"]
+    M0 --> SCORE["CHẤM ĐIỂM TỰ ĐỘNG<br>số sai · trích dẫn ma<br>câu thiếu căn cứ · biết từ chối đúng lúc"]
+    M1 --> SCORE
+    M2 --> SCORE
+```
 
 ## 3. Hợp đồng dữ liệu (data contracts)
 
@@ -121,7 +119,8 @@ experiments/run_benchmark.py (headless, KHÔNG cần UI):
 
 ### 4.4 `app/backend/app/generation/`
 - Prompt templates versioned trong `prompts_llm/` (mỗi mode 1 template).
-- Gọi Anthropic API (model thống nhất cho cả 3 modes — đề xuất `claude-sonnet-5-5`); parse + retry khi vỡ schema.
+- Gọi LLM qua MỘT wrapper trung lập về nhà cung cấp (đổi model chỉ sửa config). Chốt hiện tại: **Gemini API** (Google AI Studio, free tier) — model thống nhất cho cả 3 modes, đề xuất `gemini-2.5-flash`; parse + retry khi vỡ schema.
+- Free tier có rate limit → benchmark chạy tuần tự, có nghỉ giữa các call. Điều khoản free tier cho phép Google dùng dữ liệu gửi lên để cải thiện dịch vụ → **chỉ gửi dữ liệu synthetic** (quy tắc sẵn có của dự án — nêu lại trong chương bảo mật của khóa luận).
 
 ### 4.5 `app/backend/app/verification/`
 - **Numeric gate**: regex/parser bóc mọi số trong comment → đối chiếu VarianceCase (khớp tuyệt đối hoặc làm tròn khai báo). Fail → gắn cờ đỏ từng số.
@@ -151,7 +150,7 @@ GET  /api/meta                         dataset_version, model_id, prompt_version
 - Xuất `results/summary.csv` + hình matplotlib → `thesis/figures/`. **Kết quả Chương 4 sinh từ đây, không chép tay.**
 
 ## 5. Deploy
-- Backend: Render/Railway (uvicorn + SQLite synthetic nằm trong repo — được phép vì là dữ liệu giả). Env: `ANTHROPIC_API_KEY`. CORS mở cho domain frontend.
+- Backend: Render/Railway (uvicorn + SQLite synthetic nằm trong repo — được phép vì là dữ liệu giả). Env: `GEMINI_API_KEY`. CORS mở cho domain frontend.
 - Frontend: Vercel, env `VITE_API_URL`.
 - Fallback nếu kẹt hạ tầng: docker-compose trên VPS, hoặc demo local + video quay sẵn (cut line cuối).
 
@@ -163,7 +162,7 @@ GET  /api/meta                         dataset_version, model_id, prompt_version
 | API | FastAPI + uvicorn | Nhẹ, OpenAPI tự sinh |
 | Data | SQLite + pandas | Đủ cho 5 properties, zero-ops |
 | Retrieval | rank-bm25 + **BGE-M3** (local, precompute offline) | Hybrid, đa ngôn ngữ, miễn phí |
-| LLM (generation) | Anthropic API, 1 model cho cả 3 modes | Fairness |
+| LLM (generation) | Gemini API (AI Studio free tier) qua wrapper trung lập, 1 model cho cả 3 modes | Miễn phí để test, fairness |
 | Quản lý thư viện | **Poetry** (`pyproject.toml` + commit `poetry.lock`) | Tái lập môi trường |
 | Frontend | React + Vite + TS + Tailwind | User đã có kinh nghiệm |
 | Test | pytest (engine + verification bắt buộc) | Phần tất định phải có test |
