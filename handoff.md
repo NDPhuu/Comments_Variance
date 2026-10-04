@@ -59,6 +59,7 @@ KhoaLuan/  (= repo Comments_Variance)
 
 | # | Quyết định | Ngày |
 |---|---|---|
+| 28 | **Xuất Word**: `thesis/chuong1.docx` tạo bằng `app/tools/export_docx.js` (format Viện: TNR, H1 16/H2 14, body 13 justify 1,5, lề chuẩn, số trang, Hình 1.1 PNG từ `gen_hinh_1_1.py`). ⚠ TÁC GIẢ SỬA TRỰC TIẾP TRÊN .DOCX → từ nay bản .docx là source of truth của C1; phiên sau muốn sửa C1 phải đọc .docx (pandoc/python-docx), KHÔNG ghi đè từ chuong1.md. Lưu ý: chuong1.md trên đĩa từng bị buffer cũ ghi đè về draft 1 — đã khôi phục draft 2 từ git | 04/10 |
 | 27 | **Chương 1 draft 2**: văn phong formal; mở đầu kết hợp ngành BĐS KCN + làn sóng GenAI với **nguồn sơ cấp CBRE Figures Q2/2026** (2 PDF trong `materials/` — bản quyền, đã gitignore `materials/*.pdf`) + Gartner 2025; Hình 1.1 (mermaid, điểm đứt gãy kiểm chứng); 7 nguồn đã verify (docs/02 §3.7–3.8). Còn ⟦anecdote⟧ chờ tác giả | 04/10 |
 | 26 | **BỎ DSRM/TTF hoàn toàn** — khóa luận định vị là **NGHIÊN CỨU ỨNG DỤNG** (giải quyết vấn đề doanh nghiệp bằng kiến thức RAG/NLP học ở trường); phương pháp C3 = quy trình 4 bước: khảo sát vấn đề → xác định yêu cầu → thiết kế & xây dựng → đánh giá thực nghiệm. Đã gỡ refs DSR/TTF/TAM khỏi kho nguồn; KHÔNG đề xuất lại | 04/10 |
 | 25 | Đánh giá theo **convention của literature RAG/NLP**: bảng metric + mean ± SD trên k=3 lần chạy + Cohen's κ cho máy chấm. **BỎ kiểm định kinh tế lượng** (bootstrap/Wilcoxon/McNemar) — không thuộc chuẩn mực dòng bài này; xác nhận cách hiểu tiêu chí rubric với GVHD | 04/10 |
