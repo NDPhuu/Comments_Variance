@@ -15,7 +15,7 @@ Nền móng tất định: dữ liệu synthetic đóng băng được, engine t
 - [ ] Viết `docs/house_style.md`: mô tả schema + taxonomy ở dạng ẨN DANH (không chép nguyên văn comment thật, không số thật, không tên dự án/vendor).
 
 ### B. Synthetic data
-- [ ] `app/data_synth/scenarios.yaml`: 8–10 kịch bản (đối chiếu taxonomy ở A — kịch bản phải giống loại nguyên nhân thật).
+- [ ] `app/data_synth/scenarios.yaml`: 8–10 kịch bản, **doanh thu leasing trước** (new lease sớm/trễ, early termination, dời bàn giao, escalation, FX) + vài kịch bản chi phí (one-off repair, timing, reversal) + 2 bẫy (missing evidence, trùng từ khóa sai property). Đối chiếu taxonomy ở A — kịch bản phải giống loại nguyên nhân thật.
 - [ ] `generator.py`: 5 properties × 12 tháng × ~10 PL lines, GL transaction-level, budget, mapping, ~25 material cases, evidence corpus 60–100 docs + gold labels. Seed cố định.
 - [ ] Freeze `dataset_v1`, commit (SQLite + evidence docs).
 

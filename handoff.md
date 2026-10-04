@@ -55,6 +55,10 @@ KhoaLuan/  (= repo Comments_Variance)
 
 | # | Quyết định | Ngày |
 |---|---|---|
+| 16 | **Scope: TOÀN BỘ P&L Act vs Budget** (line × property × tháng), trọng tâm kịch bản **leasing revenue** (contract events); chi phí R&M/SG&A vẫn trong scope — KHÔNG phải OPEX-only. Mock đã đổi ví dụ chính sang leasing revenue | 04/10 |
+| 15 | Mock UI đã publish: https://claude.ai/artifact/Vfzk4DSJLFJUDfzSocfCH9 (nguồn: `docs/ui_mockup.html`) — tham chiếu thiết kế cho Phase 4 | 04/10 |
+| 14 | Embeddings: **BGE-M3** chạy local (FlagEmbedding), KHÔNG dùng API trả phí; embed corpus + evidence pack per case PRECOMPUTE offline → runtime web không load model (Render free tier). LLM generation vẫn là Anthropic API | 04/10 |
+| 13 | Quản lý thư viện backend bằng **Poetry** (máy đã có v2.4.1); commit `poetry.lock` | 04/10 |
 | 12 | Quản lý mã nguồn GitHub (`NDPhuu/Comments_Variance`); `.gitignore` chặn `Sample_FP&A/`, `local_data/`, mọi `.xls*`, `.env` | 04/10 |
 | 11 | Deadline 18/10/2026 cho TOÀN BỘ (deploy + 5 chương); user có kinh nghiệm RAG + deploy → giữ stack FastAPI+React | 04/10 |
 | 10 | Cấu trúc 5 phase + handoff riêng từng phase; 2 prompt chuẩn (clean code, thesis writing) | 04/10 |
@@ -68,7 +72,7 @@ KhoaLuan/  (= repo Comments_Variance)
 
 ## 5. Việc user cần làm / xác nhận NGAY
 
-1. ⚠️ **LLM API**: dùng Anthropic API key nào, budget bao nhiêu cho benchmark (~25 cases × 3 modes × vài lần chạy)? Model đề xuất: 1 model thống nhất (`claude-sonnet-5-5`).
+1. ⚠️ **LLM API cho generation** (embeddings đã chốt BGE-M3 local, không tốn phí): cần Anthropic API key + budget cho benchmark (~25 cases × 3 modes × vài lần chạy — ước lượng nhỏ, vài USD). Model đề xuất: 1 model thống nhất (`claude-sonnet-5-5`).
 2. ⚠️ Xác nhận 18/10 là hạn **toàn văn nộp** hay còn buffer sau đó (ảnh hưởng cut lines).
 3. Deploy: Render + Vercel ổn không, hay bạn có hạ tầng quen tay khác?
 4. (Khi rảnh) 1 anecdote AI-comment-sai cụ thể cho mở đầu Chương 1.

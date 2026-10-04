@@ -1,0 +1,302 @@
+<title>Glass-Box Workbench</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* Layout: walkthrough dọc 4 bước (Input → Engine → Output → Verify), panel provenance nằm trong bước 3 */
+:root{
+  --bg:#f6f7f9; --surface:#ffffff; --ink:#1c2430; --muted:#5c6878;
+  --line:#dde3ea; --accent:#0f6f6a; --accent-soft:#e3f0ef;
+  --ok:#1a7f4b; --ok-soft:#e4f3ea; --bad:#b42318; --bad-soft:#fbeae8;
+  --warn:#9a6700; --warn-soft:#fdf3d9; --abst:#4a5565; --abst-soft:#e9edf2;
+  --chip:#eef4f4; --hl:#fff3c4;
+  --sans:'IBM Plex Sans',system-ui,Segoe UI,sans-serif;
+  --mono:'IBM Plex Mono',Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#12161c; --surface:#1a2029; --ink:#e8edf3; --muted:#9aa7b5;
+  --line:#2b3440; --accent:#4fb3ac; --accent-soft:#15302e;
+  --ok:#4ccb87; --ok-soft:#14301f; --bad:#f08a80; --bad-soft:#3a1713;
+  --warn:#e5b35c; --warn-soft:#332706; --abst:#aab6c4; --abst-soft:#242c36;
+  --chip:#223034; --hl:#4a3f12; color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#12161c; --surface:#1a2029; --ink:#e8edf3; --muted:#9aa7b5;
+  --line:#2b3440; --accent:#4fb3ac; --accent-soft:#15302e;
+  --ok:#4ccb87; --ok-soft:#14301f; --bad:#f08a80; --bad-soft:#3a1713;
+  --warn:#e5b35c; --warn-soft:#332706; --abst:#aab6c4; --abst-soft:#242c36;
+  --chip:#223034; --hl:#4a3f12; color-scheme:dark;
+}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);margin:0;padding-block:0 48px;padding-inline:16px;line-height:1.55}
+.wrap{max-width:1060px;margin:0 auto}
+header.top{padding-block:28px 10px}
+.kicker{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:600}
+h1{font-size:clamp(22px,3.5vw,30px);margin:.2em 0 .25em;text-wrap:balance}
+.sub{color:var(--muted);max-width:68ch;margin:0}
+.flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:18px 0 6px;font-size:12.5px;color:var(--muted)}
+.flow b{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px 11px;font-weight:600;color:var(--ink);white-space:nowrap}
+.flow b.llm{border-color:var(--accent);color:var(--accent)}
+.flow span{opacity:.6}
+section{margin-top:30px}
+.step{display:flex;align-items:baseline;gap:10px;margin-bottom:10px}
+.step .n{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--accent);background:var(--accent-soft);border-radius:6px;padding:2px 8px;white-space:nowrap}
+.step h2{font-size:17px;margin:0}
+.step p{margin:0;color:var(--muted);font-size:13.5px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:760px){.grid2{grid-template-columns:1fr}}
+.grid2>*{min-width:0}
+h3{font-size:13px;margin:0 0 8px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);text-align:left;padding:6px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.mono{font-family:var(--mono);font-size:12.5px;white-space:nowrap}
+tr.hl td{background:var(--hl)}
+span.hl{background:var(--hl);border-radius:4px;padding:0 3px}
+.note{font-size:12px;color:var(--muted);margin-top:8px}
+.badge{display:inline-block;font-size:11px;font-weight:600;border-radius:999px;padding:2px 9px;white-space:nowrap}
+.b-bad{background:var(--bad-soft);color:var(--bad)} .b-ok{background:var(--ok-soft);color:var(--ok)}
+.b-warn{background:var(--warn-soft);color:var(--warn)} .b-abst{background:var(--abst-soft);color:var(--abst)}
+.b-acc{background:var(--accent-soft);color:var(--accent)}
+.case-head{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:baseline;margin-bottom:12px}
+.case-head .id{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.kpis{display:flex;flex-wrap:wrap;gap:10px;margin:4px 0 14px}
+.kpi{border:1px solid var(--line);border-radius:8px;padding:8px 14px;min-width:118px}
+.kpi .l{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.kpi .v{font-family:var(--mono);font-size:17px;font-weight:600;font-variant-numeric:tabular-nums}
+.kpi .v.bad{color:var(--bad)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:-1px}
+.tabs button{font:inherit;font-size:13px;font-weight:600;padding:9px 14px;border:1px solid var(--line);border-bottom:none;background:var(--bg);color:var(--muted);border-radius:9px 9px 0 0;cursor:pointer}
+.tabs button.on{background:var(--surface);color:var(--ink)}
+.tabs button:focus-visible,button:focus-visible,.chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.mode-panel{border-radius:0 10px 10px 10px}
+.mode-panel[hidden]{display:none}
+.mode-tag{font-size:12px;color:var(--muted);margin:0 0 10px}
+.comment{font-size:14.5px;max-width:72ch}
+.comment p{margin:.5em 0}
+.chip{font:inherit;font-family:var(--mono);font-size:12.5px;font-weight:600;border-radius:6px;padding:1px 6px;border:1px dashed transparent;cursor:pointer;background:var(--chip);color:var(--ink)}
+button.chip{border:1px dashed var(--accent);color:var(--accent);background:var(--accent-soft)}
+.chip.ev{border:1px solid var(--line);color:var(--accent);background:transparent}
+.flag{border-bottom:2px solid var(--bad)}
+.flag-w{border-bottom:2px dotted var(--warn)}
+.src{margin-top:12px;border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:0 8px 8px 0;padding:10px 12px;font-size:13px}
+.src[hidden]{display:none}
+.src .t{font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--accent);margin-bottom:3px}
+.ev-card{margin-top:12px;border:1px solid var(--line);border-radius:8px;padding:12px;font-size:13px}
+.ev-card[hidden]{display:none}
+.ev-card .meta{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-bottom:6px}
+.ev-card mark{background:var(--hl);color:inherit;padding:0 2px}
+.verdict{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:4px}
+.verdict .v-item{border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:13px}
+.verdict .v-item b{display:block;font-family:var(--mono);font-size:15px}
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;font-size:12px;color:var(--muted)}
+footer{margin-top:40px;border-top:1px solid var(--line);padding-top:12px;font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 20px}
+footer .mono{font-size:11.5px}
+@media (prefers-reduced-motion:no-preference){ tr.hl td{transition:background .3s} }
+</style>
+
+<div class="wrap">
+<header class="top">
+  <div class="kicker">Mock minh họa · dữ liệu giả lập 100% · scope: P&amp;L Act vs Budget (trọng tâm leasing revenue)</div>
+  <h1>Glass-Box Variance Commentary Workbench</h1>
+  <p class="sub">Trang này mô phỏng sản phẩm cuối của khóa luận: dữ liệu P&amp;L đi vào, lời giải trình <em>kiểm chứng được</em> đi ra. Mọi con số bấm được để truy về sổ, mọi nguyên nhân bấm được để xem bằng chứng.</p>
+  <div class="flow">
+    <b>① Input: GL + Budget + Rent roll</b><span>→</span>
+    <b>② Variance Engine (tất định)</b><span>→</span>
+    <b>Retrieval (RAG)</b><span>→</span>
+    <b class="llm">LLM viết comment</b><span>→</span>
+    <b>③④ Verification gates</b>
+  </div>
+</header>
+
+<!-- ================= BƯỚC 1: INPUT ================= -->
+<section>
+  <div class="step"><span class="n">BƯỚC 1</span><div><h2>Input — dữ liệu đầu vào</h2>
+  <p>Schema mô phỏng đúng bộ file tháng thực tế (GL Full, PL Act vs Budget, rent roll). Thêm kho bằng chứng cho retrieval.</p></div></div>
+  <div class="grid2">
+    <div class="card tbl">
+      <h3>GL 511 Leasing revenue theo tenant — PROP-C · Jul-26 (gộp với Budget rent roll để dễ nhìn)</h3>
+      <table>
+        <tr><th>Tenant</th><th>Ghi chú hợp đồng</th><th class="num">Budget</th><th class="num">Actual</th><th class="num">Δ</th></tr>
+        <tr id="row-TEN-009"><td class="mono">TEN-009</td><td>Escalation 5% từ 01/07 theo HĐ</td><td class="num">140,000</td><td class="num">147,000</td><td class="num">+7,000</td></tr>
+        <tr id="row-TEN-014"><td class="mono">TEN-014</td><td>Budget giả định thuê hết năm</td><td class="num">60,000</td><td class="num">0</td><td class="num">−60,000</td></tr>
+        <tr id="row-TEN-027"><td class="mono">TEN-027</td><td>Budget: lease mới bắt đầu 01/07</td><td class="num">32,000</td><td class="num">0</td><td class="num">−32,000</td></tr>
+        <tr id="row-OTH"><td class="mono">Khác (ổn định)</td><td>—</td><td class="num">1,018,000</td><td class="num">1,018,000</td><td class="num">0</td></tr>
+      </table>
+      <div class="note">Tổng: Budget <span class="mono">1,250,000</span> · Actual <span class="mono">1,165,000</span> (version budget: 26B)</div>
+    </div>
+    <div class="card">
+      <h3>Evidence corpus (cho RAG)</h3>
+      <table>
+        <tr><th>ID</th><th>Loại</th><th>Cấp</th><th>Nội dung (tóm tắt)</th></tr>
+        <tr><td class="mono">EV-112</td><td>Termination notice (duyệt)</td><td>1</td><td>TEN-014 chấm dứt HĐ hiệu lực 30/06/2026, phí chấm dứt 30,000 ghi nhận T8</td></tr>
+        <tr><td class="mono">EV-128</td><td>Biên bản bàn giao</td><td>2</td><td>TEN-027 dời bàn giao sang 15/08/2026 do chậm hoàn thiện M&amp;E</td></tr>
+        <tr><td class="mono">EV-052</td><td>Memo marketing</td><td>3</td><td>Kế hoạch tour khách thuê tiềm năng tại <b>PROP-A</b> (bẫy: trùng từ khóa, sai property)</td></tr>
+      </table>
+      <div class="note">Mỗi tài liệu có metadata (property, kỳ, loại) + gold label phục vụ đánh giá.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BƯỚC 2: ENGINE ================= -->
+<section>
+  <div class="step"><span class="n">BƯỚC 2</span><div><h2>Variance Engine — máy tính số, không phải AI</h2>
+  <p>Engine tất định tính variance, xét materiality, phân rã theo tenant/giao dịch. LLM không được tính bất kỳ số nào.</p></div></div>
+  <div class="card">
+    <div class="case-head">
+      <strong>Leasing revenue · PROP-C · 07/2026</strong>
+      <span class="id">case_id: 2026-07_PROP-C_511</span>
+      <span class="badge b-bad">Unfavorable</span>
+      <span class="badge b-acc">Material (|Δ|≥50k hoặc ≥5%)</span>
+    </div>
+    <div class="kpis">
+      <div class="kpi"><div class="l">Budget</div><div class="v">1,250,000</div></div>
+      <div class="kpi"><div class="l">Actual</div><div class="v">1,165,000</div></div>
+      <div class="kpi"><div class="l">Variance</div><div class="v bad">−85,000</div></div>
+      <div class="kpi"><div class="l">%</div><div class="v bad">−6.8%</div></div>
+    </div>
+    <div class="tbl">
+      <table>
+        <tr><th>Contributor</th><th>Sự kiện (từ dữ liệu có cấu trúc)</th><th class="num">Δ</th><th class="num">% variance</th></tr>
+        <tr><td class="mono">TEN-014</td><td>Rent = 0 từ 07/2026 (budget giả định tiếp tục thuê)</td><td class="num">−60,000</td><td class="num">71%</td></tr>
+        <tr><td class="mono">TEN-027</td><td>Lease mới trong budget chưa phát sinh doanh thu</td><td class="num">−32,000</td><td class="num">38%</td></tr>
+        <tr><td class="mono">TEN-009</td><td>Đơn giá tăng 5% so với budget</td><td class="num">+7,000</td><td class="num">−8%</td></tr>
+      </table>
+    </div>
+    <div class="note">Tổng contributors = −85,000 — khớp variance. Phần chưa giải thích (residual) = 0. Engine chỉ biết "cái gì"; "vì sao" cần bằng chứng → bước 3.</div>
+  </div>
+</section>
+
+<!-- ================= BƯỚC 3: OUTPUT 3 CHẾ ĐỘ ================= -->
+<section>
+  <div class="step"><span class="n">BƯỚC 3</span><div><h2>Output — cùng một case, ba chế độ sinh comment</h2>
+  <p>Đây là trục so sánh của khóa luận. Chuyển tab để thấy khác biệt. Trong Glass-box: <b>bấm vào con số</b> hoặc <b>citation</b>.</p></div></div>
+
+  <div class="tabs" role="tablist">
+    <button class="on" data-mode="m0">M0 · LLM-only</button>
+    <button data-mode="m1">M1 · Vanilla RAG</button>
+    <button data-mode="m2">M2 · Glass-box ★</button>
+  </div>
+
+  <!-- M0 -->
+  <div class="card mode-panel" id="panel-m0">
+    <p class="mode-tag">LLM nhận số thô và tự viết. Trôi chảy — nhưng không có gì kiểm chứng được. <span class="badge b-bad">Không có provenance</span></p>
+    <div class="comment">
+      <p>Doanh thu cho thuê tại PROP-C tháng 7 đạt khoảng <span class="flag">1,170,000</span>, thấp hơn ngân sách <span class="flag">82,000</span>, chủ yếu do <span class="flag">thị trường cho thuê khu công nghiệp chững lại trong quý 3</span> và một khách thuê rời đi. Dự kiến doanh thu sẽ phục hồi từ tháng 9.</p>
+    </div>
+    <div class="legend">
+      <span><span class="badge b-bad">gạch đỏ</span> hai số sai (đúng: 1,165,000 và 85,000) và một nguyên nhân vĩ mô bịa — không tồn tại trong bất kỳ dữ liệu nào. "Một khách thuê rời đi" đúng hướng nhưng không nêu được tenant nào, bao nhiêu tiền, nguồn đâu. Người đọc non-tech không có cách nào phát hiện.</span>
+    </div>
+  </div>
+
+  <!-- M1 -->
+  <div class="card mode-panel" id="panel-m1" hidden>
+    <p class="mode-tag">LLM nhận thêm top-k tài liệu từ vector search, prompt tự do. <span class="badge b-warn">Có trích nguồn nhưng không kiểm chứng</span></p>
+    <div class="comment">
+      <p>Leasing revenue PROP-C thấp hơn budget 85,000 (−6.8%) do <span class="flag">một hợp đồng chấm dứt sớm</span> và lease mới chậm bắt đầu; công ty đang đẩy mạnh tìm khách thay thế <span class="flag">[EV-052]</span>.</p>
+    </div>
+    <div class="legend">
+      <span><span class="badge b-bad">gạch đỏ</span> claim "chấm dứt sớm" đúng hướng nhưng KHÔNG có citation; còn citation duy nhất [EV-052] dính bẫy trùng từ khóa — memo đó thuộc PROP-A, không liên quan case này. Số đúng nhưng không bấm được để truy nguồn.</span>
+    </div>
+  </div>
+
+  <!-- M2 -->
+  <div class="card mode-panel" id="panel-m2" hidden>
+    <p class="mode-tag">Engine đưa số đã verify + retrieval có lọc metadata + schema bắt buộc + gates. <span class="badge b-ok">✓ Verified</span></p>
+    <div class="comment" id="m2c">
+      <p><b>Quan sát:</b> Leasing revenue PROP-C đạt <button class="chip" data-src="actual">1,165,000</button> so với budget <button class="chip" data-src="budget">1,250,000</button>, thấp hơn <button class="chip" data-src="var">85,000</button> (<button class="chip" data-src="pct">−6.8%</button>).</p>
+      <p><b>Nguyên nhân xác nhận:</b> (1) TEN-014 chấm dứt hợp đồng hiệu lực 30/06/2026, hụt <button class="chip" data-src="t14">60,000</button> so với budget <button class="chip ev" data-ev="EV-112">[EV-112]</button>; (2) TEN-027 dời bàn giao sang 15/08 do chậm hoàn thiện M&amp;E, lease mới chưa phát sinh doanh thu, hụt <button class="chip" data-src="t27">32,000</button> <button class="chip ev" data-ev="EV-128">[EV-128]</button>.</p>
+      <p><b>Bù đắp một phần:</b> escalation 5% của TEN-009 từ 01/07 theo hợp đồng, thêm <button class="chip" data-src="t09">7,000</button> (nguồn: contract list — dữ liệu có cấu trúc).</p>
+      <p><b>Lưu ý timing:</b> phí chấm dứt <button class="chip" data-src="fee">30,000</button> của TEN-014 sẽ ghi nhận vào Other income tháng 8 <button class="chip ev" data-ev="EV-112">[EV-112]</button> — <span class="flag-w">theo dõi ở kỳ sau</span>.</p>
+    </div>
+    <div class="src" id="srcbox" hidden><div class="t">Provenance</div><div id="srctext"></div></div>
+    <div class="ev-card" id="evbox" hidden>
+      <div class="meta" id="evmeta"></div><div id="evtext"></div>
+    </div>
+    <h3 style="margin-top:16px">Verdict từ verification gates</h3>
+    <div class="verdict">
+      <div class="v-item">Số liệu khớp engine<b>8 / 8 ✓</b></div>
+      <div class="v-item">Citation có thật &amp; đúng đoạn<b>3 / 3 ✓</b></div>
+      <div class="v-item">Claim không có bằng chứng<b>0</b></div>
+      <div class="v-item">Trạng thái<b style="color:var(--ok)">VERIFIED</b></div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:14px">
+    <h3>Case đặc biệt — khi thiếu bằng chứng, hệ thống phải tự khai</h3>
+    <div class="case-head" style="margin-bottom:6px">
+      <strong>Marketing · PROP-E · 07/2026</strong>
+      <span class="id">variance +18,400 (+31%)</span>
+      <span class="badge b-abst">⛔ Abstained</span>
+    </div>
+    <p class="comment" style="margin:0">Quan sát: chi phí Marketing vượt ngân sách 18,400 (+31%), tập trung ở 2 giao dịch với VND-021. <b>Không đủ bằng chứng để nêu nguyên nhân</b> (retrieval score dưới ngưỡng). Đề xuất: xác nhận với Marketing lead trước 10/08.</p>
+    <div class="note">LLM-only ở case này sẽ bịa một nguyên nhân nghe hợp lý. Glass-box từ chối — và từ chối đúng lúc là một metric được đo (abstention accuracy). Scope hệ thống phủ cả dòng chi phí P&amp;L, không riêng doanh thu.</div>
+  </div>
+</section>
+
+<!-- ================= BƯỚC 4 ================= -->
+<section>
+  <div class="step"><span class="n">BƯỚC 4</span><div><h2>Vòng kiểm của analyst — từ người viết thành người kiểm có công cụ</h2>
+  <p>Analyst duyệt từng case: Verified → gửi manager; Cần xác nhận → hỏi đúng người được nêu tên; Abstained → điều tra thêm. Mọi thao tác ghi audit log.</p></div></div>
+  <div class="card">
+    <div class="tbl"><table>
+      <tr><th>Case</th><th>Variance</th><th>Gates</th><th>Trạng thái</th><th>Hành động kế tiếp</th></tr>
+      <tr><td class="mono">PROP-C · Leasing revenue</td><td class="num">−85,000</td><td><span class="badge b-ok">8/8 số ✓ · 3/3 cite ✓</span></td><td><span class="badge b-ok">Verified</span></td><td>Gửi manager duyệt</td></tr>
+      <tr><td class="mono">PROP-C · R&amp;M</td><td class="num">+62,500</td><td><span class="badge b-warn">1 claim chờ xác nhận</span></td><td><span class="badge b-warn">Needs confirmation</span></td><td>Hỏi Operations</td></tr>
+      <tr><td class="mono">PROP-E · Marketing</td><td class="num">+18,400</td><td><span class="badge b-abst">Evidence không đủ</span></td><td><span class="badge b-abst">Abstained</span></td><td>Xác nhận với Marketing lead</td></tr>
+    </table></div>
+  </div>
+</section>
+
+<footer>
+  <span>Mock tĩnh cho khóa luận — toàn bộ dữ liệu là giả lập.</span>
+  <span class="mono">dataset_v1 · model: claude-sonnet-5-5 · prompt_v1</span>
+</footer>
+</div>
+
+<script>
+(function(){
+  // Tabs
+  var tabs=document.querySelectorAll('.tabs button');
+  tabs.forEach(function(b){b.addEventListener('click',function(){
+    tabs.forEach(function(x){x.classList.toggle('on',x===b);});
+    ['m0','m1','m2'].forEach(function(m){document.getElementById('panel-'+m).hidden=(m!==b.dataset.mode);});
+  });});
+
+  // Provenance: mỗi con số trỏ về nguồn engine + dòng dữ liệu gốc
+  var SRC={
+    actual:{t:'Actual 1,165,000 = tổng GL 511 · PROP-C · 07/2026 (engine:actual) = 147,000 + 0 + 0 + 1,018,000.',rows:['row-TEN-009','row-TEN-014','row-TEN-027','row-OTH']},
+    budget:{t:'Budget 1,250,000 = tổng rent roll budget version 26B (engine:budget) = 140,000 + 60,000 + 32,000 + 1,018,000.',rows:['row-TEN-009','row-TEN-014','row-TEN-027','row-OTH']},
+    var:{t:'Variance 85,000 = 1,250,000 − 1,165,000 (engine:variance). Khớp tổng contributors: 60,000 + 32,000 − 7,000.',rows:['row-TEN-014','row-TEN-027','row-TEN-009']},
+    pct:{t:'−6.8% = −85,000 ÷ 1,250,000 (engine:variance_pct).',rows:[]},
+    t14:{t:'60,000 = budget TEN-014 (60,000) − actual (0). Sự kiện: chấm dứt HĐ hiệu lực 30/06/2026 — bằng chứng EV-112 (engine:contributor).',rows:['row-TEN-014']},
+    t27:{t:'32,000 = budget TEN-027 (32,000) − actual (0). Budget giả định lease mới bắt đầu 01/07; thực tế dời bàn giao 15/08 — bằng chứng EV-128 (engine:contributor).',rows:['row-TEN-027']},
+    t09:{t:'7,000 = actual TEN-009 (147,000) − budget (140,000). Escalation 5% từ 01/07 theo contract list (engine:contributor).',rows:['row-TEN-009']},
+    fee:{t:'30,000 = phí chấm dứt theo điều 8.2 trong EV-112; CHƯA nằm trong doanh thu tháng 7 — sẽ vào Other income tháng 8 (timing note, không phải số của case này).',rows:['row-TEN-014']}
+  };
+  var EV={
+    'EV-112':{m:'EV-112 · Termination notice đã duyệt · cấp 1 · PROP-C',
+      h:'“Chấm dứt hợp đồng thuê <b>TEN-014</b> <mark>hiệu lực 30/06/2026 theo điều 8.2</mark>; khách thuê thanh toán <mark>phí chấm dứt 30,000, ghi nhận trong kỳ tháng 8/2026</mark>.”'},
+    'EV-128':{m:'EV-128 · Biên bản bàn giao mặt bằng · cấp 2 · PROP-C',
+      h:'“<b>TEN-027</b>: hai bên thống nhất <mark>dời ngày bàn giao sang 15/08/2026 do chậm hoàn thiện hệ thống M&E</mark>; tiền thuê tính từ ngày bàn giao thực tế.”'}
+  };
+  function clearHL(){document.querySelectorAll('.hl').forEach(function(r){r.classList.remove('hl');});}
+  document.getElementById('m2c').addEventListener('click',function(e){
+    var c=e.target.closest('.chip'); if(!c) return;
+    clearHL();
+    var sb=document.getElementById('srcbox'), eb=document.getElementById('evbox');
+    if(c.dataset.src){
+      var s=SRC[c.dataset.src];
+      document.getElementById('srctext').innerHTML=s.t; sb.hidden=false; eb.hidden=true;
+      s.rows.forEach(function(id){var r=document.getElementById(id); if(r) r.classList.add('hl');});
+      var first=document.getElementById(s.rows[0]); if(first){first.scrollIntoView({block:'center',behavior:'smooth'});}
+    } else if(c.dataset.ev){
+      var v=EV[c.dataset.ev];
+      document.getElementById('evmeta').textContent=v.m;
+      document.getElementById('evtext').innerHTML=v.h;
+      eb.hidden=false; sb.hidden=true;
+    }
+  });
+})();
+</script>

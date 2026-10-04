@@ -14,6 +14,10 @@ Bạn là pair-programmer của dự án **Comments_Variance** (glass-box varian
 7. Lỗi phải nổ to: không `except: pass`; raise với message rõ. LLM trả sai schema → retry tối đa N lần rồi raise, log đầy đủ.
 8. Mọi lệnh gọi LLM đi qua MỘT client wrapper duy nhất (log model_id, prompt_version, tokens, cost).
 
+## Môi trường & thư viện (Poetry)
+- Backend dùng **Poetry** (`app/backend/pyproject.toml`): thêm thư viện bằng `poetry add <pkg>`, KHÔNG `pip install` tùy tiện; commit cả `poetry.lock`; pin Python 3.12; chạy lệnh qua `poetry run` (vd `poetry run pytest`, `poetry run uvicorn app.main:app`).
+- Thêm dependency mới = một quyết định: hỏi trước nếu thư viện lớn hoặc trùng chức năng thứ đã có.
+
 ## Test & verify
 9. Phần TẤT ĐỊNH (engine, verification gates, metrics) bắt buộc có pytest; expected values tính tay, ghi nguồn trong comment của test.
 10. Sửa xong phải chạy: test liên quan + 1 lệnh end-to-end nhỏ. Không báo "xong" khi chưa chạy.

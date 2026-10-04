@@ -3,6 +3,10 @@
 > Cập nhật: 2026-10-04. Kiến trúc cho MVP hoàn thành 18/10/2026.
 > Nguyên tắc tối thượng (rút từ câu chuyện v2 — `objectives.md`): **LLM không bao giờ tính số; mọi con số và nhận định trong output phải truy vết được về nguồn; không đủ bằng chứng thì từ chối, không bịa.**
 
+## 0. Phạm vi phân tích
+
+Toàn bộ **P&L Actual vs Budget** theo `PL line × property × tháng` — đúng theo file `PL_Act vs budget` hàng tháng. **Trọng tâm kịch bản là leasing revenue** (sự kiện hợp đồng: ký mới, chấm dứt sớm, dời bàn giao, escalation, FX) vì đây là domain chính và là phần comments thật T1–T8 tập trung; các dòng chi phí (R&M, SG&A) vẫn thuộc scope với kịch bản riêng. **Không phải đề tài OPEX-only.** Ví dụ data contract ở §3 dùng một case chi phí để minh họa; case doanh thu giống hệt về cấu trúc — contributors khi đó là các sự kiện tenant (xem mock `docs/ui_mockup.html`).
+
 ## 1. Sơ đồ tổng
 
 ```
@@ -101,7 +105,7 @@ experiments/run_benchmark.py (headless, KHÔNG cần UI):
 ## 4. Thành phần chi tiết
 
 ### 4.1 `app/data_synth/` — bộ sinh dữ liệu
-- `scenarios.yaml`: 8–10 kịch bản gieo (one-off repair, contract escalation, new lease, early termination, FX, timing shift, reversal/actual âm, budget = 0, **missing evidence** — để test abstention, irrelevant-evidence-cùng-từ-khóa).
+- `scenarios.yaml`: 8–10 kịch bản gieo, **doanh thu trước**: new lease sớm/trễ so với budget, early termination, dời bàn giao, rent escalation, FX; **chi phí sau**: one-off repair, timing shift, reversal/actual âm, budget = 0; và 2 kịch bản bẫy: **missing evidence** (test abstention), irrelevant-evidence-cùng-từ-khóa.
 - `generator.py`: 5 properties (PROP-A…E) × 12 tháng × ~10 PL lines; GL transaction-level; ~25 material cases; seed cố định → **dataset_v1 đóng băng và commit**.
 - Gold labels: case → {evidence_ids, cause, facts bắt buộc, claims bị cấm}.
 - Schema các bảng mô phỏng đúng cấu trúc `Sample_FP&A/` (GL Full → gl_transactions; PL_26B → budget; sheet Output → pl_line mapping). **Chỉ mượn cấu trúc, không mượn dữ liệu.**
@@ -111,8 +115,9 @@ experiments/run_benchmark.py (headless, KHÔNG cần UI):
 - Không gọi LLM, không đọc evidence. Mọi số hệ thống hiển thị đều sinh từ đây.
 
 ### 4.3 `app/backend/app/retrieval/` — module RAG
-- Index: BM25 (`rank-bm25`) + dense (sentence-transformers hoặc embedding API) + metadata filter.
+- Index: metadata filter + BM25 (`rank-bm25`) + dense embeddings bằng **BGE-M3** (chạy local qua `FlagEmbedding`/sentence-transformers — đa ngôn ngữ, tốt cho tiếng Việt, miễn phí).
 - Fusion (reciprocal rank) → top-k, trả kèm `retrieval_score` để abstention dùng.
+- **Chiến lược precompute:** corpus và case là CỐ ĐỊNH → embed toàn bộ offline, lưu evidence pack per case vào SQLite. Web app lúc runtime KHÔNG cần load model embedding (Render free tier không gánh nổi ~2GB) — chỉ gọi LLM API khi bấm Generate.
 
 ### 4.4 `app/backend/app/generation/`
 - Prompt templates versioned trong `prompts_llm/` (mỗi mode 1 template).
@@ -157,9 +162,9 @@ GET  /api/meta                         dataset_version, model_id, prompt_version
 | Ngôn ngữ backend | Python 3.12 | Kỹ năng sẵn có |
 | API | FastAPI + uvicorn | Nhẹ, OpenAPI tự sinh |
 | Data | SQLite + pandas | Đủ cho 5 properties, zero-ops |
-| Retrieval | rank-bm25 + sentence-transformers (hoặc embedding API) | Hybrid đơn giản, chạy local |
-| LLM | Anthropic API, 1 model cho cả 3 modes | Fairness |
+| Retrieval | rank-bm25 + **BGE-M3** (local, precompute offline) | Hybrid, đa ngôn ngữ, miễn phí |
+| LLM (generation) | Anthropic API, 1 model cho cả 3 modes | Fairness |
+| Quản lý thư viện | **Poetry** (`pyproject.toml` + commit `poetry.lock`) | Tái lập môi trường |
 | Frontend | React + Vite + TS + Tailwind | User đã có kinh nghiệm |
 | Test | pytest (engine + verification bắt buộc) | Phần tất định phải có test |
 | Deploy | Render + Vercel | Free tier, nhanh |
-```
