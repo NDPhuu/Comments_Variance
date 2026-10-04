@@ -1,6 +1,7 @@
 # Khung trình bày khóa luận + Danh mục tài liệu tham khảo (APA 7th)
 
-> **Trạng thái:** cập nhật 04/10 — khung 5 chương (quyết định #7), bổ sung metric học thuật cho chương đánh giá và dòng trust/XAI.
+> **Trạng thái:** cập nhật 04/10 — khung 5 chương (quyết định #7), bổ sung metric học thuật và dòng trust/XAI.
+> **⚠ CHUẨN TRÍCH DẪN TRONG BẢN NỘP = HARVARD THEO VIỆN** (xem `docs/quy_dinh_vien.md` mục 3), KHÔNG phải APA. Danh mục dưới đây giữ định dạng APA làm **kho tra cứu nguồn** (đầy đủ DOI để verify); khi đưa vào khóa luận phải reformat sang mẫu Harvard của Viện, và "et al." đổi thành "cộng sự".
 > **Cảnh báo trích dẫn:** các mục tham khảo dưới đây được ghi từ trí nhớ của Claude — các bài kinh điển có độ tin cao, nhưng **bắt buộc đối chiếu lại DOI/số trang/năm trên Google Scholar hoặc trang nhà xuất bản trước khi đưa vào khóa luận**. Tuyệt đối không cite bài chưa tự mở ra đọc ít nhất abstract + phần liên quan.
 
 ---

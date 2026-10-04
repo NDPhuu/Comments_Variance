@@ -27,6 +27,9 @@ Sinh toàn bộ bằng chứng định lượng của Chương 4 — bằng **me
 | Từ chối đúng lúc trên case không trả lời được | **Answerability / selective prediction accuracy** | SQuAD 2.0; Kamath et al. (2020) |
 | Máy chấm đáng tin không | **Cohen's κ** máy vs. người | Cohen (1960) |
 | (Phụ, nếu kịp) faithfulness qua thư viện bên thứ ba | **RAGAS** | Es et al. (2024) — nêu caveat LLM-judge |
+| So sánh M0/M1/M2 có ý nghĩa thống kê không | **Bootstrap CI (95%) + kiểm định ghép cặp** (Wilcoxon signed-rank cho metric liên tục; McNemar cho đúng/sai theo case) | đáp ứng tiêu chí rubric "kiểm định thống kê phù hợp" (2đ) — xem `docs/quy_dinh_vien.md` §4 |
+
+**Tăng cỡ mẫu quan sát:** mỗi case × mỗi mode chạy **k = 3 lần** (temperature cố định, ghi cả 3 output) → 34 case × 3 mode × 3 lần = 306 quan sát; vừa đo được độ dao động của LLM, vừa đủ n cho kiểm định ghép cặp theo case.
 
 ## C. Việc phải làm
 
