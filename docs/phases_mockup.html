@@ -1,0 +1,252 @@
+<title>Mock 5 Giai Đoạn</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* Design theo design.md: navy chủ đạo, cyan nhấn, nền trắng, bo 4px, không gradient/emoji. Single-theme light có chủ đích. */
+:root{
+  --navy:#081A36; --blue:#004583; --cyan:#01A7E5; --blue3:#789FD4;
+  --sky:#B2E2F9; --cyan1:#D8F7FC; --g700:#4B4B4B; --g400:#AEB4C2; --g100:#F3F4F6;
+  --white:#FFFFFF; --green:#2E9E6B; --red:#EC5D69; --red1:#FDECEE;
+  --head:'Be Vietnam Pro',Arial,sans-serif; --body:'Inter',Arial,sans-serif;
+  --mono:'IBM Plex Mono',Consolas,monospace;
+}
+body{background:var(--white);color:var(--g700);font-family:var(--body);margin:0;padding-block:0 56px;padding-inline:16px;line-height:1.55;font-size:14px}
+.wrap{max-width:980px;margin:0 auto}
+.cover{background:var(--navy);color:var(--white);border-radius:4px;padding:28px 28px 24px;margin-top:20px}
+.cover .k{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan);font-weight:600}
+.cover h1{font-family:var(--head);font-weight:600;font-size:clamp(22px,3.5vw,30px);margin:.25em 0 .3em;line-height:1.15}
+.cover p{margin:0;color:var(--sky);max-width:72ch;font-size:13.5px}
+.timeline{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 6px}
+.tstep{flex:1 1 150px;background:var(--g100);border-radius:4px;padding:10px 12px;border-top:4px solid var(--cyan)}
+.tstep .n{font-family:var(--mono);font-weight:600;font-size:11px;color:var(--cyan)}
+.tstep .t{font-family:var(--head);font-weight:600;color:var(--navy);font-size:13px;line-height:1.2}
+.tstep .d{font-size:11px;color:var(--g700)}
+section{margin-top:40px}
+.ph{display:flex;align-items:baseline;gap:12px;border-top:4px solid var(--navy);padding-top:12px}
+.ph .num{font-family:var(--head);font-weight:700;font-size:34px;color:var(--cyan);line-height:1}
+.ph h2{font-family:var(--head);font-weight:600;color:var(--navy);font-size:20px;margin:0}
+.ph .dates{margin-left:auto;font-family:var(--mono);font-size:12px;color:var(--blue);white-space:nowrap}
+.why{margin:10px 0 16px;max-width:76ch}
+.why b{color:var(--navy)}
+h3{font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--blue);margin:20px 0 8px;font-weight:600}
+.card{background:var(--white);border:1px solid var(--g400);border-radius:4px;padding:14px 16px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:820px){.grid2{grid-template-columns:1fr}}
+.grid2>*{min-width:0}
+pre{background:var(--navy);color:#DCE7F5;border-radius:4px;padding:12px 14px;font:12px/1.55 var(--mono);overflow-x:auto;margin:0}
+pre .c{color:var(--blue3)} pre .k{color:var(--cyan)} pre .s{color:#B2E2F9} pre .g{color:#7FD6A8} pre .r{color:#F3A6AD}
+.tbl{overflow-x:auto;border:1px solid var(--g400);border-radius:4px}
+table{border-collapse:collapse;width:100%;font-size:12.5px;min-width:520px}
+th{background:var(--navy);color:var(--white);font-weight:600;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;text-align:left;padding:8px 10px;white-space:nowrap}
+td{padding:7px 10px;border-bottom:1px solid var(--g100);vertical-align:top}
+tr:last-child td{border-bottom:0}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.mono{font-family:var(--mono);font-size:12px}
+.best td{background:var(--cyan1);color:var(--navy);font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.chip{font:600 11.5px var(--body);background:var(--g100);color:var(--navy);border:1px solid var(--g400);border-radius:999px;padding:3px 10px}
+.gate{background:var(--cyan1);border-left:4px solid var(--cyan);border-radius:0 4px 4px 0;padding:10px 14px;font-size:13px;color:var(--navy);margin-top:16px}
+.gate b{font-weight:600}
+.warn{background:var(--red1);border:1px solid var(--red);border-radius:4px;padding:10px 14px;font-size:12.5px;margin-top:12px}
+.cap{font-size:11.5px;color:var(--g400);margin-top:6px}
+ol.demo{margin:8px 0 0;padding-left:20px;font-size:13px}
+ol.demo li{margin:5px 0}
+footer{border-top:1px solid var(--g400);margin-top:48px;padding-top:10px;font-size:11.5px;color:var(--g400);display:flex;flex-wrap:wrap;gap:6px 20px}
+</style>
+
+<div class="wrap">
+
+<div class="cover">
+  <div class="k">Mock minh họa · mọi dữ liệu và kết quả bên dưới là VÍ DỤ GIẢ LẬP</div>
+  <h1>5 giai đoạn — mỗi giai đoạn làm ra cái gì?</h1>
+  <p>Trang này cho bạn "sờ" được sản phẩm của từng phase trước khi code: file trông thế nào, bảng trông thế nào, kết quả trông thế nào. Hạn chót toàn bộ: 18/10/2026.</p>
+  <div class="timeline">
+    <div class="tstep"><div class="n">PHASE 1</div><div class="t">Dữ liệu &amp; Engine</div><div class="d">04–07/10</div></div>
+    <div class="tstep"><div class="n">PHASE 2</div><div class="t">RAG + Viết + Kiểm</div><div class="d">08–10/10</div></div>
+    <div class="tstep"><div class="n">PHASE 3</div><div class="t">Benchmark</div><div class="d">11–12/10</div></div>
+    <div class="tstep"><div class="n">PHASE 4</div><div class="t">Web + Deploy</div><div class="d">13–15/10</div></div>
+    <div class="tstep"><div class="n">PHASE 5</div><div class="t">Khóa luận</div><div class="d">15–18/10</div></div>
+  </div>
+</div>
+
+<!-- ================= PHASE 1 ================= -->
+<section>
+  <div class="ph"><div class="num">01</div><h2>Dữ liệu giả lập &amp; Variance Engine</h2><div class="dates">04–07/10</div></div>
+  <p class="why"><b>Vì sao phải làm trước tiên:</b> toàn bộ thí nghiệm cần một "đề thi có đáp án". Phase này tạo ra đề thi đó: số liệu giả lập giống cấu trúc file thật, mỗi chênh lệch được GIEO một nguyên nhân biết trước (gold label) — nhờ vậy sau này chấm điểm AI được bằng máy.</p>
+
+  <h3>1a · Kịch bản gieo — file scenarios.yaml trông thế nào</h3>
+  <pre><span class="c"># Mỗi kịch bản = một loại nguyên nhân có thật ngoài đời (rút từ comments T1–T8)</span>
+- id: <span class="k">early_termination</span>          <span class="c"># tenant chấm dứt sớm</span>
+  side: revenue
+  effect: <span class="s">"actual rent = 0 từ tháng hiệu lực; budget vẫn giả định thuê tiếp"</span>
+  evidence_sinh_kem: <span class="s">termination_notice</span>   <span class="c"># cấp 1 — bằng chứng mạnh</span>
+  gold_cause: <span class="s">early_termination</span>
+- id: <span class="k">handover_delay</span>             <span class="c"># lease mới dời ngày bàn giao</span>
+- id: <span class="k">rent_escalation</span>            <span class="c"># đơn giá tăng theo hợp đồng</span>
+- id: <span class="k">one_off_repair</span>             <span class="c"># chi phí sửa chữa đột xuất</span>
+- id: <span class="k">missing_evidence</span>           <span class="c"># BẪY: không sinh bằng chứng → hệ thống phải TỪ CHỐI</span>
+- id: <span class="k">keyword_trap</span>               <span class="c"># BẪY: tài liệu trùng từ khóa nhưng sai property</span></pre>
+
+  <h3>1b · Dữ liệu sinh ra — bảng GL giả lập (trích)</h3>
+  <div class="tbl"><table>
+    <tr><th>txn_id</th><th>date</th><th>property</th><th>gl</th><th>tenant/vendor</th><th>memo</th><th class="num">amount</th></tr>
+    <tr><td class="mono">GL-20311</td><td>05/07/26</td><td class="mono">PROP-C</td><td class="mono">511</td><td class="mono">TEN-009</td><td>Rent Jul-26 (escalated)</td><td class="num">147,000</td></tr>
+    <tr><td class="mono">GL-20318</td><td>05/07/26</td><td class="mono">PROP-C</td><td class="mono">511</td><td class="mono">TEN-003</td><td>Rent Jul-26</td><td class="num">86,000</td></tr>
+    <tr><td class="mono">GL-20944</td><td>18/07/26</td><td class="mono">PROP-A</td><td class="mono">6321</td><td class="mono">VND-012</td><td>Roof repair phase 2</td><td class="num">48,200</td></tr>
+  </table></div>
+  <p class="cap">5 property × 12 tháng × ~10 PL line → vài nghìn dòng GL, ~25 case trọng yếu được gieo.</p>
+
+  <h3>1c · Đáp án gắn kèm — gold_labels.json trông thế nào</h3>
+  <pre>{
+  <span class="k">"case_id"</span>: <span class="s">"2026-07_PROP-C_511"</span>,
+  <span class="k">"gold_cause"</span>: [<span class="s">"early_termination"</span>, <span class="s">"handover_delay"</span>],
+  <span class="k">"gold_evidence"</span>: [<span class="s">"EV-112"</span>, <span class="s">"EV-128"</span>],
+  <span class="k">"facts"</span>: { <span class="k">"variance"</span>: <span class="g">-85000</span>, <span class="k">"ten_014_delta"</span>: <span class="g">-60000</span>, <span class="k">"ten_027_delta"</span>: <span class="g">-32000</span> },
+  <span class="k">"prohibited_claims"</span>: [<span class="s">"thị trường chững lại"</span>, <span class="s">"giá vật liệu tăng"</span>]  <span class="c">// AI nói câu này = bịa</span>
+}</pre>
+
+  <h3>1d · Rút từ comments thật T1–T8 — docs/house_style.md (ẩn danh)</h3>
+  <div class="card">
+    <p style="margin:0 0 8px">Khung comment chuẩn nhà (ví dụ minh họa): <b>3–5 câu</b> — (1) số liệu MTD/YTD so budget; (2) driver chính kèm số; (3) yếu tố bù đắp/timing; đơn vị nghìn; văn phong ngắn gọn.</p>
+    <div class="chips">
+      <span class="chip">early termination</span><span class="chip">handover delay</span><span class="chip">escalation</span>
+      <span class="chip">FX</span><span class="chip">one-off repair</span><span class="chip">timing</span><span class="chip">reversal</span>
+    </div>
+    <p class="cap">Cause taxonomy thật sẽ rút từ 8 file PL_Act vs budget — chỉ mô tả ẩn danh, không chép nguyên văn.</p>
+  </div>
+
+  <h3>1e · Bằng chứng engine tính đúng — pytest</h3>
+  <pre><span class="g">tests/test_engine.py::test_variance_prop_c_jul  PASSED</span>
+<span class="g">tests/test_engine.py::test_materiality_budget_zero  PASSED</span>
+<span class="g">tests/test_engine.py::test_contribution_sums_to_variance  PASSED</span>
+<span class="g">======================== 8 passed in 0.41s ========================</span></pre>
+
+  <div class="gate"><b>XONG Phase 1 khi:</b> chạy 1 lệnh ra danh sách case JSON; đối chiếu tay 3 case khớp 100%; dataset đóng băng (seed cố định) và commit.</div>
+</section>
+
+<!-- ================= PHASE 2 ================= -->
+<section>
+  <div class="ph"><div class="num">02</div><h2>Tìm bằng chứng + Viết + Cổng kiểm</h2><div class="dates">08–10/10</div></div>
+  <p class="why"><b>Vì sao:</b> đây là lõi kỹ thuật. Ba việc: máy tự tìm đúng tài liệu (RAG), AI viết theo khuôn, và code thường soát lại từng số từng trích dẫn.</p>
+
+  <div class="grid2">
+    <div>
+      <h3>2a · Kết quả tìm bằng chứng cho case PROP-C</h3>
+      <pre>query: <span class="s">"TEN-014 rent = 0, PROP-C, Jul-26"</span>
+filter: property=PROP-C, period≤Jul-26
+<span class="g">1. EV-112  termination_notice   score 0.91 ✓</span>
+<span class="g">2. EV-128  handover_minutes     score 0.84 ✓</span>
+3. EV-067  service_memo         score 0.31
+<span class="r">✕ EV-052  marketing_memo — LOẠI từ đầu
+   (property=PROP-A, sai metadata)</span></pre>
+      <p class="cap">Bẫy trùng từ khóa bị chặn bởi bộ lọc metadata — trước cả khi so nghĩa.</p>
+    </div>
+    <div>
+      <h3>2b · Luật trong prompt của chế độ Glass-box (trích)</h3>
+      <pre><span class="c"># prompts_llm/m2.txt (trích)</span>
+Bạn CHỈ ĐƯỢC dùng con số trong FACTS.
+Mỗi câu nguyên nhân PHẢI kèm [EV-id]
+  từ danh sách EVIDENCE.
+Không có bằng chứng → ghi vào UNKNOWNS,
+  KHÔNG suy đoán.
+Trả về đúng JSON schema, không thêm chữ.</pre>
+    </div>
+  </div>
+
+  <h3>2c · Cổng kiểm bắt lỗi thế nào — test bằng 10 lỗi gieo cố ý</h3>
+  <div class="tbl"><table>
+    <tr><th>Lỗi gieo vào comment</th><th>Cổng</th><th>Kết quả</th></tr>
+    <tr><td>Sửa 85,000 thành 82,000</td><td>Numeric gate</td><td class="mono" style="color:var(--green)">BẮT ĐƯỢC — không khớp engine</td></tr>
+    <tr><td>Thêm trích dẫn [EV-999] không tồn tại</td><td>Citation gate</td><td class="mono" style="color:var(--green)">BẮT ĐƯỢC — id ma</td></tr>
+    <tr><td>Thêm câu "do thị trường chững lại" (không EV)</td><td>Claim gate</td><td class="mono" style="color:var(--green)">BẮT ĐƯỢC — thiếu căn cứ</td></tr>
+    <tr><td>Case missing-evidence mà AI vẫn nêu nguyên nhân</td><td>Abstention</td><td class="mono" style="color:var(--green)">BẮT ĐƯỢC — phải từ chối</td></tr>
+  </table></div>
+
+  <div class="gate"><b>XONG Phase 2 khi:</b> 3 chế độ chạy hàng loạt không vỡ schema; cổng kiểm bắt 10/10 lỗi gieo.</div>
+</section>
+
+<!-- ================= PHASE 3 ================= -->
+<section>
+  <div class="ph"><div class="num">03</div><h2>Benchmark — chấm điểm 3 chế độ</h2><div class="dates">11–12/10</div></div>
+  <p class="why"><b>Vì sao:</b> đây là nơi sinh ra TOÀN BỘ bằng chứng định lượng của Chương 4. Cùng ~25 case, 3 chế độ cùng làm, máy chấm theo đáp án gold.</p>
+
+  <h3>3a · Điều kiện thi được đóng băng — run_config.json</h3>
+  <pre>{ <span class="k">"model"</span>: <span class="s">"gemini-2.5-flash"</span>, <span class="k">"temperature"</span>: <span class="g">0.2</span>,
+  <span class="k">"dataset"</span>: <span class="s">"dataset_v1"</span>, <span class="k">"prompts"</span>: <span class="s">"prompt_v1"</span>, <span class="k">"cases"</span>: <span class="g">25</span>, <span class="k">"run_at"</span>: <span class="s">"2026-10-11T20:00"</span> }</pre>
+
+  <h3>3b · Bảng kết quả chính (SỐ MINH HỌA — kết quả thật do script sinh)</h3>
+  <div class="tbl"><table>
+    <tr><th>Chỉ số (càng thấp càng tốt, trừ dòng cuối)</th><th class="num">M0 · AI trần</th><th class="num">M1 · Vanilla RAG</th><th class="num">M2 · Glass-box</th></tr>
+    <tr><td>Tỷ lệ số sai so với sổ</td><td class="num">18%</td><td class="num">9%</td><td class="num" style="color:var(--green);font-weight:600">1%</td></tr>
+    <tr><td>Tỷ lệ trích dẫn ma / sai tài liệu</td><td class="num">— (không cite)</td><td class="num">23%</td><td class="num" style="color:var(--green);font-weight:600">2%</td></tr>
+    <tr><td>Tỷ lệ câu nguyên nhân thiếu căn cứ</td><td class="num">41%</td><td class="num">24%</td><td class="num" style="color:var(--green);font-weight:600">3%</td></tr>
+    <tr class="best"><td>Từ chối đúng lúc (5 case bẫy thiếu bằng chứng)</td><td class="num">0/5</td><td class="num">1/5</td><td class="num">5/5</td></tr>
+  </table></div>
+  <p class="cap">Kèm theo: bảng chia theo từng loại kịch bản (robustness) + hình xuất tự động vào thesis/figures/ — Chương 4 không chép tay số nào.</p>
+
+  <div class="gate"><b>XONG Phase 3 khi:</b> results/summary.csv + 4–6 hình sẵn sàng cho Chương 4; kiểm tay 20% mẫu cờ "thiếu căn cứ" để xác nhận máy chấm đúng.</div>
+</section>
+
+<!-- ================= PHASE 4 ================= -->
+<section>
+  <div class="ph"><div class="num">04</div><h2>Web app &amp; Deploy</h2><div class="dates">13–15/10</div></div>
+  <p class="why"><b>Vì sao đứng sau benchmark:</b> kết quả khoa học đã chốt ở Phase 3 (chạy không cần giao diện). Phase 4 là lớp trình diễn — làm cho hội đồng NHÌN THẤY sự minh bạch bằng mắt. Giao diện đúng như mock Workbench đã có.</p>
+
+  <div class="grid2">
+    <div>
+      <h3>4a · Kịch bản demo 2 phút trước giảng viên</h3>
+      <ol class="demo">
+        <li>Mở <b>Hàng chờ</b>: "tháng 7 có 4 khoản phải giải trình".</li>
+        <li>Bấm case Leasing revenue PROP-C → màn <b>Điều tra</b>.</li>
+        <li>Bấm dòng TEN-014 → termination notice hiện ra.</li>
+        <li>Sang <b>Draft</b>: bấm số 60,000 → dòng sổ gốc; verdict 8/8 ✓.</li>
+        <li>Sang <b>So sánh</b>: chỉ vào số sai + trích dẫn ma của M0/M1.</li>
+        <li>Chốt bằng case PROP-E: "thiếu bằng chứng — hệ thống từ chối, không bịa".</li>
+      </ol>
+    </div>
+    <div>
+      <h3>4b · Checklist deploy</h3>
+      <pre>Backend  → Render:  uvicorn + SQLite (synthetic)
+           env GEMINI_API_KEY · bật CORS
+Frontend → Vercel:  env VITE_API_URL
+Kiểm tra → mở link từ máy/mạng khác, chạy đủ 6 bước demo
+Dự phòng → video quay sẵn 2 phút</pre>
+    </div>
+  </div>
+
+  <div class="gate"><b>XONG Phase 4 khi:</b> link public chạy trơn 6 bước demo từ một máy khác; screenshot đã vào thesis/figures/.</div>
+</section>
+
+<!-- ================= PHASE 5 ================= -->
+<section>
+  <div class="ph"><div class="num">05</div><h2>Hoàn thiện khóa luận</h2><div class="dates">15–18/10</div></div>
+  <p class="why"><b>Vì sao không dồn về cuối:</b> các chương được viết RẢI từ Phase 1 (xem cột phải) — Phase 5 chỉ ghép, rà và trau chuốt. Mỗi chương đều có nguyên liệu sinh sẵn từ phase trước.</p>
+
+  <h3>5a · Mục lục 5 chương — chương nào lấy nguyên liệu từ đâu</h3>
+  <div class="tbl"><table>
+    <tr><th>Chương</th><th>Nội dung chính</th><th>Nguyên liệu có sẵn từ</th><th>Viết draft ở</th></tr>
+    <tr><td><b>C1</b> Mở đầu</td><td>Câu chuyện hộp đen → hộp kính, mục tiêu, câu hỏi NC</td><td>objectives.md</td><td>Phase 1</td></tr>
+    <tr><td><b>C2</b> Cơ sở lý thuyết</td><td>FP&amp;A variance · LLM/RAG/hallucination · DSRM/TTF/trust</td><td>docs/02 (danh mục APA)</td><td>Phase 2</td></tr>
+    <tr><td><b>C3</b> Phương pháp</td><td>DSRM, thiết kế hệ thống, dữ liệu giả lập, cách đo</td><td>docs/architecture.md</td><td>Phase 1–2</td></tr>
+    <tr><td><b>C4</b> Kết quả</td><td>Hệ thống hoàn chỉnh + bảng/hình benchmark + thảo luận</td><td>Phase 3 results + Phase 4 screenshots</td><td>Phase 3–4</td></tr>
+    <tr><td><b>C5</b> Kết luận</td><td>Trả lời câu hỏi NC, đóng góp, hạn chế nói thật</td><td>mọi phase</td><td>Phase 4–5</td></tr>
+  </table></div>
+
+  <h3>5b · Checklist trước khi nộp</h3>
+  <ol class="demo">
+    <li>Lượt rà 1 — logic: mọi kết luận trỏ về bảng/hình cụ thể.</li>
+    <li>Lượt rà 2 — ngôn ngữ: câu ngắn, thuật ngữ có giải thích lần đầu.</li>
+    <li>Verify TỪNG citation APA (mở bài gốc, khớp DOI) — bài không mở được thì bỏ.</li>
+    <li>Phụ lục: schema, kịch bản gieo, 3 prompt, run_config.</li>
+    <li>Slide 12–15 trang + chạy thử demo 2 lần + video dự phòng.</li>
+  </ol>
+
+  <div class="warn"><b>Nguyên tắc sống còn:</b> khóa luận về hệ thống chống "nói không căn cứ" thì chính nó không được có câu nào không căn cứ. Dữ liệu là giả lập → mọi kết luận viết rõ "trên bộ dữ liệu mô phỏng".</div>
+
+  <div class="gate"><b>XONG Phase 5 = NỘP (18/10):</b> PDF toàn văn + repo tag v1.0 + link web sống + slide.</div>
+</section>
+
+<footer>
+  <span>Khóa luận tốt nghiệp — trang mock, mọi số liệu là ví dụ minh họa</span>
+  <span class="mono" style="font-family:var(--mono)">kế hoạch chi tiết: phases/*.md trong repo</span>
+</footer>
+</div>

@@ -7,6 +7,21 @@
 
 Toàn bộ **P&L Actual vs Budget** theo `PL line × property × tháng` — đúng theo file `PL_Act vs budget` hàng tháng. **Trọng tâm kịch bản là leasing revenue** (sự kiện hợp đồng: ký mới, chấm dứt sớm, dời bàn giao, escalation, FX) vì đây là domain chính và là phần comments thật T1–T8 tập trung; các dòng chi phí (R&M, SG&A) vẫn thuộc scope với kịch bản riêng. **Không phải đề tài OPEX-only.** Ví dụ data contract ở §3 dùng một case chi phí để minh họa; case doanh thu giống hệt về cấu trúc — contributors khi đó là các sự kiện tenant (xem mock `docs/ui_mockup.html`).
 
+## 0b. Kiểm tra thực tế — thành phần nào có thật, thành phần nào là thiết bị nghiên cứu
+
+| Thành phần | Ngoài đời có thật không? | Ghi chú thành thật |
+|---|---|---|
+| GL Full (sổ cái) | **Thật** — tải từ NetSuite hàng tháng | Synthetic chỉ mô phỏng cấu trúc cột |
+| Budget / rent roll theo tenant | **Thật** — file budget 26B | Cùng grain với actual |
+| Mapping GL account → PL line | **Thật** — nằm trong file PL Act vs Budget (sheet Working/Output) | Hệ thống chỉ chuẩn hóa lại |
+| Ngưỡng trọng yếu (materiality) | **Thật về hành vi** — analyst chỉ giải trình khoản lớn | Nhưng ngưỡng thường ngầm trong đầu; hệ thống buộc viết ra thành config — bản thân việc này là một giá trị |
+| Cause taxonomy | **Thật** — rút từ comments đã duyệt T1–T8/2026 | Không bịa loại nguyên nhân nào |
+| **Kho bằng chứng tập trung** | **KHÔNG có sẵn** — tài liệu rải rác (SharePoint, NetSuite attachment, Outlook, trí nhớ) | Corpus synthetic là *thiết bị nghiên cứu*; triển khai thật đòi hỏi doanh nghiệp gom tài liệu — nêu thẳng ở hạn chế C5 và là một khuyến nghị của đề tài |
+| Verification gates | **Tự động hóa việc có thật** — người review đang dò số và hỏi "căn cứ đâu?" bằng tay | Không phát minh hành vi mới, chỉ làm máy thay người |
+| Abstention (từ chối) | **Thật về nhu cầu** — analyst giỏi cũng nói "chưa rõ, để hỏi lại" | AI hiện tại không biết làm vậy — đó là gap |
+| M0 (AI trần) | **Thật** — xấp xỉ cách dùng AI hiện tại trong quy trình ~1h | Baseline phản ánh hiện trạng |
+| M1 (vanilla RAG) | **Thật** — là chuẩn phổ biến của industry/tutorial | Baseline phản ánh "giải pháp hiển nhiên" |
+
 ## 1. Sơ đồ tổng
 
 ```mermaid

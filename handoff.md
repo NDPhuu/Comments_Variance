@@ -22,7 +22,11 @@ KhoaLuan/  (= repo Comments_Variance)
 │   ├── architecture.md        # kiến trúc hệ thống + data contracts
 │   ├── house_style.md         # (Phase 1 tạo) output schema + cause taxonomy, ẨN DANH
 │   ├── demo_script.md         # (Phase 4 tạo) kịch bản demo 2 phút
+│   ├── ui_mockup.html         # mock app theo luồng demo giảng viên (artifact Vfzk…)
+│   ├── phases_mockup.html     # mock sản phẩm từng phase (artifact M1Zr…)
 │   └── 02_khung_khoaluan_APA7.md  # khung chương + APA refs (còn nợ: sửa 6→5 chương)
+├── design.md                  # style guide (palette BW pitchbook) — nguồn thiết kế web
+├── README.md                  # cửa ngõ repo: vấn đề/giải pháp + bảng thuật ngữ
 ├── phases/                    # handoff riêng từng phase (trạng thái + checklist + bàn giao)
 │   ├── phase1_data_engine.md      04–07/10
 │   ├── phase2_rag_generation.md   08–10/10
@@ -55,6 +59,7 @@ KhoaLuan/  (= repo Comments_Variance)
 
 | # | Quyết định | Ngày |
 |---|---|---|
+| 19 | Style web theo `design.md` (palette navy/cyan pitchbook, Be Vietnam Pro + Inter, không emoji/gradient) — KHÔNG gắn logo/tên công ty để giữ ẩn danh. 2 mock đã publish: app demo flow https://claude.ai/artifact/Vfzk4DSJLFJUDfzSocfCH9 · mock 5 phase https://claude.ai/artifact/M1ZrjDzkvKkwgq1mwLdngH | 04/10 |
 | 18 | Chống buzzword: `README.md` là cửa ngõ repo (vấn đề/giải pháp tiếng Việt thường + bảng thuật ngữ); mọi tài liệu mới: thuật ngữ xuất hiện lần đầu phải kèm giải thích một dòng | 04/10 |
 | 17 | LLM generation: **Gemini API (Google AI Studio, free tier)** qua wrapper trung lập provider (đổi model chỉ sửa config); model thống nhất cho cả 3 modes (đề xuất `gemini-2.5-flash`); CHỈ gửi dữ liệu synthetic lên API | 04/10 |
 | 16 | **Scope: TOÀN BỘ P&L Act vs Budget** (line × property × tháng), trọng tâm kịch bản **leasing revenue** (contract events); chi phí R&M/SG&A vẫn trong scope — KHÔNG phải OPEX-only. Mock đã đổi ví dụ chính sang leasing revenue | 04/10 |
