@@ -21,7 +21,7 @@ Kiến trúc 4 khối; mô hình ngôn ngữ chỉ đứng ở khối 3, khối 
 4. **Cổng kiểm tất định** (chạy SAU khi sinh): bóc mọi con số (giữ hậu tố k/m/bn/%), so với các TRƯỜNG engine (budget, actual, variance, |variance|, từng contributor và trị tuyệt đối), dung sai 0,5% (5% nếu viết "~"); trích dẫn phải có trong kho, đúng khu, kỳ ≤ tháng xét; `drivers_confirmed` thiếu trích dẫn hợp lệ → unsupported; case không tài liệu nào `linked` mà model không từ chối → gắn cờ vi phạm.
 
 **Đánh giá**: 3 mode cùng model, cùng 34 case có đáp án vàng (khoảng 20 kịch bản khác nhau; 3 case bẫy thiếu bằng chứng), mỗi case 3 lần.
-- M0 = model + bảng số engine, không bằng chứng. M1 = cùng evidence pack với M2, prompt tự do, không schema, không cổng. M2 = đầy đủ.
+- M0 = model + bảng số engine, không bằng chứng. M1 = cùng evidence pack với M2, prompt tự do, không schema. M2 = đầy đủ. Cổng kiểm chạy trên output của CẢ 3 mode như dụng cụ đo, không sửa/chặn output; metric không dùng cờ của cổng.
 - Thước đo (định nghĩa THEO CODE):
   - numeric accuracy = tỷ lệ con số trong output qua cổng số (có dung sai), không phải exact match chặt;
   - citation precision/recall = so tập ID trích dẫn với tập ID vàng, ý tưởng theo ALCE nhưng không dùng NLI;
@@ -61,7 +61,7 @@ Kiến trúc 4 khối; mô hình ngôn ngữ chỉ đứng ở khối 3, khối 
 - Lần chạy đầu: cổng số gắn cờ nhầm nhiều output M2 (tỷ lệ viết dạng thập phân, số chép từ bằng chứng) — đang sửa.
 - SD hiện tính gộp mọi record case×lần, chưa phải SD giữa 3 lần chạy.
 - Abstention không chặn trước khi sinh; chỉ kiểm sau khi sinh.
-- M1 dùng chung pack truy xuất với M2, nên M1↔M2 chỉ cô lập tác dụng của prompt + schema + cổng, không cô lập retrieval.
+- M1 dùng chung pack truy xuất với M2, nên trong benchmark M1↔M2 chỉ khác prompt + schema; đóng góp của retrieval và giá trị "gắn cờ cho người duyệt" của cổng chưa được đo.
 - Chưa có giao diện provenance viewer.
 
 ## GIÁO TRÌNH — mỗi buổi MỘT chủ đề, tối đa ~45 phút. [BẮT BUỘC] dạy kỹ; [NẾU CÒN GIỜ] được rút gọn.
@@ -70,7 +70,7 @@ Kiến trúc 4 khối; mô hình ngôn ngữ chỉ đứng ở khối 3, khối 
 1. **[BẮT BUỘC] TF-IDF → BM25**
    - IDF; công thức BM25Okapi đầy đủ; k₁ = bão hòa tần suất, b = chuẩn hóa độ dài.
    - Thư viện dùng IDF = ln((N − n + 0,5)/(n + 0,5)), không có "+1" như biến thể của Lucene.
-   - Vì sao mã hiếm "027" điểm cao còn "services" ≈ 0.
+   - Số thật pool case PROP-C 2026-08 (N=6 tài liệu, tokenizer tách "TEN-027" → "ten","027"): "027" n=1 → IDF 1,299; "ten" n=2 → 0,588; "08" n=3 → đúng 0; "prop","c","2026" n=6 → IDF thô −2,565, bị nâng lên 0,25 × 0,668 = 0,167 — chính 3 từ này cho ops memo điểm nền 0,754.
    - IDF có thể âm khi từ phủ hơn nửa pool: thư viện thay IDF âm bằng 0,25 × IDF trung bình, nên điểm cả tài liệu có thể âm (đã thấy −2,35 ở case khối công ty).
    - IDF đổi theo từng case vì pool đổi.
 2. **[NẾU CÒN GIỜ] Embedding & cosine (BGE-M3)**
