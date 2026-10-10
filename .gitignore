@@ -264,3 +264,5 @@ materials/*.pdf
 # Bản thảo khóa luận - chỉ giữ local, không push
 thesis/
 materials/papers/
+KLTN_Structure.docx
+app/backend/results/raw/
