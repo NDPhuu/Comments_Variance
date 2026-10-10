@@ -101,6 +101,46 @@ def test_13_so_quote_tu_tai_lieu_da_cite():
     assert any(not x["ok"] for x in no), no
 
 
+def test_14_dau_cong_tren_variance_am_bi_bat():
+    # case favorable: variance = -62,500. Model viet "+62,500" -> mau thuan dau (TAT-QA).
+    fav = {**CASE, "actual": 57_500.0, "variance": -62_500.0, "variance_pct": -0.5208,
+           "direction": "favorable", "contributors": []}
+    v = gates.numeric_gate(out("favorable variance of +62,500 (+52.1%)"), fav)
+    assert all(not x["ok"] for x in v), v  # ca so tien lan % deu sai dau
+    # khong dau: do lon hop le (huong da neu bang chu "favorable") -> pass
+    v2 = gates.numeric_gate(out("favorable variance of 62,500 (52.1%)"), fav)
+    assert all(x["ok"] for x in v2), v2
+    # dau am dung -> pass
+    v3 = gates.numeric_gate(out("variance of -62,500 (-52.1%)"), fav)
+    assert all(x["ok"] for x in v3), v3
+
+
+def test_15_bullet_markdown_khong_phai_dau_am():
+    # "- 48,200" sau xuong dong la gach dau dong, KHONG phai -48,200
+    v = gates.numeric_gate(out("drivers:\n- 48,200 roof repair\n- 9,800 chiller"), CASE)
+    assert all(x["ok"] for x in v), v
+
+
+def test_16_variance_pct_am_100_chep_tu_facts():
+    z = {**CASE, "actual": 0.0, "variance": -120_000.0, "variance_pct": -1.0,
+         "direction": "favorable", "contributors": []}
+    v = gates.numeric_gate(out("actual 0.0 vs budget 120,000, variance -120,000 (-1.0)"), z)
+    assert all(x["ok"] for x in v), v
+    # nhung dan nhan % cho phan so van bi bat: -1.0% khac -100%
+    v2 = gates.numeric_gate(out("favorable variance of -1.0%"), z)
+    assert any(not x["ok"] for x in v2), v2
+
+
+def test_17_phan_tram_quote_tu_tai_lieu_da_cite():
+    doc = {**DOCS[0], "text": "22% temporary tariff surcharge applied"}
+    ok = gates.numeric_gate(out("22% tariff surcharge drove overspend [EV-301]"),
+                            {**CASE, "contributors": []}, cited_docs=[doc])
+    assert all(x["ok"] for x in ok), ok
+    no = gates.numeric_gate(out("22% tariff surcharge drove overspend"),
+                            {**CASE, "contributors": []})
+    assert any(not x["ok"] for x in no), no
+
+
 def test_10_phan_tram_sai_bi_bat():
     v = gates.numeric_gate(out("variance of 62,500 (+45.0%)"), CASE)
     pct = [x for x in v if x["is_pct"]]

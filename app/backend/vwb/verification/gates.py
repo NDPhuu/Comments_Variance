@@ -19,7 +19,8 @@ REL_TOL = 0.005  # 0.5% — cho phep viet 62,500 thanh $62.5k, KHONG cho lech sc
 PCT_TOL = 0.15   # diem phan tram
 
 _NUM = re.compile(
-    r"(?<![A-Za-z0-9-])([+\-−–~]?)\$?\s?(\d{1,3}(?:,\d{3})+|\d+(?:\.\d+)?)\s*(k|m|bn|%)?",
+    # dau chi tinh khi DINH LIEN so/$ — "- 62,000" (bullet markdown / gach ngang) khong phai so am
+    r"(?<![A-Za-z0-9-])([+\-−–~]?)(?:\$\s?)?(\d{1,3}(?:,\d{3})+|\d+(?:\.\d+)?)\s*(k|m|bn|%)?",
     re.I,
 )
 _EVID = re.compile(r"\[(EV-\d+)\]")
@@ -56,6 +57,8 @@ def parse_numbers(text: str) -> list[dict]:
                 "value": sign * val,
                 "is_pct": suffix == "%",
                 "approx": sign_s == "~",
+                # dau TUONG MINH (+/-): so phai khop ca dau, khong duoc khop truong do lon
+                "signed": sign_s in ("+", "-", "−", "–"),
             }
         )
     return out
@@ -109,26 +112,46 @@ def numeric_gate(output: dict, case: dict, cited_docs: list[dict] | None = None)
     fracs = fraction_fields(case)
     pct = case.get("variance_pct")
     ev_values: list[float] = []
+    ev_pcts: list[float] = []
     for d in cited_docs or []:
-        ev_values += [x["value"] for x in parse_numbers(d.get("text", "")) if not x["is_pct"]]
+        for x in parse_numbers(d.get("text", "")):
+            (ev_pcts if x["is_pct"] else ev_values).append(x["value"])
     verdicts = []
+    signed_fields = {k: v for k, v in fields.items() if "_abs" not in k}
     for n in parse_numbers(" \n ".join(text_parts)):
         if n["is_pct"]:
-            ok = pct is not None and abs(abs(n["value"]) - abs(pct) * 100) <= PCT_TOL
-            verdicts.append({**n, "matched": "variance_pct" if ok else None, "ok": ok})
+            if pct is None:
+                ok = False
+            elif n["signed"]:  # dau tuong minh phai khop dau variance_pct (TAT-QA giu dau)
+                ok = abs(n["value"] - pct * 100) <= PCT_TOL
+            else:
+                ok = abs(abs(n["value"]) - abs(pct) * 100) <= PCT_TOL
+            matched = "variance_pct" if ok else None
+            if not ok:  # % quote tu tai lieu DA cite (vd "22% tariff surcharge")
+                for v in ev_pcts:
+                    diff = abs(n["value"] - v) if n["signed"] else abs(abs(n["value"]) - abs(v))
+                    if diff <= PCT_TOL:
+                        ok, matched = True, "cited_evidence"
+                        break
+            verdicts.append({**n, "matched": matched, "ok": ok})
             continue
         if n["value"] == 0:  # gia tri 0 (vd actual=0 sau termination): khong co rui ro bia
             verdicts.append({**n, "matched": "zero", "ok": True})
             continue
-        matched = _match(n["value"], n["approx"], fields)
-        if matched is None and abs(n["value"]) < 1.0:  # phan so chep tu FACTS
+        # so co dau tuong minh: chi khop truong CO DAU — "+57,500" tren variance am
+        # khong duoc muon truong do lon (variance_abs) de thoat
+        matched = _match(n["value"], n["approx"], signed_fields if n["signed"] else fields)
+        if matched is None:  # phan so chep tu FACTS (ke ca -1.0 = -100%, hay >1 khi actual >> budget)
             for name, v in fracs.items():
-                if abs(n["value"] - v) <= 0.002 or abs(abs(n["value"]) - abs(v)) <= 0.002:
+                if abs(n["value"] - v) <= 0.002 or (
+                    not n["signed"] and abs(abs(n["value"]) - abs(v)) <= 0.002
+                ):
                     matched = name
                     break
         if matched is None and ev_values:  # so quote tu tai lieu DA cite (truy vet duoc)
             for v in ev_values:
-                if abs(abs(n["value"]) - abs(v)) <= max(1.0, REL_TOL * abs(v)):
+                diff = abs(n["value"] - v) if n["signed"] else abs(abs(n["value"]) - abs(v))
+                if diff <= max(1.0, REL_TOL * abs(v)):
                     matched = "cited_evidence"
                     break
         verdicts.append({**n, "matched": matched, "ok": matched is not None})
