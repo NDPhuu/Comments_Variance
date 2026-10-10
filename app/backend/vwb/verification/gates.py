@@ -10,6 +10,7 @@
 
 from __future__ import annotations
 
+import json
 import re
 
 from vwb import config
@@ -74,6 +75,19 @@ def engine_fields(case: dict) -> dict[str, float]:
     return f
 
 
+def fraction_fields(case: dict) -> dict[str, float]:
+    """Cac gia tri dang PHAN SO hop le (model hay chep nguyen van tu FACTS):
+    variance_pct va share cua contributors."""
+    f: dict[str, float] = {}
+    if case.get("variance_pct") is not None:
+        f["variance_pct(fraction)"] = case["variance_pct"]
+    for c in case.get("contributors", []):
+        for k in ("share_of_variance", "share_of_actual"):
+            if c.get(k) is not None:
+                f[f"share:{c['key']}"] = c[k]
+    return f
+
+
 def _match(value: float, approx: bool, fields: dict[str, float]) -> str | None:
     tol_rel = 0.05 if approx else REL_TOL
     for name, v in fields.items():
@@ -84,21 +98,40 @@ def _match(value: float, approx: bool, fields: dict[str, float]) -> str | None:
     return None
 
 
-def numeric_gate(output: dict, case: dict) -> list[dict]:
+def numeric_gate(output: dict, case: dict, cited_docs: list[dict] | None = None) -> list[dict]:
+    """cited_docs: tai lieu DA DUOC output trich dan — so xuat hien trong do van
+    truy vet duoc (nhu comment that quote gia tri hop dong), nen duoc chap nhan."""
     text_parts = [output.get("draft_comment", "")]
     for key in ("observed_facts", "drivers_confirmed", "drivers_possible", "offsets"):
         for item in output.get(key, []) or []:
             text_parts.append(item["text"] if isinstance(item, dict) else str(item))
     fields = engine_fields(case)
+    fracs = fraction_fields(case)
     pct = case.get("variance_pct")
+    ev_values: list[float] = []
+    for d in cited_docs or []:
+        ev_values += [x["value"] for x in parse_numbers(d.get("text", "")) if not x["is_pct"]]
     verdicts = []
     for n in parse_numbers(" \n ".join(text_parts)):
         if n["is_pct"]:
             ok = pct is not None and abs(abs(n["value"]) - abs(pct) * 100) <= PCT_TOL
             verdicts.append({**n, "matched": "variance_pct" if ok else None, "ok": ok})
-        else:
-            matched = _match(n["value"], n["approx"], fields)
-            verdicts.append({**n, "matched": matched, "ok": matched is not None})
+            continue
+        if n["value"] == 0:  # gia tri 0 (vd actual=0 sau termination): khong co rui ro bia
+            verdicts.append({**n, "matched": "zero", "ok": True})
+            continue
+        matched = _match(n["value"], n["approx"], fields)
+        if matched is None and abs(n["value"]) < 1.0:  # phan so chep tu FACTS
+            for name, v in fracs.items():
+                if abs(n["value"] - v) <= 0.002 or abs(abs(n["value"]) - abs(v)) <= 0.002:
+                    matched = name
+                    break
+        if matched is None and ev_values:  # so quote tu tai lieu DA cite (truy vet duoc)
+            for v in ev_values:
+                if abs(abs(n["value"]) - abs(v)) <= max(1.0, REL_TOL * abs(v)):
+                    matched = "cited_evidence"
+                    break
+        verdicts.append({**n, "matched": matched, "ok": matched is not None})
     return verdicts
 
 
@@ -156,7 +189,9 @@ def abstention_gate(output: dict, pack: dict) -> dict:
 
 def verify(output: dict, case: dict, docs: list[dict], pack: dict) -> dict:
     docs_by_id = {d["doc_id"]: d for d in docs}
-    numbers = numeric_gate(output, case)
+    _cited = _EVID.findall(json.dumps(output, ensure_ascii=False)) if output else []
+    cited_docs = [docs_by_id[c] for c in dict.fromkeys(_cited) if c in docs_by_id]
+    numbers = numeric_gate(output, case, cited_docs)
     citations = citation_gate(output, docs_by_id, case)
     claims = claim_gate(output, citations)
     abst = abstention_gate(output, pack)

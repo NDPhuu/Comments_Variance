@@ -19,10 +19,11 @@ _EVID = re.compile(r"\[(EV-\d+)\]")
 
 
 # ----------------------------------------------------------------- per-record
-def numeric_accuracy(output: dict, case: dict) -> float | None:
-    """EM giu DAU va SCALE (TAT-QA §4.2), khop theo TRUONG engine (FinQA §3.2).
-    = ty le con so trong output khop mot truong cua VarianceCase."""
-    v = gates.numeric_gate(output, case)
+def numeric_accuracy(output: dict, case: dict, docs_by_id: dict | None = None) -> float | None:
+    """EM giu DAU va SCALE (TAT-QA §4.2), khop theo TRUONG engine (FinQA §3.2);
+    chap nhan them: phan so chep tu FACTS, gia tri 0, va so quote tu tai lieu DA cite."""
+    cited = [docs_by_id[c] for c in cited_ids(output) if docs_by_id and c in docs_by_id]
+    v = gates.numeric_gate(output, case, cited)
     if not v:
         return None
     return sum(1 for x in v if x["ok"]) / len(v)
@@ -127,12 +128,14 @@ def scenario_of(gold: dict) -> str:
     return gold["gold_causes"][0] if gold["gold_causes"] else "other"
 
 
-def compute(records: list[dict], gold_all: dict, packs: dict, out_dir) -> dict:
+def compute(records: list[dict], gold_all: dict, packs: dict, out_dir,
+            docs: list[dict] | None = None) -> dict:
     """records: [{case_id, mode, rep, output, verdict}] -> summary/by_scenario/coverage_risk CSV
     + kappa_sample.csv (20% menh de cho nguoi cham tay, Cohen 1960)."""
     import csv
 
     out_dir.mkdir(parents=True, exist_ok=True)
+    docs_by_id = {d["doc_id"]: d for d in (docs or [])}
     per_mode: dict[str, dict[str, list]] = {}
     rows_claims = []
     for r in records:
@@ -144,7 +147,7 @@ def compute(records: list[dict], gold_all: dict, packs: dict, out_dir) -> dict:
             "scenario_rows": [],
         })
         case = r["case"]
-        num = numeric_accuracy(o, case)
+        num = numeric_accuracy(o, case, docs_by_id)
         cp, cr = citation_pr(o, g)
         un = unsupported_claim_rate(o, g)
         m["numeric"].append(num)

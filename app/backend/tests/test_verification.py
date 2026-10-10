@@ -80,6 +80,27 @@ def test_09_output_dung_phai_duoc_pass():
     assert r["overall"] == "verified", r
 
 
+def test_11_phan_so_chep_tu_facts_duoc_pass():
+    # model chep variance_pct dang phan so (0.5208) tu FACTS — khong phai bia
+    v = gates.numeric_gate(out("unfavorable variance of 62,500 (0.5208)"), CASE)
+    assert all(x["ok"] for x in v), v
+
+
+def test_12_gia_tri_zero_duoc_pass():
+    v = gates.numeric_gate(out("actual of $0.0k after termination"), CASE)
+    assert all(x["ok"] for x in v), v
+
+
+def test_13_so_quote_tu_tai_lieu_da_cite():
+    # 48.2k co trong EV-301; duoc pass KHI cite, FAIL khi khong cite
+    doc = DOCS[0]
+    ok = gates.numeric_gate(out("contract value $48.2k [EV-301]"),
+                            {**CASE, "contributors": []}, cited_docs=[doc])
+    assert all(x["ok"] for x in ok), ok
+    no = gates.numeric_gate(out("contract value $48.2k"), {**CASE, "contributors": []})
+    assert any(not x["ok"] for x in no), no
+
+
 def test_10_phan_tram_sai_bi_bat():
     v = gates.numeric_gate(out("variance of 62,500 (+45.0%)"), CASE)
     pct = [x for x in v if x["is_pct"]]
