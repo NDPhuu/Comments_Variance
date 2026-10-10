@@ -35,7 +35,9 @@ TOP_CONTRIBUTORS = 6
 # --- Phase 2: retrieval / generation / verification ---
 TOP_K_EVIDENCE = 5
 # Abstention: theo LIEN KET NOI DUNG (retrieval.core.linked), khong dung nguong diem tho
-GEN_MODEL = "gemini-3.8-flash"  # gemini-2.5-flash da bi khoa voi tai khoan moi (404, 10/2026)
+# Chon model theo bang rate limit free tier cua tai khoan (10/10/2026):
+# 3.8-flash chi 20 call/NGAY -> khong du 306 call; 3.5-flash-lite: 15 RPM / 500 RPD -> du.
+GEN_MODEL = "gemini-3.5-flash-lite"
 GEN_TEMPERATURE = 0.2
 PROMPT_VERSION = "prompt_v1"
 EVIDENCE_PACKS_FILE = "evidence_packs.json"  # trong DATA_DIR

@@ -26,7 +26,7 @@ from vwb.retrieval import core as retrieval
 from vwb.verification import gates
 
 RESULTS = config.BASE_DIR / "results"
-SLEEP_BETWEEN_CALLS = 13.0  # giay — free tier gemini-3.8-flash ~5 call/phut (user xac nhan 10/10)
+SLEEP_BETWEEN_CALLS = 4.5  # giay — gemini-3.5-flash-lite free tier: 15 RPM / 500 RPD
 
 
 def load_inputs() -> tuple[list[dict], dict, list[dict], dict]:
