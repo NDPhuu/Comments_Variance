@@ -1,0 +1,2134 @@
+{
+ "2026-05_CORP_Financial_expenses": {
+  "case_id": "2026-05_CORP_Financial_expenses",
+  "docs": [
+   {
+    "doc_id": "EV-121",
+    "type": "loan_memo",
+    "property": "CORP",
+    "period": "2026-05",
+    "authority": 2,
+    "title": "Refinancing gap 2026-05",
+    "text": "Treasury memo: repayment-to-refinancing gap on project facilities in 2026-05; interest saving assumed under Financial expenses budget (~$249k) does not materialize until new facility drawdown.",
+    "bm25_score": -4.002,
+    "rrf": 0.0328,
+    "linked": true
+   }
+  ],
+  "best_bm25": -4.002,
+  "linked_any": true,
+  "dense_used": true
+ },
+ "2026-05_PROP-D_Repair_and_Maintenance": {
+  "case_id": "2026-05_PROP-D_Repair_and_Maintenance",
+  "docs": [
+   {
+    "doc_id": "EV-113",
+    "type": "vendor_invoice",
+    "property": "PROP-D",
+    "period": "2026-05",
+    "authority": 2,
+    "title": "Invoice VND-018 road surface repair",
+    "text": "Invoice VND-018: road surface repair at PROP-D, amount $80k, service period 2026-05.",
+    "bm25_score": 6.729,
+    "rrf": 0.0325,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-112",
+    "type": "work_order",
+    "property": "PROP-D",
+    "period": "2026-05",
+    "authority": 1,
+    "title": "Work order road surface repair",
+    "text": "Work order WO-2295 approved: road surface repair at PROP-D, contractor VND-018, contract value $80k, execution 2026-05.",
+    "bm25_score": 5.627,
+    "rrf": 0.032,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-149",
+    "type": "ops_memo",
+    "property": "PROP-D",
+    "period": "2026-01",
+    "authority": 3,
+    "title": "CCTV maintenance visit PROP-D 2026-01",
+    "text": "Ops memo: CCTV maintenance visit at PROP-D completed in 2026-01; no budget impact expected.",
+    "bm25_score": 7.005,
+    "rrf": 0.0318,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-150",
+    "type": "ops_memo",
+    "property": "PROP-D",
+    "period": "2026-05",
+    "authority": 3,
+    "title": "parking line repainting PROP-D 2026-05",
+    "text": "Ops memo: parking line repainting at PROP-D completed in 2026-05; no budget impact expected.",
+    "bm25_score": 1.091,
+    "rrf": 0.0315,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-128",
+    "type": "ops_memo",
+    "property": "PROP-D",
+    "period": "2026-02",
+    "authority": 3,
+    "title": "parking line repainting PROP-D 2026-02",
+    "text": "Ops memo: parking line repainting at PROP-D completed in 2026-02; no budget impact expected.",
+    "bm25_score": 0.727,
+    "rrf": 0.031,
+    "linked": false
+   }
+  ],
+  "best_bm25": 7.005,
+  "linked_any": true,
+  "dense_used": true
+ },
+ "2026-05_PROP-A_Leasing_revenue": {
+  "case_id": "2026-05_PROP-A_Leasing_revenue",
+  "docs": [
+   {
+    "doc_id": "EV-108",
+    "type": "handover_minutes",
+    "property": "PROP-A",
+    "period": "2026-05",
+    "authority": 2,
+    "title": "Early handover TEN-060",
+    "text": "TEN-060 at PROP-A: early handover completed in 2026-05, one month ahead of budget; rent $36k/month starts immediately.",
+    "bm25_score": 1.811,
+    "rrf": 0.0328,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-136",
+    "type": "ops_memo",
+    "property": "PROP-A",
+    "period": "2026-04",
+    "authority": 3,
+    "title": "quarterly pest control PROP-A 2026-04",
+    "text": "Ops memo: quarterly pest control at PROP-A completed in 2026-04; no budget impact expected.",
+    "bm25_score": -0.179,
+    "rrf": 0.032,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-141",
+    "type": "ops_memo",
+    "property": "PROP-A",
+    "period": "2026-02",
+    "authority": 3,
+    "title": "parking line repainting PROP-A 2026-02",
+    "text": "Ops memo: parking line repainting at PROP-A completed in 2026-02; no budget impact expected.",
+    "bm25_score": -0.179,
+    "rrf": 0.032,
+    "linked": false
+   }
+  ],
+  "best_bm25": 1.811,
+  "linked_any": true,
+  "dense_used": true
+ },
+ "2026-05_PROP-B_Leasing_revenue": {
+  "case_id": "2026-05_PROP-B_Leasing_revenue",
+  "docs": [
+   {
+    "doc_id": "EV-105",
+    "type": "handover_minutes",
+    "property": "PROP-B",
+    "period": "2026-05",
+    "authority": 2,
+    "title": "Handover minutes TEN-059",
+    "text": "TEN-059 at PROP-B: handover postponed from 2026-05 to 2026-07 due to delayed M&E completion. Rent ($33k/month) accrues from actual handover date.",
+    "bm25_score": 3.517,
+    "rrf": 0.0328,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-154",
+    "type": "ops_memo",
+    "property": "PROP-B",
+    "period": "2026-05",
+    "authority": 3,
+    "title": "routine fire-safety inspection PROP-B 2026-05",
+    "text": "Ops memo: routine fire-safety inspection at PROP-B completed in 2026-05; no budget impact expected.",
+    "bm25_score": 0.916,
+    "rrf": 0.032,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-132",
+    "type": "ops_memo",
+    "property": "PROP-B",
+    "period": "2026-03",
+    "authority": 3,
+    "title": "landscaping schedule PROP-B 2026-03",
+    "text": "Ops memo: landscaping schedule at PROP-B completed in 2026-03; no budget impact expected.",
+    "bm25_score": 0.462,
+    "rrf": 0.032,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-130",
+    "type": "ops_memo",
+    "property": "PROP-B",
+    "period": "2026-02",
+    "authority": 3,
+    "title": "quarterly pest control PROP-B 2026-02",
+    "text": "Ops memo: quarterly pest control at PROP-B completed in 2026-02; no budget impact expected.",
+    "bm25_score": 0.45,
+    "rrf": 0.031,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-155",
+    "type": "ops_memo",
+    "property": "PROP-B",
+    "period": "2026-01",
+    "authority": 3,
+    "title": "CCTV maintenance visit PROP-B 2026-01",
+    "text": "Ops memo: CCTV maintenance visit at PROP-B completed in 2026-01; no budget impact expected.",
+    "bm25_score": 0.45,
+    "rrf": 0.031,
+    "linked": false
+   }
+  ],
+  "best_bm25": 3.517,
+  "linked_any": true,
+  "dense_used": true
+ },
+ "2026-05_PROP-B_Marketing": {
+  "case_id": "2026-05_PROP-B_Marketing",
+  "docs": [
+   {
+    "doc_id": "EV-132",
+    "type": "ops_memo",
+    "property": "PROP-B",
+    "period": "2026-03",
+    "authority": 3,
+    "title": "landscaping schedule PROP-B 2026-03",
+    "text": "Ops memo: landscaping schedule at PROP-B completed in 2026-03; no budget impact expected.",
+    "bm25_score": 0.77,
+    "rrf": 0.0323,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-105",
+    "type": "handover_minutes",
+    "property": "PROP-B",
+    "period": "2026-05",
+    "authority": 2,
+    "title": "Handover minutes TEN-059",
+    "text": "TEN-059 at PROP-B: handover postponed from 2026-05 to 2026-07 due to delayed M&E completion. Rent ($33k/month) accrues from actual handover date.",
+    "bm25_score": 1.494,
+    "rrf": 0.0323,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-154",
+    "type": "ops_memo",
+    "property": "PROP-B",
+    "period": "2026-05",
+    "authority": 3,
+    "title": "routine fire-safety inspection PROP-B 2026-05",
+    "text": "Ops memo: routine fire-safety inspection at PROP-B completed in 2026-05; no budget impact expected.",
+    "bm25_score": 2.164,
+    "rrf": 0.0318,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-155",
+    "type": "ops_memo",
+    "property": "PROP-B",
+    "period": "2026-01",
+    "authority": 3,
+    "title": "CCTV maintenance visit PROP-B 2026-01",
+    "text": "Ops memo: CCTV maintenance visit at PROP-B completed in 2026-01; no budget impact expected.",
+    "bm25_score": 0.749,
+    "rrf": 0.0313,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-130",
+    "type": "ops_memo",
+    "property": "PROP-B",
+    "period": "2026-02",
+    "authority": 3,
+    "title": "quarterly pest control PROP-B 2026-02",
+    "text": "Ops memo: quarterly pest control at PROP-B completed in 2026-02; no budget impact expected.",
+    "bm25_score": 0.749,
+    "rrf": 0.0312,
+    "linked": false
+   }
+  ],
+  "best_bm25": 2.164,
+  "linked_any": false,
+  "dense_used": true
+ },
+ "2026-05_PROP-B_Security_and_cleaning": {
+  "case_id": "2026-05_PROP-B_Security_and_cleaning",
+  "docs": [
+   {
+    "doc_id": "EV-154",
+    "type": "ops_memo",
+    "property": "PROP-B",
+    "period": "2026-05",
+    "authority": 3,
+    "title": "routine fire-safety inspection PROP-B 2026-05",
+    "text": "Ops memo: routine fire-safety inspection at PROP-B completed in 2026-05; no budget impact expected.",
+    "bm25_score": 2.164,
+    "rrf": 0.0328,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-132",
+    "type": "ops_memo",
+    "property": "PROP-B",
+    "period": "2026-03",
+    "authority": 3,
+    "title": "landscaping schedule PROP-B 2026-03",
+    "text": "Ops memo: landscaping schedule at PROP-B completed in 2026-03; no budget impact expected.",
+    "bm25_score": 0.77,
+    "rrf": 0.0317,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-105",
+    "type": "handover_minutes",
+    "property": "PROP-B",
+    "period": "2026-05",
+    "authority": 2,
+    "title": "Handover minutes TEN-059",
+    "text": "TEN-059 at PROP-B: handover postponed from 2026-05 to 2026-07 due to delayed M&E completion. Rent ($33k/month) accrues from actual handover date.",
+    "bm25_score": 1.494,
+    "rrf": 0.0315,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-155",
+    "type": "ops_memo",
+    "property": "PROP-B",
+    "period": "2026-01",
+    "authority": 3,
+    "title": "CCTV maintenance visit PROP-B 2026-01",
+    "text": "Ops memo: CCTV maintenance visit at PROP-B completed in 2026-01; no budget impact expected.",
+    "bm25_score": 0.749,
+    "rrf": 0.0315,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-130",
+    "type": "ops_memo",
+    "property": "PROP-B",
+    "period": "2026-02",
+    "authority": 3,
+    "title": "quarterly pest control PROP-B 2026-02",
+    "text": "Ops memo: quarterly pest control at PROP-B completed in 2026-02; no budget impact expected.",
+    "bm25_score": 0.749,
+    "rrf": 0.0312,
+    "linked": false
+   }
+  ],
+  "best_bm25": 2.164,
+  "linked_any": false,
+  "dense_used": true
+ },
+ "2026-06_PROP-E_Repair_and_Maintenance": {
+  "case_id": "2026-06_PROP-E_Repair_and_Maintenance",
+  "docs": [
+   {
+    "doc_id": "EV-117",
+    "type": "vendor_invoice",
+    "property": "PROP-E",
+    "period": "2026-06",
+    "authority": 2,
+    "title": "Invoice VND-042 fire pump overhaul",
+    "text": "Invoice VND-042: fire pump overhaul at PROP-E, amount $62k, service period 2026-06.",
+    "bm25_score": 0.177,
+    "rrf": 0.0328,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-116",
+    "type": "work_order",
+    "property": "PROP-E",
+    "period": "2026-06",
+    "authority": 1,
+    "title": "Work order fire pump overhaul",
+    "text": "Work order WO-2847 approved: fire pump overhaul at PROP-E, contractor VND-042, contract value $62k, execution 2026-06.",
+    "bm25_score": 0.149,
+    "rrf": 0.0323,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-138",
+    "type": "ops_memo",
+    "property": "PROP-E",
+    "period": "2026-01",
+    "authority": 3,
+    "title": "landscaping schedule PROP-E 2026-01",
+    "text": "Ops memo: landscaping schedule at PROP-E completed in 2026-01; no budget impact expected.",
+    "bm25_score": 0.084,
+    "rrf": 0.0317,
+    "linked": false
+   }
+  ],
+  "best_bm25": 0.177,
+  "linked_any": true,
+  "dense_used": true
+ },
+ "2026-06_PROP-B_Leasing_revenue": {
+  "case_id": "2026-06_PROP-B_Leasing_revenue",
+  "docs": [
+   {
+    "doc_id": "EV-105",
+    "type": "handover_minutes",
+    "property": "PROP-B",
+    "period": "2026-05",
+    "authority": 2,
+    "title": "Handover minutes TEN-059",
+    "text": "TEN-059 at PROP-B: handover postponed from 2026-05 to 2026-07 due to delayed M&E completion. Rent ($33k/month) accrues from actual handover date.",
+    "bm25_score": 3.795,
+    "rrf": 0.0328,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-137",
+    "type": "ops_memo",
+    "property": "PROP-B",
+    "period": "2026-06",
+    "authority": 3,
+    "title": "routine fire-safety inspection PROP-B 2026-06",
+    "text": "Ops memo: routine fire-safety inspection at PROP-B completed in 2026-06; no budget impact expected.",
+    "bm25_score": 2.35,
+    "rrf": 0.0323,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-132",
+    "type": "ops_memo",
+    "property": "PROP-B",
+    "period": "2026-03",
+    "authority": 3,
+    "title": "landscaping schedule PROP-B 2026-03",
+    "text": "Ops memo: landscaping schedule at PROP-B completed in 2026-03; no budget impact expected.",
+    "bm25_score": 0.529,
+    "rrf": 0.0317,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-130",
+    "type": "ops_memo",
+    "property": "PROP-B",
+    "period": "2026-02",
+    "authority": 3,
+    "title": "quarterly pest control PROP-B 2026-02",
+    "text": "Ops memo: quarterly pest control at PROP-B completed in 2026-02; no budget impact expected.",
+    "bm25_score": 0.515,
+    "rrf": 0.0308,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-154",
+    "type": "ops_memo",
+    "property": "PROP-B",
+    "period": "2026-05",
+    "authority": 3,
+    "title": "routine fire-safety inspection PROP-B 2026-05",
+    "text": "Ops memo: routine fire-safety inspection at PROP-B completed in 2026-05; no budget impact expected.",
+    "bm25_score": 0.501,
+    "rrf": 0.0308,
+    "linked": false
+   }
+  ],
+  "best_bm25": 3.795,
+  "linked_any": true,
+  "dense_used": true
+ },
+ "2026-06_PROP-D_Leasing_revenue": {
+  "case_id": "2026-06_PROP-D_Leasing_revenue",
+  "docs": [
+   {
+    "doc_id": "EV-104",
+    "type": "handover_minutes",
+    "property": "PROP-D",
+    "period": "2026-06",
+    "authority": 2,
+    "title": "Handover minutes TEN-058",
+    "text": "TEN-058 at PROP-D: handover postponed from 2026-06 to 2026-08 due to delayed M&E completion. Rent ($29k/month) accrues from actual handover date.",
+    "bm25_score": 5.141,
+    "rrf": 0.0328,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-128",
+    "type": "ops_memo",
+    "property": "PROP-D",
+    "period": "2026-02",
+    "authority": 3,
+    "title": "parking line repainting PROP-D 2026-02",
+    "text": "Ops memo: parking line repainting at PROP-D completed in 2026-02; no budget impact expected.",
+    "bm25_score": 0.807,
+    "rrf": 0.0318,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-113",
+    "type": "vendor_invoice",
+    "property": "PROP-D",
+    "period": "2026-05",
+    "authority": 2,
+    "title": "Invoice VND-018 road surface repair",
+    "text": "Invoice VND-018: road surface repair at PROP-D, amount $80k, service period 2026-05.",
+    "bm25_score": 0.592,
+    "rrf": 0.0315,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-150",
+    "type": "ops_memo",
+    "property": "PROP-D",
+    "period": "2026-05",
+    "authority": 3,
+    "title": "parking line repainting PROP-D 2026-05",
+    "text": "Ops memo: parking line repainting at PROP-D completed in 2026-05; no budget impact expected.",
+    "bm25_score": 0.807,
+    "rrf": 0.0315,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-149",
+    "type": "ops_memo",
+    "property": "PROP-D",
+    "period": "2026-01",
+    "authority": 3,
+    "title": "CCTV maintenance visit PROP-D 2026-01",
+    "text": "Ops memo: CCTV maintenance visit at PROP-D completed in 2026-01; no budget impact expected.",
+    "bm25_score": 0.807,
+    "rrf": 0.0313,
+    "linked": false
+   }
+  ],
+  "best_bm25": 5.141,
+  "linked_any": true,
+  "dense_used": true
+ },
+ "2026-07_PROP-D_Marketing": {
+  "case_id": "2026-07_PROP-D_Marketing",
+  "docs": [
+   {
+    "doc_id": "EV-110",
+    "type": "approval_email",
+    "property": "PROP-D",
+    "period": "2026-07",
+    "authority": 2,
+    "title": "Fee rescheduled PROP-D 2026-07",
+    "text": "Approved: consultancy fee $44k budgeted under Marketing at PROP-D for 2026-07 is rescheduled; vendor will invoice in 2026-08. Budget phasing unchanged.",
+    "bm25_score": 15.018,
+    "rrf": 0.0328,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-113",
+    "type": "vendor_invoice",
+    "property": "PROP-D",
+    "period": "2026-05",
+    "authority": 2,
+    "title": "Invoice VND-018 road surface repair",
+    "text": "Invoice VND-018: road surface repair at PROP-D, amount $80k, service period 2026-05.",
+    "bm25_score": 8.706,
+    "rrf": 0.0323,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-135",
+    "type": "ops_memo",
+    "property": "PROP-D",
+    "period": "2026-07",
+    "authority": 3,
+    "title": "quarterly pest control PROP-D 2026-07",
+    "text": "Ops memo: quarterly pest control at PROP-D completed in 2026-07; no budget impact expected.",
+    "bm25_score": 7.399,
+    "rrf": 0.031,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-128",
+    "type": "ops_memo",
+    "property": "PROP-D",
+    "period": "2026-02",
+    "authority": 3,
+    "title": "parking line repainting PROP-D 2026-02",
+    "text": "Ops memo: parking line repainting at PROP-D completed in 2026-02; no budget impact expected.",
+    "bm25_score": 2.879,
+    "rrf": 0.031,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-112",
+    "type": "work_order",
+    "property": "PROP-D",
+    "period": "2026-05",
+    "authority": 1,
+    "title": "Work order road surface repair",
+    "text": "Work order WO-2295 approved: road surface repair at PROP-D, contractor VND-018, contract value $80k, execution 2026-05.",
+    "bm25_score": 6.328,
+    "rrf": 0.0308,
+    "linked": false
+   }
+  ],
+  "best_bm25": 15.018,
+  "linked_any": true,
+  "dense_used": true
+ },
+ "2026-07_PROP-E_Repair_and_Maintenance": {
+  "case_id": "2026-07_PROP-E_Repair_and_Maintenance",
+  "docs": [
+   {
+    "doc_id": "EV-120",
+    "type": "accounting_memo",
+    "property": "PROP-E",
+    "period": "2026-07",
+    "authority": 2,
+    "title": "Capitalization memo PROP-E",
+    "text": "Accounting memo: $40k of improvement works at PROP-E qualifies for capitalization from 2026-07; Repair & Maintenance expense reduced accordingly vs budget.",
+    "bm25_score": 12.928,
+    "rrf": 0.0325,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-117",
+    "type": "vendor_invoice",
+    "property": "PROP-E",
+    "period": "2026-06",
+    "authority": 2,
+    "title": "Invoice VND-042 fire pump overhaul",
+    "text": "Invoice VND-042: fire pump overhaul at PROP-E, amount $62k, service period 2026-06.",
+    "bm25_score": 0.84,
+    "rrf": 0.0323,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-138",
+    "type": "ops_memo",
+    "property": "PROP-E",
+    "period": "2026-01",
+    "authority": 3,
+    "title": "landscaping schedule PROP-E 2026-01",
+    "text": "Ops memo: landscaping schedule at PROP-E completed in 2026-01; no budget impact expected.",
+    "bm25_score": 1.184,
+    "rrf": 0.032,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-116",
+    "type": "work_order",
+    "property": "PROP-E",
+    "period": "2026-06",
+    "authority": 1,
+    "title": "Work order fire pump overhaul",
+    "text": "Work order WO-2847 approved: fire pump overhaul at PROP-E, contractor VND-042, contract value $62k, execution 2026-06.",
+    "bm25_score": 0.777,
+    "rrf": 0.0312,
+    "linked": false
+   }
+  ],
+  "best_bm25": 12.928,
+  "linked_any": true,
+  "dense_used": true
+ },
+ "2026-07_PROP-D_Leasing_revenue": {
+  "case_id": "2026-07_PROP-D_Leasing_revenue",
+  "docs": [
+   {
+    "doc_id": "EV-104",
+    "type": "handover_minutes",
+    "property": "PROP-D",
+    "period": "2026-06",
+    "authority": 2,
+    "title": "Handover minutes TEN-058",
+    "text": "TEN-058 at PROP-D: handover postponed from 2026-06 to 2026-08 due to delayed M&E completion. Rent ($29k/month) accrues from actual handover date.",
+    "bm25_score": 5.455,
+    "rrf": 0.0328,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-110",
+    "type": "approval_email",
+    "property": "PROP-D",
+    "period": "2026-07",
+    "authority": 2,
+    "title": "Fee rescheduled PROP-D 2026-07",
+    "text": "Approved: consultancy fee $44k budgeted under Marketing at PROP-D for 2026-07 is rescheduled; vendor will invoice in 2026-08. Budget phasing unchanged.",
+    "bm25_score": 2.025,
+    "rrf": 0.0318,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-135",
+    "type": "ops_memo",
+    "property": "PROP-D",
+    "period": "2026-07",
+    "authority": 3,
+    "title": "quarterly pest control PROP-D 2026-07",
+    "text": "Ops memo: quarterly pest control at PROP-D completed in 2026-07; no budget impact expected.",
+    "bm25_score": 2.138,
+    "rrf": 0.0313,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-128",
+    "type": "ops_memo",
+    "property": "PROP-D",
+    "period": "2026-02",
+    "authority": 3,
+    "title": "parking line repainting PROP-D 2026-02",
+    "text": "Ops memo: parking line repainting at PROP-D completed in 2026-02; no budget impact expected.",
+    "bm25_score": 1.234,
+    "rrf": 0.031,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-151",
+    "type": "ops_memo",
+    "property": "PROP-D",
+    "period": "2026-07",
+    "authority": 3,
+    "title": "quarterly pest control PROP-D 2026-07",
+    "text": "Ops memo: quarterly pest control at PROP-D completed in 2026-07; no budget impact expected.",
+    "bm25_score": 2.138,
+    "rrf": 0.0308,
+    "linked": false
+   }
+  ],
+  "best_bm25": 5.455,
+  "linked_any": true,
+  "dense_used": true
+ },
+ "2026-07_PROP-A_Utilities": {
+  "case_id": "2026-07_PROP-A_Utilities",
+  "docs": [
+   {
+    "doc_id": "EV-118",
+    "type": "rate_notice",
+    "property": "PROP-A",
+    "period": "2026-07",
+    "authority": 2,
+    "title": "Tariff surcharge 2026-07",
+    "text": "Utility provider notice: temporary tariff surcharge 22% applied to PROP-A utilities consumption in 2026-07 (approx $25k impact).",
+    "bm25_score": 7.19,
+    "rrf": 0.0328,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-147",
+    "type": "ops_memo",
+    "property": "PROP-A",
+    "period": "2026-07",
+    "authority": 3,
+    "title": "quarterly pest control PROP-A 2026-07",
+    "text": "Ops memo: quarterly pest control at PROP-A completed in 2026-07; no budget impact expected.",
+    "bm25_score": 2.853,
+    "rrf": 0.0318,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-141",
+    "type": "ops_memo",
+    "property": "PROP-A",
+    "period": "2026-02",
+    "authority": 3,
+    "title": "parking line repainting PROP-A 2026-02",
+    "text": "Ops memo: parking line repainting at PROP-A completed in 2026-02; no budget impact expected.",
+    "bm25_score": 0.92,
+    "rrf": 0.0318,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-136",
+    "type": "ops_memo",
+    "property": "PROP-A",
+    "period": "2026-04",
+    "authority": 3,
+    "title": "quarterly pest control PROP-A 2026-04",
+    "text": "Ops memo: quarterly pest control at PROP-A completed in 2026-04; no budget impact expected.",
+    "bm25_score": 0.92,
+    "rrf": 0.0313,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-108",
+    "type": "handover_minutes",
+    "property": "PROP-A",
+    "period": "2026-05",
+    "authority": 2,
+    "title": "Early handover TEN-060",
+    "text": "TEN-060 at PROP-A: early handover completed in 2026-05, one month ahead of budget; rent $36k/month starts immediately.",
+    "bm25_score": 0.621,
+    "rrf": 0.0313,
+    "linked": false
+   }
+  ],
+  "best_bm25": 7.19,
+  "linked_any": true,
+  "dense_used": true
+ },
+ "2026-07_PROP-E_Marketing": {
+  "case_id": "2026-07_PROP-E_Marketing",
+  "docs": [
+   {
+    "doc_id": "EV-120",
+    "type": "accounting_memo",
+    "property": "PROP-E",
+    "period": "2026-07",
+    "authority": 2,
+    "title": "Capitalization memo PROP-E",
+    "text": "Accounting memo: $40k of improvement works at PROP-E qualifies for capitalization from 2026-07; Repair & Maintenance expense reduced accordingly vs budget.",
+    "bm25_score": 3.97,
+    "rrf": 0.0328,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-138",
+    "type": "ops_memo",
+    "property": "PROP-E",
+    "period": "2026-01",
+    "authority": 3,
+    "title": "landscaping schedule PROP-E 2026-01",
+    "text": "Ops memo: landscaping schedule at PROP-E completed in 2026-01; no budget impact expected.",
+    "bm25_score": 1.015,
+    "rrf": 0.032,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-117",
+    "type": "vendor_invoice",
+    "property": "PROP-E",
+    "period": "2026-06",
+    "authority": 2,
+    "title": "Invoice VND-042 fire pump overhaul",
+    "text": "Invoice VND-042: fire pump overhaul at PROP-E, amount $62k, service period 2026-06.",
+    "bm25_score": 0.72,
+    "rrf": 0.032,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-116",
+    "type": "work_order",
+    "property": "PROP-E",
+    "period": "2026-06",
+    "authority": 1,
+    "title": "Work order fire pump overhaul",
+    "text": "Work order WO-2847 approved: fire pump overhaul at PROP-E, contractor VND-042, contract value $62k, execution 2026-06.",
+    "bm25_score": 0.666,
+    "rrf": 0.0312,
+    "linked": false
+   }
+  ],
+  "best_bm25": 3.97,
+  "linked_any": false,
+  "dense_used": true
+ },
+ "2026-08_CORP_Other_income": {
+  "case_id": "2026-08_CORP_Other_income",
+  "docs": [
+   {
+    "doc_id": "EV-123",
+    "type": "insurance_letter",
+    "property": "CORP",
+    "period": "2026-08",
+    "authority": 1,
+    "title": "Insurance compensation",
+    "text": "Insurer confirmation: compensation $300k for storm damage approved; recognized under Other income in 2026-08.",
+    "bm25_score": -0.139,
+    "rrf": 0.0328,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-121",
+    "type": "loan_memo",
+    "property": "CORP",
+    "period": "2026-05",
+    "authority": 2,
+    "title": "Refinancing gap 2026-05",
+    "text": "Treasury memo: repayment-to-refinancing gap on project facilities in 2026-05; interest saving assumed under Financial expenses budget (~$249k) does not materialize until new facility drawdown.",
+    "bm25_score": -0.158,
+    "rrf": 0.0323,
+    "linked": false
+   }
+  ],
+  "best_bm25": -0.139,
+  "linked_any": true,
+  "dense_used": true
+ },
+ "2026-08_PROP-C_Leasing_revenue": {
+  "case_id": "2026-08_PROP-C_Leasing_revenue",
+  "docs": [
+   {
+    "doc_id": "EV-106",
+    "type": "contract_annex",
+    "property": "PROP-C",
+    "period": "2026-08",
+    "authority": 2,
+    "title": "Escalation annex TEN-025",
+    "text": "Annex to lease TEN-025 at PROP-C: rental escalation 5% effective 2026-08 per contract schedule; budget was prepared at pre-escalation rate.",
+    "bm25_score": 4.004,
+    "rrf": 0.0325,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-101",
+    "type": "termination_notice",
+    "property": "PROP-C",
+    "period": "2026-08",
+    "authority": 1,
+    "title": "Termination notice TEN-027",
+    "text": "Termination of lease TEN-027 at PROP-C: effective end of 2026-07 under clause 8.2. Termination fee $30k payable by tenant, to be recorded in 2026-09 under Other income. Budgeted rent $60k/month ceases from 2026-08.",
+    "bm25_score": 3.46,
+    "rrf": 0.0325,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-129",
+    "type": "ops_memo",
+    "property": "PROP-C",
+    "period": "2026-05",
+    "authority": 3,
+    "title": "parking line repainting PROP-C 2026-05",
+    "text": "Ops memo: parking line repainting at PROP-C completed in 2026-05; no budget impact expected.",
+    "bm25_score": 0.754,
+    "rrf": 0.0313,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-144",
+    "type": "ops_memo",
+    "property": "PROP-C",
+    "period": "2026-08",
+    "authority": 3,
+    "title": "CCTV maintenance visit PROP-C 2026-08",
+    "text": "Ops memo: CCTV maintenance visit at PROP-C completed in 2026-08; no budget impact expected.",
+    "bm25_score": 0.754,
+    "rrf": 0.031,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-143",
+    "type": "ops_memo",
+    "property": "PROP-C",
+    "period": "2026-06",
+    "authority": 3,
+    "title": "parking line repainting PROP-C 2026-06",
+    "text": "Ops memo: parking line repainting at PROP-C completed in 2026-06; no budget impact expected.",
+    "bm25_score": 0.754,
+    "rrf": 0.031,
+    "linked": false
+   }
+  ],
+  "best_bm25": 4.004,
+  "linked_any": true,
+  "dense_used": true
+ },
+ "2026-08_PROP-E_Leasing_revenue": {
+  "case_id": "2026-08_PROP-E_Leasing_revenue",
+  "docs": [
+   {
+    "doc_id": "EV-107",
+    "type": "contract_annex",
+    "property": "PROP-E",
+    "period": "2026-08",
+    "authority": 2,
+    "title": "Escalation annex TEN-049",
+    "text": "Annex to lease TEN-049 at PROP-E: rental escalation 8% effective 2026-08 per contract schedule; budget was prepared at pre-escalation rate.",
+    "bm25_score": 5.794,
+    "rrf": 0.0328,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-102",
+    "type": "termination_notice",
+    "property": "PROP-E",
+    "period": "2026-08",
+    "authority": 1,
+    "title": "Termination notice TEN-057",
+    "text": "Termination of lease TEN-057 at PROP-E: effective end of 2026-07 under clause 8.2. Termination fee $25k payable by tenant, to be recorded in 2026-09 under Other income. Budgeted rent $50k/month ceases from 2026-08.",
+    "bm25_score": 5.014,
+    "rrf": 0.0323,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-126",
+    "type": "ops_memo",
+    "property": "PROP-E",
+    "period": "2026-08",
+    "authority": 3,
+    "title": "landscaping schedule PROP-E 2026-08",
+    "text": "Ops memo: landscaping schedule at PROP-E completed in 2026-08; no budget impact expected.",
+    "bm25_score": 1.381,
+    "rrf": 0.0315,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-119",
+    "type": "rate_notice",
+    "property": "PROP-E",
+    "period": "2026-08",
+    "authority": 2,
+    "title": "Tariff surcharge 2026-08",
+    "text": "Utility provider notice: temporary tariff surcharge 22% applied to PROP-E utilities consumption in 2026-08 (approx $24k impact).",
+    "bm25_score": 1.087,
+    "rrf": 0.031,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-138",
+    "type": "ops_memo",
+    "property": "PROP-E",
+    "period": "2026-01",
+    "authority": 3,
+    "title": "landscaping schedule PROP-E 2026-01",
+    "text": "Ops memo: landscaping schedule at PROP-E completed in 2026-01; no budget impact expected.",
+    "bm25_score": 1.381,
+    "rrf": 0.0308,
+    "linked": false
+   }
+  ],
+  "best_bm25": 5.794,
+  "linked_any": true,
+  "dense_used": true
+ },
+ "2026-08_PROP-E_Utilities": {
+  "case_id": "2026-08_PROP-E_Utilities",
+  "docs": [
+   {
+    "doc_id": "EV-119",
+    "type": "rate_notice",
+    "property": "PROP-E",
+    "period": "2026-08",
+    "authority": 2,
+    "title": "Tariff surcharge 2026-08",
+    "text": "Utility provider notice: temporary tariff surcharge 22% applied to PROP-E utilities consumption in 2026-08 (approx $24k impact).",
+    "bm25_score": 7.087,
+    "rrf": 0.0328,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-117",
+    "type": "vendor_invoice",
+    "property": "PROP-E",
+    "period": "2026-06",
+    "authority": 2,
+    "title": "Invoice VND-042 fire pump overhaul",
+    "text": "Invoice VND-042: fire pump overhaul at PROP-E, amount $62k, service period 2026-06.",
+    "bm25_score": 4.57,
+    "rrf": 0.0323,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-126",
+    "type": "ops_memo",
+    "property": "PROP-E",
+    "period": "2026-08",
+    "authority": 3,
+    "title": "landscaping schedule PROP-E 2026-08",
+    "text": "Ops memo: landscaping schedule at PROP-E completed in 2026-08; no budget impact expected.",
+    "bm25_score": 2.302,
+    "rrf": 0.0315,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-116",
+    "type": "work_order",
+    "property": "PROP-E",
+    "period": "2026-06",
+    "authority": 1,
+    "title": "Work order fire pump overhaul",
+    "text": "Work order WO-2847 approved: fire pump overhaul at PROP-E, contractor VND-042, contract value $62k, execution 2026-06.",
+    "bm25_score": 3.489,
+    "rrf": 0.0313,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-138",
+    "type": "ops_memo",
+    "property": "PROP-E",
+    "period": "2026-01",
+    "authority": 3,
+    "title": "landscaping schedule PROP-E 2026-01",
+    "text": "Ops memo: landscaping schedule at PROP-E completed in 2026-01; no budget impact expected.",
+    "bm25_score": 2.302,
+    "rrf": 0.031,
+    "linked": false
+   }
+  ],
+  "best_bm25": 7.087,
+  "linked_any": true,
+  "dense_used": true
+ },
+ "2026-09_PROP-B_Leasing_revenue": {
+  "case_id": "2026-09_PROP-B_Leasing_revenue",
+  "docs": [
+   {
+    "doc_id": "EV-103",
+    "type": "termination_notice",
+    "property": "PROP-B",
+    "period": "2026-09",
+    "authority": 1,
+    "title": "Termination notice TEN-015",
+    "text": "Termination of lease TEN-015 at PROP-B: effective end of 2026-08 under clause 8.2. Termination fee $30k payable by tenant, to be recorded in 2026-10 under Other income. Budgeted rent $59k/month ceases from 2026-09.",
+    "bm25_score": 4.527,
+    "rrf": 0.0328,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-105",
+    "type": "handover_minutes",
+    "property": "PROP-B",
+    "period": "2026-05",
+    "authority": 2,
+    "title": "Handover minutes TEN-059",
+    "text": "TEN-059 at PROP-B: handover postponed from 2026-05 to 2026-07 due to delayed M&E completion. Rent ($33k/month) accrues from actual handover date.",
+    "bm25_score": 1.812,
+    "rrf": 0.0323,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-132",
+    "type": "ops_memo",
+    "property": "PROP-B",
+    "period": "2026-03",
+    "authority": 3,
+    "title": "landscaping schedule PROP-B 2026-03",
+    "text": "Ops memo: landscaping schedule at PROP-B completed in 2026-03; no budget impact expected.",
+    "bm25_score": 1.038,
+    "rrf": 0.0317,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-155",
+    "type": "ops_memo",
+    "property": "PROP-B",
+    "period": "2026-01",
+    "authority": 3,
+    "title": "CCTV maintenance visit PROP-B 2026-01",
+    "text": "Ops memo: CCTV maintenance visit at PROP-B completed in 2026-01; no budget impact expected.",
+    "bm25_score": 1.013,
+    "rrf": 0.031,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-130",
+    "type": "ops_memo",
+    "property": "PROP-B",
+    "period": "2026-02",
+    "authority": 3,
+    "title": "quarterly pest control PROP-B 2026-02",
+    "text": "Ops memo: quarterly pest control at PROP-B completed in 2026-02; no budget impact expected.",
+    "bm25_score": 1.013,
+    "rrf": 0.0306,
+    "linked": false
+   }
+  ],
+  "best_bm25": 4.527,
+  "linked_any": true,
+  "dense_used": true
+ },
+ "2026-09_PROP-C_Leasing_revenue": {
+  "case_id": "2026-09_PROP-C_Leasing_revenue",
+  "docs": [
+   {
+    "doc_id": "EV-106",
+    "type": "contract_annex",
+    "property": "PROP-C",
+    "period": "2026-08",
+    "authority": 2,
+    "title": "Escalation annex TEN-025",
+    "text": "Annex to lease TEN-025 at PROP-C: rental escalation 5% effective 2026-08 per contract schedule; budget was prepared at pre-escalation rate.",
+    "bm25_score": 5.014,
+    "rrf": 0.0323,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-109",
+    "type": "approval_email",
+    "property": "PROP-C",
+    "period": "2026-09",
+    "authority": 2,
+    "title": "Fee rescheduled PROP-C 2026-09",
+    "text": "Approved: consultancy fee $28k budgeted under Management fee at PROP-C for 2026-09 is rescheduled; vendor will invoice in 2026-10. Budget phasing unchanged.",
+    "bm25_score": 2.073,
+    "rrf": 0.0323,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-101",
+    "type": "termination_notice",
+    "property": "PROP-C",
+    "period": "2026-08",
+    "authority": 1,
+    "title": "Termination notice TEN-027",
+    "text": "Termination of lease TEN-027 at PROP-C: effective end of 2026-07 under clause 8.2. Termination fee $30k payable by tenant, to be recorded in 2026-09 under Other income. Budgeted rent $60k/month ceases from 2026-08.",
+    "bm25_score": 4.975,
+    "rrf": 0.0323,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-129",
+    "type": "ops_memo",
+    "property": "PROP-C",
+    "period": "2026-05",
+    "authority": 3,
+    "title": "parking line repainting PROP-C 2026-05",
+    "text": "Ops memo: parking line repainting at PROP-C completed in 2026-05; no budget impact expected.",
+    "bm25_score": 1.022,
+    "rrf": 0.031,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-143",
+    "type": "ops_memo",
+    "property": "PROP-C",
+    "period": "2026-06",
+    "authority": 3,
+    "title": "parking line repainting PROP-C 2026-06",
+    "text": "Ops memo: parking line repainting at PROP-C completed in 2026-06; no budget impact expected.",
+    "bm25_score": 1.022,
+    "rrf": 0.0308,
+    "linked": false
+   }
+  ],
+  "best_bm25": 5.014,
+  "linked_any": true,
+  "dense_used": true
+ },
+ "2026-09_PROP-E_Leasing_revenue": {
+  "case_id": "2026-09_PROP-E_Leasing_revenue",
+  "docs": [
+   {
+    "doc_id": "EV-102",
+    "type": "termination_notice",
+    "property": "PROP-E",
+    "period": "2026-08",
+    "authority": 1,
+    "title": "Termination notice TEN-057",
+    "text": "Termination of lease TEN-057 at PROP-E: effective end of 2026-07 under clause 8.2. Termination fee $25k payable by tenant, to be recorded in 2026-09 under Other income. Budgeted rent $50k/month ceases from 2026-08.",
+    "bm25_score": 6.245,
+    "rrf": 0.0325,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-107",
+    "type": "contract_annex",
+    "property": "PROP-E",
+    "period": "2026-08",
+    "authority": 2,
+    "title": "Escalation annex TEN-049",
+    "text": "Annex to lease TEN-049 at PROP-E: rental escalation 8% effective 2026-08 per contract schedule; budget was prepared at pre-escalation rate.",
+    "bm25_score": 5.794,
+    "rrf": 0.0325,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-126",
+    "type": "ops_memo",
+    "property": "PROP-E",
+    "period": "2026-08",
+    "authority": 3,
+    "title": "landscaping schedule PROP-E 2026-08",
+    "text": "Ops memo: landscaping schedule at PROP-E completed in 2026-08; no budget impact expected.",
+    "bm25_score": 1.381,
+    "rrf": 0.0313,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-119",
+    "type": "rate_notice",
+    "property": "PROP-E",
+    "period": "2026-08",
+    "authority": 2,
+    "title": "Tariff surcharge 2026-08",
+    "text": "Utility provider notice: temporary tariff surcharge 22% applied to PROP-E utilities consumption in 2026-08 (approx $24k impact).",
+    "bm25_score": 1.087,
+    "rrf": 0.031,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-120",
+    "type": "accounting_memo",
+    "property": "PROP-E",
+    "period": "2026-07",
+    "authority": 2,
+    "title": "Capitalization memo PROP-E",
+    "text": "Accounting memo: $40k of improvement works at PROP-E qualifies for capitalization from 2026-07; Repair & Maintenance expense reduced accordingly vs budget.",
+    "bm25_score": 1.167,
+    "rrf": 0.031,
+    "linked": false
+   }
+  ],
+  "best_bm25": 6.245,
+  "linked_any": true,
+  "dense_used": true
+ },
+ "2026-09_PROP-A_Marketing": {
+  "case_id": "2026-09_PROP-A_Marketing",
+  "docs": [
+   {
+    "doc_id": "EV-111",
+    "type": "approval_email",
+    "property": "PROP-A",
+    "period": "2026-09",
+    "authority": 2,
+    "title": "Fee rescheduled PROP-A 2026-09",
+    "text": "Approved: consultancy fee $38k budgeted under Marketing at PROP-A for 2026-09 is rescheduled; vendor will invoice in 2026-10. Budget phasing unchanged.",
+    "bm25_score": 15.058,
+    "rrf": 0.0328,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-133",
+    "type": "ops_memo",
+    "property": "PROP-A",
+    "period": "2026-08",
+    "authority": 3,
+    "title": "quarterly pest control PROP-A 2026-08",
+    "text": "Ops memo: quarterly pest control at PROP-A completed in 2026-08; no budget impact expected.",
+    "bm25_score": 1.913,
+    "rrf": 0.0315,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-141",
+    "type": "ops_memo",
+    "property": "PROP-A",
+    "period": "2026-02",
+    "authority": 3,
+    "title": "parking line repainting PROP-A 2026-02",
+    "text": "Ops memo: parking line repainting at PROP-A completed in 2026-02; no budget impact expected.",
+    "bm25_score": 1.913,
+    "rrf": 0.0315,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-118",
+    "type": "rate_notice",
+    "property": "PROP-A",
+    "period": "2026-07",
+    "authority": 2,
+    "title": "Tariff surcharge 2026-07",
+    "text": "Utility provider notice: temporary tariff surcharge 22% applied to PROP-A utilities consumption in 2026-07 (approx $25k impact).",
+    "bm25_score": 1.725,
+    "rrf": 0.0313,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-136",
+    "type": "ops_memo",
+    "property": "PROP-A",
+    "period": "2026-04",
+    "authority": 3,
+    "title": "quarterly pest control PROP-A 2026-04",
+    "text": "Ops memo: quarterly pest control at PROP-A completed in 2026-04; no budget impact expected.",
+    "bm25_score": 1.913,
+    "rrf": 0.0308,
+    "linked": false
+   }
+  ],
+  "best_bm25": 15.058,
+  "linked_any": true,
+  "dense_used": true
+ },
+ "2026-09_PROP-C_Management_fee": {
+  "case_id": "2026-09_PROP-C_Management_fee",
+  "docs": [
+   {
+    "doc_id": "EV-109",
+    "type": "approval_email",
+    "property": "PROP-C",
+    "period": "2026-09",
+    "authority": 2,
+    "title": "Fee rescheduled PROP-C 2026-09",
+    "text": "Approved: consultancy fee $28k budgeted under Management fee at PROP-C for 2026-09 is rescheduled; vendor will invoice in 2026-10. Budget phasing unchanged.",
+    "bm25_score": 12.997,
+    "rrf": 0.0328,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-101",
+    "type": "termination_notice",
+    "property": "PROP-C",
+    "period": "2026-08",
+    "authority": 1,
+    "title": "Termination notice TEN-027",
+    "text": "Termination of lease TEN-027 at PROP-C: effective end of 2026-07 under clause 8.2. Termination fee $30k payable by tenant, to be recorded in 2026-09 under Other income. Budgeted rent $60k/month ceases from 2026-08.",
+    "bm25_score": 5.092,
+    "rrf": 0.0323,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-139",
+    "type": "ops_memo",
+    "property": "PROP-C",
+    "period": "2026-03",
+    "authority": 3,
+    "title": "CCTV maintenance visit PROP-C 2026-03",
+    "text": "Ops memo: CCTV maintenance visit at PROP-C completed in 2026-03; no budget impact expected.",
+    "bm25_score": 1.703,
+    "rrf": 0.0315,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-129",
+    "type": "ops_memo",
+    "property": "PROP-C",
+    "period": "2026-05",
+    "authority": 3,
+    "title": "parking line repainting PROP-C 2026-05",
+    "text": "Ops memo: parking line repainting at PROP-C completed in 2026-05; no budget impact expected.",
+    "bm25_score": 1.703,
+    "rrf": 0.0308,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-144",
+    "type": "ops_memo",
+    "property": "PROP-C",
+    "period": "2026-08",
+    "authority": 3,
+    "title": "CCTV maintenance visit PROP-C 2026-08",
+    "text": "Ops memo: CCTV maintenance visit at PROP-C completed in 2026-08; no budget impact expected.",
+    "bm25_score": 1.703,
+    "rrf": 0.0308,
+    "linked": false
+   }
+  ],
+  "best_bm25": 12.997,
+  "linked_any": true,
+  "dense_used": true
+ },
+ "2026-10_CORP_Financial_expenses": {
+  "case_id": "2026-10_CORP_Financial_expenses",
+  "docs": [
+   {
+    "doc_id": "EV-122",
+    "type": "loan_memo",
+    "property": "CORP",
+    "period": "2026-10",
+    "authority": 2,
+    "title": "Refinancing gap 2026-10",
+    "text": "Treasury memo: repayment-to-refinancing gap on project facilities in 2026-10; interest saving assumed under Financial expenses budget (~$195k) does not materialize until new facility drawdown.",
+    "bm25_score": 1.591,
+    "rrf": 0.0328,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-123",
+    "type": "insurance_letter",
+    "property": "CORP",
+    "period": "2026-08",
+    "authority": 1,
+    "title": "Insurance compensation",
+    "text": "Insurer confirmation: compensation $300k for storm damage approved; recognized under Other income in 2026-08.",
+    "bm25_score": -0.178,
+    "rrf": 0.032,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-121",
+    "type": "loan_memo",
+    "property": "CORP",
+    "period": "2026-05",
+    "authority": 2,
+    "title": "Refinancing gap 2026-05",
+    "text": "Treasury memo: repayment-to-refinancing gap on project facilities in 2026-05; interest saving assumed under Financial expenses budget (~$249k) does not materialize until new facility drawdown.",
+    "bm25_score": -0.48,
+    "rrf": 0.032,
+    "linked": true
+   }
+  ],
+  "best_bm25": 1.591,
+  "linked_any": true,
+  "dense_used": true
+ },
+ "2026-10_PROP-D_Repair_and_Maintenance": {
+  "case_id": "2026-10_PROP-D_Repair_and_Maintenance",
+  "docs": [
+   {
+    "doc_id": "EV-115",
+    "type": "vendor_invoice",
+    "property": "PROP-D",
+    "period": "2026-10",
+    "authority": 2,
+    "title": "Invoice VND-032 fire pump overhaul",
+    "text": "Invoice VND-032: fire pump overhaul at PROP-D, amount $71k, service period 2026-10.",
+    "bm25_score": 23.285,
+    "rrf": 0.0328,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-114",
+    "type": "work_order",
+    "property": "PROP-D",
+    "period": "2026-10",
+    "authority": 1,
+    "title": "Work order fire pump overhaul",
+    "text": "Work order WO-2798 approved: fire pump overhaul at PROP-D, contractor VND-032, contract value $71k, execution 2026-10.",
+    "bm25_score": 19.958,
+    "rrf": 0.0323,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-113",
+    "type": "vendor_invoice",
+    "property": "PROP-D",
+    "period": "2026-05",
+    "authority": 2,
+    "title": "Invoice VND-018 road surface repair",
+    "text": "Invoice VND-018: road surface repair at PROP-D, amount $80k, service period 2026-05.",
+    "bm25_score": 16.699,
+    "rrf": 0.0317,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-128",
+    "type": "ops_memo",
+    "property": "PROP-D",
+    "period": "2026-02",
+    "authority": 3,
+    "title": "parking line repainting PROP-D 2026-02",
+    "text": "Ops memo: parking line repainting at PROP-D completed in 2026-02; no budget impact expected.",
+    "bm25_score": 4.071,
+    "rrf": 0.0308,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-149",
+    "type": "ops_memo",
+    "property": "PROP-D",
+    "period": "2026-01",
+    "authority": 3,
+    "title": "CCTV maintenance visit PROP-D 2026-01",
+    "text": "Ops memo: CCTV maintenance visit at PROP-D completed in 2026-01; no budget impact expected.",
+    "bm25_score": 16.518,
+    "rrf": 0.0306,
+    "linked": true
+   }
+  ],
+  "best_bm25": 23.285,
+  "linked_any": true,
+  "dense_used": true
+ },
+ "2026-10_PROP-B_Leasing_revenue": {
+  "case_id": "2026-10_PROP-B_Leasing_revenue",
+  "docs": [
+   {
+    "doc_id": "EV-103",
+    "type": "termination_notice",
+    "property": "PROP-B",
+    "period": "2026-09",
+    "authority": 1,
+    "title": "Termination notice TEN-015",
+    "text": "Termination of lease TEN-015 at PROP-B: effective end of 2026-08 under clause 8.2. Termination fee $30k payable by tenant, to be recorded in 2026-10 under Other income. Budgeted rent $59k/month ceases from 2026-09.",
+    "bm25_score": 4.489,
+    "rrf": 0.0328,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-152",
+    "type": "ops_memo",
+    "property": "PROP-B",
+    "period": "2026-10",
+    "authority": 3,
+    "title": "landscaping schedule PROP-B 2026-10",
+    "text": "Ops memo: landscaping schedule at PROP-B completed in 2026-10; no budget impact expected.",
+    "bm25_score": 2.577,
+    "rrf": 0.032,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-105",
+    "type": "handover_minutes",
+    "property": "PROP-B",
+    "period": "2026-05",
+    "authority": 2,
+    "title": "Handover minutes TEN-059",
+    "text": "TEN-059 at PROP-B: handover postponed from 2026-05 to 2026-07 due to delayed M&E completion. Rent ($33k/month) accrues from actual handover date.",
+    "bm25_score": 2.076,
+    "rrf": 0.032,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-132",
+    "type": "ops_memo",
+    "property": "PROP-B",
+    "period": "2026-03",
+    "authority": 3,
+    "title": "landscaping schedule PROP-B 2026-03",
+    "text": "Ops memo: landscaping schedule at PROP-B completed in 2026-03; no budget impact expected.",
+    "bm25_score": 1.113,
+    "rrf": 0.0312,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-155",
+    "type": "ops_memo",
+    "property": "PROP-B",
+    "period": "2026-01",
+    "authority": 3,
+    "title": "CCTV maintenance visit PROP-B 2026-01",
+    "text": "Ops memo: CCTV maintenance visit at PROP-B completed in 2026-01; no budget impact expected.",
+    "bm25_score": 1.085,
+    "rrf": 0.0305,
+    "linked": false
+   }
+  ],
+  "best_bm25": 4.489,
+  "linked_any": true,
+  "dense_used": true
+ },
+ "2026-10_PROP-C_Leasing_revenue": {
+  "case_id": "2026-10_PROP-C_Leasing_revenue",
+  "docs": [
+   {
+    "doc_id": "EV-106",
+    "type": "contract_annex",
+    "property": "PROP-C",
+    "period": "2026-08",
+    "authority": 2,
+    "title": "Escalation annex TEN-025",
+    "text": "Annex to lease TEN-025 at PROP-C: rental escalation 5% effective 2026-08 per contract schedule; budget was prepared at pre-escalation rate.",
+    "bm25_score": 5.705,
+    "rrf": 0.0323,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-101",
+    "type": "termination_notice",
+    "property": "PROP-C",
+    "period": "2026-08",
+    "authority": 1,
+    "title": "Termination notice TEN-027",
+    "text": "Termination of lease TEN-027 at PROP-C: effective end of 2026-07 under clause 8.2. Termination fee $30k payable by tenant, to be recorded in 2026-09 under Other income. Budgeted rent $60k/month ceases from 2026-08.",
+    "bm25_score": 4.932,
+    "rrf": 0.0323,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-109",
+    "type": "approval_email",
+    "property": "PROP-C",
+    "period": "2026-09",
+    "authority": 2,
+    "title": "Fee rescheduled PROP-C 2026-09",
+    "text": "Approved: consultancy fee $28k budgeted under Management fee at PROP-C for 2026-09 is rescheduled; vendor will invoice in 2026-10. Budget phasing unchanged.",
+    "bm25_score": 1.957,
+    "rrf": 0.032,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-142",
+    "type": "ops_memo",
+    "property": "PROP-C",
+    "period": "2026-10",
+    "authority": 3,
+    "title": "CCTV maintenance visit PROP-C 2026-10",
+    "text": "Ops memo: CCTV maintenance visit at PROP-C completed in 2026-10; no budget impact expected.",
+    "bm25_score": 2.534,
+    "rrf": 0.0315,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-129",
+    "type": "ops_memo",
+    "property": "PROP-C",
+    "period": "2026-05",
+    "authority": 3,
+    "title": "parking line repainting PROP-C 2026-05",
+    "text": "Ops memo: parking line repainting at PROP-C completed in 2026-05; no budget impact expected.",
+    "bm25_score": 1.097,
+    "rrf": 0.0305,
+    "linked": false
+   }
+  ],
+  "best_bm25": 5.705,
+  "linked_any": true,
+  "dense_used": true
+ },
+ "2026-10_PROP-E_Leasing_revenue": {
+  "case_id": "2026-10_PROP-E_Leasing_revenue",
+  "docs": [
+   {
+    "doc_id": "EV-107",
+    "type": "contract_annex",
+    "property": "PROP-E",
+    "period": "2026-08",
+    "authority": 2,
+    "title": "Escalation annex TEN-049",
+    "text": "Annex to lease TEN-049 at PROP-E: rental escalation 8% effective 2026-08 per contract schedule; budget was prepared at pre-escalation rate.",
+    "bm25_score": 5.794,
+    "rrf": 0.0328,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-102",
+    "type": "termination_notice",
+    "property": "PROP-E",
+    "period": "2026-08",
+    "authority": 1,
+    "title": "Termination notice TEN-057",
+    "text": "Termination of lease TEN-057 at PROP-E: effective end of 2026-07 under clause 8.2. Termination fee $25k payable by tenant, to be recorded in 2026-09 under Other income. Budgeted rent $50k/month ceases from 2026-08.",
+    "bm25_score": 5.014,
+    "rrf": 0.0323,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-126",
+    "type": "ops_memo",
+    "property": "PROP-E",
+    "period": "2026-08",
+    "authority": 3,
+    "title": "landscaping schedule PROP-E 2026-08",
+    "text": "Ops memo: landscaping schedule at PROP-E completed in 2026-08; no budget impact expected.",
+    "bm25_score": 1.381,
+    "rrf": 0.031,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-119",
+    "type": "rate_notice",
+    "property": "PROP-E",
+    "period": "2026-08",
+    "authority": 2,
+    "title": "Tariff surcharge 2026-08",
+    "text": "Utility provider notice: temporary tariff surcharge 22% applied to PROP-E utilities consumption in 2026-08 (approx $24k impact).",
+    "bm25_score": 1.087,
+    "rrf": 0.031,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-138",
+    "type": "ops_memo",
+    "property": "PROP-E",
+    "period": "2026-01",
+    "authority": 3,
+    "title": "landscaping schedule PROP-E 2026-01",
+    "text": "Ops memo: landscaping schedule at PROP-E completed in 2026-01; no budget impact expected.",
+    "bm25_score": 1.381,
+    "rrf": 0.031,
+    "linked": false
+   }
+  ],
+  "best_bm25": 5.794,
+  "linked_any": true,
+  "dense_used": true
+ },
+ "2026-11_PROP-B_Leasing_revenue": {
+  "case_id": "2026-11_PROP-B_Leasing_revenue",
+  "docs": [
+   {
+    "doc_id": "EV-103",
+    "type": "termination_notice",
+    "property": "PROP-B",
+    "period": "2026-09",
+    "authority": 1,
+    "title": "Termination notice TEN-015",
+    "text": "Termination of lease TEN-015 at PROP-B: effective end of 2026-08 under clause 8.2. Termination fee $30k payable by tenant, to be recorded in 2026-10 under Other income. Budgeted rent $59k/month ceases from 2026-09.",
+    "bm25_score": 3.75,
+    "rrf": 0.0328,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-105",
+    "type": "handover_minutes",
+    "property": "PROP-B",
+    "period": "2026-05",
+    "authority": 2,
+    "title": "Handover minutes TEN-059",
+    "text": "TEN-059 at PROP-B: handover postponed from 2026-05 to 2026-07 due to delayed M&E completion. Rent ($33k/month) accrues from actual handover date.",
+    "bm25_score": 2.076,
+    "rrf": 0.0323,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-132",
+    "type": "ops_memo",
+    "property": "PROP-B",
+    "period": "2026-03",
+    "authority": 3,
+    "title": "landscaping schedule PROP-B 2026-03",
+    "text": "Ops memo: landscaping schedule at PROP-B completed in 2026-03; no budget impact expected.",
+    "bm25_score": 1.113,
+    "rrf": 0.0315,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-152",
+    "type": "ops_memo",
+    "property": "PROP-B",
+    "period": "2026-10",
+    "authority": 3,
+    "title": "landscaping schedule PROP-B 2026-10",
+    "text": "Ops memo: landscaping schedule at PROP-B completed in 2026-10; no budget impact expected.",
+    "bm25_score": 1.113,
+    "rrf": 0.0315,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-155",
+    "type": "ops_memo",
+    "property": "PROP-B",
+    "period": "2026-01",
+    "authority": 3,
+    "title": "CCTV maintenance visit PROP-B 2026-01",
+    "text": "Ops memo: CCTV maintenance visit at PROP-B completed in 2026-01; no budget impact expected.",
+    "bm25_score": 1.085,
+    "rrf": 0.0305,
+    "linked": false
+   }
+  ],
+  "best_bm25": 3.75,
+  "linked_any": true,
+  "dense_used": true
+ },
+ "2026-11_PROP-C_Leasing_revenue": {
+  "case_id": "2026-11_PROP-C_Leasing_revenue",
+  "docs": [
+   {
+    "doc_id": "EV-106",
+    "type": "contract_annex",
+    "property": "PROP-C",
+    "period": "2026-08",
+    "authority": 2,
+    "title": "Escalation annex TEN-025",
+    "text": "Annex to lease TEN-025 at PROP-C: rental escalation 5% effective 2026-08 per contract schedule; budget was prepared at pre-escalation rate.",
+    "bm25_score": 5.705,
+    "rrf": 0.0323,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-101",
+    "type": "termination_notice",
+    "property": "PROP-C",
+    "period": "2026-08",
+    "authority": 1,
+    "title": "Termination notice TEN-027",
+    "text": "Termination of lease TEN-027 at PROP-C: effective end of 2026-07 under clause 8.2. Termination fee $30k payable by tenant, to be recorded in 2026-09 under Other income. Budgeted rent $60k/month ceases from 2026-08.",
+    "bm25_score": 4.932,
+    "rrf": 0.0323,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-109",
+    "type": "approval_email",
+    "property": "PROP-C",
+    "period": "2026-09",
+    "authority": 2,
+    "title": "Fee rescheduled PROP-C 2026-09",
+    "text": "Approved: consultancy fee $28k budgeted under Management fee at PROP-C for 2026-09 is rescheduled; vendor will invoice in 2026-10. Budget phasing unchanged.",
+    "bm25_score": 1.057,
+    "rrf": 0.0311,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-129",
+    "type": "ops_memo",
+    "property": "PROP-C",
+    "period": "2026-05",
+    "authority": 3,
+    "title": "parking line repainting PROP-C 2026-05",
+    "text": "Ops memo: parking line repainting at PROP-C completed in 2026-05; no budget impact expected.",
+    "bm25_score": 1.097,
+    "rrf": 0.031,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-142",
+    "type": "ops_memo",
+    "property": "PROP-C",
+    "period": "2026-10",
+    "authority": 3,
+    "title": "CCTV maintenance visit PROP-C 2026-10",
+    "text": "Ops memo: CCTV maintenance visit at PROP-C completed in 2026-10; no budget impact expected.",
+    "bm25_score": 1.097,
+    "rrf": 0.031,
+    "linked": false
+   }
+  ],
+  "best_bm25": 5.705,
+  "linked_any": true,
+  "dense_used": true
+ },
+ "2026-11_PROP-E_Leasing_revenue": {
+  "case_id": "2026-11_PROP-E_Leasing_revenue",
+  "docs": [
+   {
+    "doc_id": "EV-107",
+    "type": "contract_annex",
+    "property": "PROP-E",
+    "period": "2026-08",
+    "authority": 2,
+    "title": "Escalation annex TEN-049",
+    "text": "Annex to lease TEN-049 at PROP-E: rental escalation 8% effective 2026-08 per contract schedule; budget was prepared at pre-escalation rate.",
+    "bm25_score": 6.944,
+    "rrf": 0.0328,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-102",
+    "type": "termination_notice",
+    "property": "PROP-E",
+    "period": "2026-08",
+    "authority": 1,
+    "title": "Termination notice TEN-057",
+    "text": "Termination of lease TEN-057 at PROP-E: effective end of 2026-07 under clause 8.2. Termination fee $25k payable by tenant, to be recorded in 2026-09 under Other income. Budgeted rent $50k/month ceases from 2026-08.",
+    "bm25_score": 5.988,
+    "rrf": 0.0323,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-134",
+    "type": "ops_memo",
+    "property": "PROP-E",
+    "period": "2026-11",
+    "authority": 3,
+    "title": "quarterly pest control PROP-E 2026-11",
+    "text": "Ops memo: quarterly pest control at PROP-E completed in 2026-11; no budget impact expected.",
+    "bm25_score": 3.343,
+    "rrf": 0.0306,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-119",
+    "type": "rate_notice",
+    "property": "PROP-E",
+    "period": "2026-08",
+    "authority": 2,
+    "title": "Tariff surcharge 2026-08",
+    "text": "Utility provider notice: temporary tariff surcharge 22% applied to PROP-E utilities consumption in 2026-08 (approx $24k impact).",
+    "bm25_score": 1.24,
+    "rrf": 0.0306,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-153",
+    "type": "ops_memo",
+    "property": "PROP-E",
+    "period": "2026-11",
+    "authority": 3,
+    "title": "CCTV maintenance visit PROP-E 2026-11",
+    "text": "Ops memo: CCTV maintenance visit at PROP-E completed in 2026-11; no budget impact expected.",
+    "bm25_score": 3.343,
+    "rrf": 0.0306,
+    "linked": false
+   }
+  ],
+  "best_bm25": 6.944,
+  "linked_any": true,
+  "dense_used": true
+ },
+ "2026-12_PROP-B_Leasing_revenue": {
+  "case_id": "2026-12_PROP-B_Leasing_revenue",
+  "docs": [
+   {
+    "doc_id": "EV-103",
+    "type": "termination_notice",
+    "property": "PROP-B",
+    "period": "2026-09",
+    "authority": 1,
+    "title": "Termination notice TEN-015",
+    "text": "Termination of lease TEN-015 at PROP-B: effective end of 2026-08 under clause 8.2. Termination fee $30k payable by tenant, to be recorded in 2026-10 under Other income. Budgeted rent $59k/month ceases from 2026-09.",
+    "bm25_score": 4.091,
+    "rrf": 0.0328,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-105",
+    "type": "handover_minutes",
+    "property": "PROP-B",
+    "period": "2026-05",
+    "authority": 2,
+    "title": "Handover minutes TEN-059",
+    "text": "TEN-059 at PROP-B: handover postponed from 2026-05 to 2026-07 due to delayed M&E completion. Rent ($33k/month) accrues from actual handover date.",
+    "bm25_score": 2.313,
+    "rrf": 0.032,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-152",
+    "type": "ops_memo",
+    "property": "PROP-B",
+    "period": "2026-10",
+    "authority": 3,
+    "title": "landscaping schedule PROP-B 2026-10",
+    "text": "Ops memo: landscaping schedule at PROP-B completed in 2026-10; no budget impact expected.",
+    "bm25_score": 1.189,
+    "rrf": 0.0313,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-132",
+    "type": "ops_memo",
+    "property": "PROP-B",
+    "period": "2026-03",
+    "authority": 3,
+    "title": "landscaping schedule PROP-B 2026-03",
+    "text": "Ops memo: landscaping schedule at PROP-B completed in 2026-03; no budget impact expected.",
+    "bm25_score": 1.189,
+    "rrf": 0.0312,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-127",
+    "type": "ops_memo",
+    "property": "PROP-B",
+    "period": "2026-12",
+    "authority": 3,
+    "title": "quarterly pest control PROP-B 2026-12",
+    "text": "Ops memo: quarterly pest control at PROP-B completed in 2026-12; no budget impact expected.",
+    "bm25_score": 3.739,
+    "rrf": 0.0308,
+    "linked": false
+   }
+  ],
+  "best_bm25": 4.091,
+  "linked_any": true,
+  "dense_used": true
+ },
+ "2026-12_PROP-C_Leasing_revenue": {
+  "case_id": "2026-12_PROP-C_Leasing_revenue",
+  "docs": [
+   {
+    "doc_id": "EV-101",
+    "type": "termination_notice",
+    "property": "PROP-C",
+    "period": "2026-08",
+    "authority": 1,
+    "title": "Termination notice TEN-027",
+    "text": "Termination of lease TEN-027 at PROP-C: effective end of 2026-07 under clause 8.2. Termination fee $30k payable by tenant, to be recorded in 2026-09 under Other income. Budgeted rent $60k/month ceases from 2026-08.",
+    "bm25_score": 4.932,
+    "rrf": 0.0325,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-106",
+    "type": "contract_annex",
+    "property": "PROP-C",
+    "period": "2026-08",
+    "authority": 2,
+    "title": "Escalation annex TEN-025",
+    "text": "Annex to lease TEN-025 at PROP-C: rental escalation 5% effective 2026-08 per contract schedule; budget was prepared at pre-escalation rate.",
+    "bm25_score": 5.705,
+    "rrf": 0.0323,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-129",
+    "type": "ops_memo",
+    "property": "PROP-C",
+    "period": "2026-05",
+    "authority": 3,
+    "title": "parking line repainting PROP-C 2026-05",
+    "text": "Ops memo: parking line repainting at PROP-C completed in 2026-05; no budget impact expected.",
+    "bm25_score": 1.097,
+    "rrf": 0.0313,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-109",
+    "type": "approval_email",
+    "property": "PROP-C",
+    "period": "2026-09",
+    "authority": 2,
+    "title": "Fee rescheduled PROP-C 2026-09",
+    "text": "Approved: consultancy fee $28k budgeted under Management fee at PROP-C for 2026-09 is rescheduled; vendor will invoice in 2026-10. Budget phasing unchanged.",
+    "bm25_score": 1.057,
+    "rrf": 0.0308,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-143",
+    "type": "ops_memo",
+    "property": "PROP-C",
+    "period": "2026-06",
+    "authority": 3,
+    "title": "parking line repainting PROP-C 2026-06",
+    "text": "Ops memo: parking line repainting at PROP-C completed in 2026-06; no budget impact expected.",
+    "bm25_score": 1.097,
+    "rrf": 0.0308,
+    "linked": false
+   }
+  ],
+  "best_bm25": 5.705,
+  "linked_any": true,
+  "dense_used": true
+ },
+ "2026-12_PROP-E_Leasing_revenue": {
+  "case_id": "2026-12_PROP-E_Leasing_revenue",
+  "docs": [
+   {
+    "doc_id": "EV-107",
+    "type": "contract_annex",
+    "property": "PROP-E",
+    "period": "2026-08",
+    "authority": 2,
+    "title": "Escalation annex TEN-049",
+    "text": "Annex to lease TEN-049 at PROP-E: rental escalation 8% effective 2026-08 per contract schedule; budget was prepared at pre-escalation rate.",
+    "bm25_score": 6.944,
+    "rrf": 0.0328,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-102",
+    "type": "termination_notice",
+    "property": "PROP-E",
+    "period": "2026-08",
+    "authority": 1,
+    "title": "Termination notice TEN-057",
+    "text": "Termination of lease TEN-057 at PROP-E: effective end of 2026-07 under clause 8.2. Termination fee $25k payable by tenant, to be recorded in 2026-09 under Other income. Budgeted rent $50k/month ceases from 2026-08.",
+    "bm25_score": 5.988,
+    "rrf": 0.0323,
+    "linked": true
+   },
+   {
+    "doc_id": "EV-126",
+    "type": "ops_memo",
+    "property": "PROP-E",
+    "period": "2026-08",
+    "authority": 3,
+    "title": "landscaping schedule PROP-E 2026-08",
+    "text": "Ops memo: landscaping schedule at PROP-E completed in 2026-08; no budget impact expected.",
+    "bm25_score": 1.579,
+    "rrf": 0.031,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-138",
+    "type": "ops_memo",
+    "property": "PROP-E",
+    "period": "2026-01",
+    "authority": 3,
+    "title": "landscaping schedule PROP-E 2026-01",
+    "text": "Ops memo: landscaping schedule at PROP-E completed in 2026-01; no budget impact expected.",
+    "bm25_score": 1.579,
+    "rrf": 0.031,
+    "linked": false
+   },
+   {
+    "doc_id": "EV-119",
+    "type": "rate_notice",
+    "property": "PROP-E",
+    "period": "2026-08",
+    "authority": 2,
+    "title": "Tariff surcharge 2026-08",
+    "text": "Utility provider notice: temporary tariff surcharge 22% applied to PROP-E utilities consumption in 2026-08 (approx $24k impact).",
+    "bm25_score": 1.24,
+    "rrf": 0.0306,
+    "linked": false
+   }
+  ],
+  "best_bm25": 6.944,
+  "linked_any": true,
+  "dense_used": true
+ }
+}
