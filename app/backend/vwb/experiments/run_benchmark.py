@@ -54,6 +54,7 @@ def main() -> None:
     ap.add_argument("--smoke", action="store_true")
     ap.add_argument("--mock", action="store_true")
     ap.add_argument("--k", type=int, default=3)
+    ap.add_argument("--resume", action="store_true")
     args = ap.parse_args()
 
     cases, gold, docs, packs = load_inputs()
@@ -79,14 +80,26 @@ def main() -> None:
 
     tag = "smoke" if args.smoke else "full"
     raw_path = raw_dir / f"records_{tag}.jsonl"
+    # Resume: bo qua (case, mode, rep) da co ket qua SACH loi trong lan chay truoc
+    done_ok: set[tuple] = set()
     records: list[dict] = []
+    if args.resume and raw_path.exists():
+        for line in raw_path.read_text(encoding="utf-8").splitlines():
+            r = json.loads(line)
+            if not r["output"].get("error"):
+                done_ok.add((r["case_id"], r["mode"], r["rep"]))
+                r["case"] = next(c for c in cases if c["case_id"] == r["case_id"])
+                records.append(r)
+        print(f"resume: giu {len(done_ok)} record sach loi")
     total = len(cases) * 3 * k
-    done = 0
-    with open(raw_path, "w", encoding="utf-8") as f:
+    done = len(done_ok)
+    with open(raw_path, "a" if args.resume else "w", encoding="utf-8") as f:
         for case in cases:
             pack = packs[case["case_id"]]
             for mode in ("m0", "m1", "m2"):
                 for rep in range(k):
+                    if (case["case_id"], mode, rep) in done_ok:
+                        continue
                     try:
                         output = generate(mode, case, pack, client)
                     except Exception as e:  # ghi loi, khong dung ca run
