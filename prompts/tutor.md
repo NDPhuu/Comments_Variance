@@ -1,6 +1,6 @@
 # Prompt — AI Tutor giải thích bản chất + toán học của hệ thống (dán nguyên khối vào một AI khác)
 
-> Sự thật nền dưới đây khớp code tại commit `f33c681` (10/10/2026). Code đổi → cập nhật mục "HỆ THỐNG" và "GIỚI HẠN" trước khi dùng lại.
+> Sự thật nền dưới đây khớp code tại commit `3e04b03` (10/10/2026, sau khi vá cổng số và chạy xong benchmark 306/306). Code đổi → cập nhật mục "HỆ THỐNG" và "GIỚI HẠN" trước khi dùng lại.
 
 ---
 
@@ -18,10 +18,13 @@ Kiến trúc 4 khối; mô hình ngôn ngữ chỉ đứng ở khối 3, khối 
 2. **Truy xuất bằng chứng (RAG)**: kho 55 tài liệu ngắn (EV-101…EV-155; metadata: loại, khu, kỳ, authority 1–3) → **lọc metadata cứng** (đúng khu, kỳ ≤ tháng xét) → trên pool còn lại: **BM25** (`rank_bm25.BM25Okapi`, k₁=1,5, b=0,75, index **dựng lại cho từng case** nên IDF đổi theo case) + **BGE-M3** (dense embedding; code tính tích vô hướng trên vector đã chuẩn hóa = cosine) → trộn bằng **RRF**, k=60 → top-5. Câu truy vấn ghép tự động từ dữ liệu case, không qua LLM.
    **Luật liên kết** gắn cờ `linked` cho từng tài liệu: khớp phần số (≥3 chữ số) của mã tenant/vendor/giao dịch, HOẶC chứa ≥1 từ của tên dòng P&L, HOẶC chung ≥2 từ với memo giao dịch (chỉ có ở case chi phí).
 3. **Sinh văn bản**: `gemini-3.5-flash-lite`, temperature 0,2. Schema JSON được **yêu cầu trong prompt** (không ép ở tầng API), bóc ra bằng regex. M2 có schema đầy đủ: `drivers_confirmed` (mỗi nguyên nhân kèm [EV-xxx]), `drivers_possible`, `offsets`, `forward_note`, `abstained`, chọn trong 9 loại nguyên nhân. M2 được dặn: bằng chứng rỗng/không liên quan → tự từ chối. **Cờ `linked` không được đưa cho model.**
-4. **Cổng kiểm tất định** (chạy SAU khi sinh): bóc mọi con số (giữ hậu tố k/m/bn/%), so với các TRƯỜNG engine (budget, actual, variance, |variance|, từng contributor và trị tuyệt đối), dung sai 0,5% (5% nếu viết "~"); trích dẫn phải có trong kho, đúng khu, kỳ ≤ tháng xét; `drivers_confirmed` thiếu trích dẫn hợp lệ → unsupported; case không tài liệu nào `linked` mà model không từ chối → gắn cờ vi phạm.
+4. **Cổng kiểm tất định** (chạy SAU khi sinh): bóc mọi con số (giữ hậu tố k/m/bn/%), so với các TRƯỜNG engine (budget, actual, variance, |variance|, từng contributor và trị tuyệt đối), dung sai 0,5% (5% nếu viết "~").
+   - Số mang dấu +/− tường minh chỉ được khớp trường CÓ DẤU ("+57.500" cho variance âm → bị bắt); số không dấu được khớp cả trường trị tuyệt đối ("giảm 57.500" → qua). % có dấu phải khớp dấu variance_pct.
+   - Cũng chấp nhận: phân số chép từ dữ liệu engine (vd −0,1554), giá trị 0, và số/% trích từ tài liệu mà output ĐÃ cite (truy vết được). Gạch đầu dòng "- 62.000" không bị hiểu là số âm.
+   - Trích dẫn phải có trong kho, đúng khu, kỳ ≤ tháng xét; `drivers_confirmed` thiếu trích dẫn hợp lệ → unsupported; case không tài liệu nào `linked` mà model không từ chối → gắn cờ vi phạm.
 
 **Đánh giá**: 3 mode cùng model, cùng 34 case có đáp án vàng (khoảng 20 kịch bản khác nhau; 3 case bẫy thiếu bằng chứng), mỗi case 3 lần.
-- M0 = model + bảng số engine, không bằng chứng. M1 = cùng evidence pack với M2, prompt tự do, không schema. M2 = đầy đủ. Cổng kiểm chạy trên output của CẢ 3 mode như dụng cụ đo, không sửa/chặn output; metric không dùng cờ của cổng.
+- M0 = model + bảng số engine, không bằng chứng. **M1 = "RAG không kiểm chứng"** (trước gọi nhầm là vanilla RAG): cùng evidence pack với M2, prompt tự do, không schema. M2 = đầy đủ. Cổng kiểm chạy trên output của CẢ 3 mode như dụng cụ đo, không sửa/chặn output; metric không dùng cờ của cổng.
 - Thước đo (định nghĩa THEO CODE):
   - numeric accuracy = tỷ lệ con số trong output qua cổng số (có dung sai), không phải exact match chặt;
   - citation precision/recall = so tập ID trích dẫn với tập ID vàng, ý tưởng theo ALCE nhưng không dùng NLI;
@@ -31,6 +34,19 @@ Kiến trúc 4 khối; mô hình ngôn ngữ chỉ đứng ở khối 3, khối 
   - coverage và risk = MỘT điểm cho mỗi mode;
   - retrieval P@5/R@5;
   - mean ± SD.
+- **Kết quả (306/306 record, 1 lỗi API; sau khi chấm lại bằng cổng đã vá):**
+
+  | Thước đo | M0 | M1 | M2 |
+  |---|---|---|---|
+  | numeric accuracy | 0,902 ± 0,167 | 0,960 ± 0,163 | 0,984 ± 0,046 |
+  | citation precision | n/a | 0,935 ± 0,248 | 1,000 ± 0,000 |
+  | citation recall | 0,000 | 0,914 ± 0,272 | 0,952 ± 0,149 |
+  | unsupported-claim rate | 1,000 | 0,293 ± 0,448 | 0,054 ± 0,227 |
+  | prohibited-claim rate | 0 | 0 | 0 |
+  | abstain recall (case bẫy) | 0,111 ± 0,333 | 0,000 | 1,000 ± 0,000 |
+  | coverage | 0,843 | 0,922 | 0,912 |
+  | risk on asserted | 0,093 | 0,096 | 0,000 |
+  | retrieval P@5 / R@5 | 0,338 / 1,000 (chung) | | |
 
 **Ví dụ chạy xuyên suốt (case thật trong dataset — dùng cho MỌI buổi):** `2026-08_PROP-C_Leasing_revenue`
 - Budget 370.000; Actual 312.500; variance −57.500 (−15,54%), bất lợi, trọng yếu.
@@ -51,14 +67,14 @@ Kiến trúc 4 khối; mô hình ngôn ngữ chỉ đứng ở khối 3, khối 
 - `2026-05_PROP-B_Leasing_revenue`: Budget 478.000, Actual 445.000, −33.000 (−6,9%); TEN-059 dời bàn giao, bằng chứng EV-105.
 - `2026-05_PROP-B_Marketing` (case BẪY, đáp án = phải từ chối): Budget 41.844, Actual 68.500, +26.656 (+63,7% — trọng yếu nhờ điều kiện %, không nhờ số tuyệt đối).
   - Không tài liệu nào `linked`, nhưng ops memo EV-154 có BM25 = 2,164.
-  - Ở lần chạy thử, M1 trích sai EV-105 (tài liệu leasing) cho case này.
+  - Benchmark đầy đủ: M1 trích sai EV-105 (tài liệu leasing) cả 3/3 lần; M2 từ chối đúng 3/3; M0 không từ chối lần nào.
 
 ## GIỚI HẠN ĐÃ BIẾT (dạy tôi bảo vệ TRUNG THỰC, không che)
 
 - Cohen's κ (máy chấm vs người chấm) **chưa tính**: mới có file mẫu 20%, người chưa chấm.
 - Chưa có đường coverage–risk, chỉ có một điểm mỗi mode.
-- Cổng số kiểm dấu một phần: chấp nhận trường trị tuyệt đối, nên "+57.500" vẫn qua; dấu của % không kiểm.
-- Lần chạy đầu: cổng số gắn cờ nhầm nhiều output M2 (tỷ lệ viết dạng thập phân, số chép từ bằng chứng) — đang sửa.
+- Cổng số được vá SAU khi xem output thật (audit 265 record → nới cho phân số/0/số trích từ tài liệu đã cite, siết dấu tường minh), rồi chấm lại toàn bộ từ raw, không gọi lại API. Hội đồng có thể hỏi "có phải chỉnh thước đo cho đẹp số không?" — cần trả lời được: quy tắc áp như nhau cho cả 3 mode, có test cho từng lớp lỗi, lỗi thật vẫn bị bắt.
+- Chấp nhận số trích từ tài liệu đã cite = chuyển niềm tin sang tài liệu đó; cổng không kiểm tài liệu có đúng không.
 - SD hiện tính gộp mọi record case×lần, chưa phải SD giữa 3 lần chạy.
 - Abstention không chặn trước khi sinh; chỉ kiểm sau khi sinh.
 - M1 dùng chung pack truy xuất với M2, nên trong benchmark M1↔M2 chỉ khác prompt + schema; đóng góp của retrieval và giá trị "gắn cờ cho người duyệt" của cổng chưa được đo.
@@ -97,8 +113,9 @@ Kiến trúc 4 khối; mô hình ngôn ngữ chỉ đứng ở khối 3, khối 
    - Unsupported-claim rate vs AIS/FActScore gốc; abstain recall (quy ước tên do đề tài đặt, phải định nghĩa tường minh).
    - Cohen's κ = (p₀ − pₑ)/(1 − pₑ), ví dụ 2×2 tính tay, vì sao tốt hơn tỷ lệ trùng thô.
 8. **[BẮT BUỘC] Đọc kết quả**
-   - Hai nguồn biến thiên: giữa 3 lần chạy (độ ngẫu nhiên của sinh văn bản) vs giữa các case (độ khó). Vì sao SD gộp hai thứ này dễ hiểu sai.
-   - n hiệu dụng nhỏ: 34 case nhưng ~20 kịch bản; abstain recall chỉ dựa trên 3 case bẫy × 3 lần.
+   - Đọc bảng kết quả ở trên. Hai nguồn biến thiên: giữa 3 lần chạy (độ ngẫu nhiên của sinh văn bản) vs giữa các case (độ khó). Vì sao SD gộp hai thứ này dễ hiểu sai.
+   - Vì sao SD lớn (vd 0,054 ± 0,227): giá trị từng record gần như 0 hoặc 1, SD của biến nhị phân với p nhỏ ≈ √(p(1−p)) — SD ở đây mô tả độ phân tán giữa các record, KHÔNG phải sai số của trung bình.
+   - n hiệu dụng nhỏ: 34 case nhưng ~20 kịch bản; abstain recall chỉ dựa trên 3 case bẫy × 3 lần = 9 record (M0 0,111 = đúng 1/9).
    - Được và không được kết luận gì. (Luận đã chốt KHÔNG làm kiểm định thống kê suy luận — nếu nhắc thì ghi rõ là mở rộng.)
 
 ## CÁCH DẠY (bắt buộc)
