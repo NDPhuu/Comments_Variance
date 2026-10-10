@@ -20,7 +20,7 @@ Toàn bộ **P&L Actual vs Budget** theo `PL line × property × tháng` — đ�
 | Verification gates | **Tự động hóa việc có thật** — người review đang dò số và hỏi "căn cứ đâu?" bằng tay | Không phát minh hành vi mới, chỉ làm máy thay người |
 | Abstention (từ chối) | **Thật về nhu cầu** — analyst giỏi cũng nói "chưa rõ, để hỏi lại" | AI hiện tại không biết làm vậy — đó là gap |
 | M0 (AI trần) | **Thật** — xấp xỉ cách dùng AI hiện tại trong quy trình ~1h | Baseline phản ánh hiện trạng |
-| M1 (vanilla RAG) | **Thật** — là chuẩn phổ biến của industry/tutorial | Baseline phản ánh "giải pháp hiển nhiên" |
+| M1 (RAG không kiểm chứng) | **Thật** — đại diện cách dùng RAG phổ biến: truy xuất tốt nhưng để LLM viết tự do, không ai soát | Dùng CÙNG bộ bằng chứng với M2 → chênh lệch M1↔M2 quy được trọn cho schema + cổng kiểm (thí nghiệm một biến) |
 
 ## 1. Sơ đồ tổng
 
@@ -55,15 +55,15 @@ Ghi chú vận hành: `experiments/run_benchmark.py` chạy toàn bộ pipeline 
 | Mode | Input cho LLM | Machinery |
 |---|---|---|
 | **M0 — LLM-only** | Bảng Budget/Actual thô của case | Không retrieval, không engine facts chi tiết, không verifier |
-| **M1 — Vanilla RAG** | Case + top-k chunks (vector-only) | Prompt tự do, không schema, không verifier |
+| **M1 — RAG không kiểm chứng** | Case + CÙNG evidence pack như M2 (metadata filter + BM25 + BGE-M3 + RRF, top-5) | Prompt tự do, không schema, không verifier |
 | **M2 — Glass-box** | Engine facts package + hybrid retrieval + taxonomy | Schema bắt buộc + verification gates + abstention |
 
-**Fairness:** cả 3 modes dùng CÙNG model, temperature, case set; chỉ khác machinery. Mỗi run ghi lại: `model_id`, `prompt_version`, `dataset_version`, `seed`, timestamp.
+**Fairness:** cả 3 modes dùng CÙNG model, temperature, case set; M1 và M2 dùng CÙNG bộ bằng chứng truy xuất — M1↔M2 chỉ khác đúng một biến (schema + cổng kiểm + abstention), nên chênh lệch quy được cho verification machinery. Đổi lại, thí nghiệm KHÔNG đo riêng đóng góp của tầng truy xuất (metadata filter/RRF) — ghi nhận là hạn chế ở C4. Mỗi run ghi lại: `model_id`, `prompt_version`, `dataset_version`, `seed`, timestamp.
 
 ```mermaid
 flowchart LR
     CASE["Cùng một bộ case<br>(có đáp án gắn sẵn)"] --> M0["M0 · AI trần<br>chỉ bước 4"]
-    CASE --> M1["M1 · Vanilla RAG<br>bước 3 thô + bước 4"]
+    CASE --> M1["M1 · RAG không kiểm chứng<br>bước 3 (cùng M2) + bước 4"]
     CASE --> M2["M2 · Glass-box<br>đủ bước 2→5"]
     M0 --> SCORE["CHẤM ĐIỂM TỰ ĐỘNG<br>số sai · trích dẫn ma<br>câu thiếu căn cứ · biết từ chối đúng lúc"]
     M1 --> SCORE

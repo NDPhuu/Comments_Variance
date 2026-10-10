@@ -28,7 +28,7 @@ Tạo một bộ tình huống giả lập **có đáp án gắn sẵn**, rồi 
 | Cách | Là gì |
 |---|---|
 | M0 — AI trần | Đưa số thô cho AI tự viết (cách nhiều người đang dùng) |
-| M1 — Vanilla RAG | AI + tìm tài liệu kiểu phổ thông, viết tự do, không ai soát |
+| M1 — RAG không kiểm chứng | AI + đúng bộ tài liệu hệ thống tìm được (như M2), nhưng viết tự do, không ai soát |
 | M2 — Hệ thống này | Đủ cả 4 nguyên tắc ở trên |
 
 Chấm điểm tự động: bao nhiêu **số sai**, bao nhiêu **trích dẫn ma**, bao nhiêu **câu nói không có căn cứ**, và có **biết từ chối** đúng lúc không.
@@ -54,7 +54,7 @@ Chấm điểm tự động: bao nhiêu **số sai**, bao nhiêu **trích dẫn 
 | **Variance** | Chênh lệch giữa thực tế và kế hoạch (Actual − Budget) |
 | **Materiality** | Ngưỡng trọng yếu: lệch nhỏ bỏ qua, lệch lớn phải giải trình |
 | **RAG** | "Tìm trước rồi mới viết": trước khi AI viết, hệ thống đi tìm tài liệu liên quan đưa kèm, để AI viết có căn cứ thay vì viết từ trí nhớ |
-| **Vanilla RAG** | Bản RAG "trơn" như trong tutorial (vanilla = vị kem mặc định): tìm vài tài liệu gần giống rồi để AI viết tự do — không ai kiểm số, không ai kiểm trích dẫn |
+| **RAG không kiểm chứng** (unverified RAG) | RAG có tìm tài liệu đưa kèm nhưng để AI viết tự do — không ai kiểm số, không ai kiểm trích dẫn. Trong đề tài, M1 dùng chung bộ truy xuất với M2 nên so sánh M1↔M2 cô lập được giá trị của khâu kiểm chứng |
 | **Glass-box** | "Hộp kính", ngược với hộp đen: nhìn xuyên được vào trong — mọi số bấm ra sổ, mọi nguyên nhân bấm ra tài liệu |
 | **Provenance** | Gốc gác của một con số hay một câu: nó đến từ dòng sổ nào, tài liệu nào |
 | **Abstention** | Sự từ chối có chủ đích: thiếu bằng chứng thì nói thiếu, không bịa |
