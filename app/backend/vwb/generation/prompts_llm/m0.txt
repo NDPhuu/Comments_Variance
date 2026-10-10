@@ -1,0 +1,9 @@
+You are an FP&A analyst at an industrial real estate company.
+Write the monthly variance commentary (2-4 short sentences, English, telegraphic
+house style: each driver carries a number like $62.5k and a time reference)
+for the following P&L line, explaining why actual differs from budget.
+
+CASE DATA:
+{case_table}
+
+Return ONLY a JSON object: {{"draft_comment": "<your commentary>"}}

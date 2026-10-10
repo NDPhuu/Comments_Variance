@@ -159,7 +159,7 @@
   "period": "2026-07",
   "authority": 2,
   "title": "Tariff surcharge 2026-07",
-  "text": "Utility provider notice: temporary tariff surcharge 22% applied to PROP-A consumption in 2026-07 (approx $25k impact)."
+  "text": "Utility provider notice: temporary tariff surcharge 22% applied to PROP-A utilities consumption in 2026-07 (approx $25k impact)."
  },
  {
   "doc_id": "EV-119",
@@ -168,7 +168,7 @@
   "period": "2026-08",
   "authority": 2,
   "title": "Tariff surcharge 2026-08",
-  "text": "Utility provider notice: temporary tariff surcharge 22% applied to PROP-E consumption in 2026-08 (approx $24k impact)."
+  "text": "Utility provider notice: temporary tariff surcharge 22% applied to PROP-E utilities consumption in 2026-08 (approx $24k impact)."
  },
  {
   "doc_id": "EV-120",
@@ -186,7 +186,7 @@
   "period": "2026-05",
   "authority": 2,
   "title": "Refinancing gap 2026-05",
-  "text": "Treasury memo: repayment-to-refinancing gap on project facilities in 2026-05; interest saving assumed in budget (~$249k) does not materialize until new facility drawdown."
+  "text": "Treasury memo: repayment-to-refinancing gap on project facilities in 2026-05; interest saving assumed under Financial expenses budget (~$249k) does not materialize until new facility drawdown."
  },
  {
   "doc_id": "EV-122",
@@ -195,7 +195,7 @@
   "period": "2026-10",
   "authority": 2,
   "title": "Refinancing gap 2026-10",
-  "text": "Treasury memo: repayment-to-refinancing gap on project facilities in 2026-10; interest saving assumed in budget (~$195k) does not materialize until new facility drawdown."
+  "text": "Treasury memo: repayment-to-refinancing gap on project facilities in 2026-10; interest saving assumed under Financial expenses budget (~$195k) does not materialize until new facility drawdown."
  },
  {
   "doc_id": "EV-123",

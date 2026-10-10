@@ -45,6 +45,15 @@
 - Self-RAG: model tự sinh reflection tokens quyết định khi nào truy xuất và tự phê bình output. CRAG: thêm bộ **đánh giá chất lượng retrieval** trước khi sinh, kém thì sửa/truy xuất lại.
 - **Ta lấy:** cảm hứng kiến trúc, KHÔNG lấy cơ chế (cả hai cần model/huấn luyện riêng): nguyên tắc "kiểm tra chất lượng bằng chứng trước khi viết" của ta nằm ở metadata filter + ngưỡng retrieval_score (tất định); nguyên tắc "tự phê bình" được thay bằng verification gates NGOÀI model — phù hợp yêu cầu kiểm toán được.
 
+## 9. Know Your Limits — Wen và cộng sự (TACL 13, 2025) · DOI 10.1162/tacl_a_00754
+
+- Survey chuyên về abstention trong LLM: hệ thống hóa phương pháp, benchmark, metric theo 3 góc nhìn (query–model–giá trị con người).
+- **Ta lấy:** chỗ dựa thuật ngữ cho đánh giá từ chối. Lưu ý quan trọng: "abstention accuracy" KHÔNG phải tên metric chuẩn hóa — trong luận phải định nghĩa tường minh = recall của lớp 'phải-từ-chối' trên các case gieo không bằng chứng, neo vào Kamath 2020 + SQuAD 2.0 + Wen 2025, luôn báo kèm cặp coverage–risk.
+
+## Ghi chú thiết kế phát sinh khi build (10/10) — abstention bằng LINKAGE
+
+Phương án ngưỡng điểm BM25 thô THẤT BẠI khi đo trên dataset (case thật CORP: −2,35…1,96 < case bẫy: 2,16–3,97 — điểm BM25 không so sánh được giữa các case vì pool/IDF khác nhau). Thay bằng **rule liên kết nội dung tất định** (`retrieval.core.linked`): doc phải nhắc mã contributor (TEN/VND/GL), tên dòng P&L, hoặc ≥2 từ nội dung memo. Đây là phiên bản tất định của "retrieval evaluator" (CRAG); bản thân phát hiện này đưa vào mục Thảo luận C4.
+
 ## Bảng chốt: metric của khóa luận ↔ gốc học thuật ↔ điểm đổi
 
 | Metric của ta | Gốc | Đổi gì |

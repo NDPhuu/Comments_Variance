@@ -253,7 +253,7 @@ def seed_events(w: World) -> None:
         w.a_cost[(prop, line, m)] += add
         ev = w.doc("rate_notice", prop, m, 2, f"Tariff surcharge {m}",
                    f"Utility provider notice: temporary tariff surcharge {pct}% applied to {prop} "
-                   f"consumption in {m} (approx ${add/1000:.0f}k impact).")
+                   f"utilities consumption in {m} (approx ${add/1000:.0f}k impact).")
         w.mark(prop, line, [m], "rate_change", [ev], PROHIB_COST)
 
     # 8) accounting_capitalization x1 (favorable)
@@ -275,8 +275,8 @@ def seed_events(w: World) -> None:
         w.a_cost[(config.CORP, "Financial expenses", m)] += amt
         ev = w.doc("loan_memo", config.CORP, m, 2, f"Refinancing gap {m}",
                    f"Treasury memo: repayment-to-refinancing gap on project facilities in {m}; "
-                   f"interest saving assumed in budget (~${amt/1000:.0f}k) does not materialize "
-                   f"until new facility drawdown.")
+                   f"interest saving assumed under Financial expenses budget (~${amt/1000:.0f}k) "
+                   f"does not materialize until new facility drawdown.")
         w.mark(config.CORP, "Financial expenses", [m], "financing_event", [ev],
                ["base rate increase"])
 

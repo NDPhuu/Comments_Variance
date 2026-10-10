@@ -1,7 +1,7 @@
 # Phase 2 — RAG + Generation + Verification (08–10/10/2026)
 
 > **Gate M2 (tối 10/10):** cả 3 modes chạy batch không vỡ schema; verifier bắt được 100% lỗi gieo cố ý trong bộ test nhỏ (~10 câu lỗi nhân tạo: số sai, citation ma, claim không evidence).
-> **Trạng thái:** ☐ chưa bắt đầu / ☐ đang làm / ☐ XONG
+> **Trạng thái:** ☑ CODE XONG 10/10 — 18/18 tests pass; verifier bắt đủ bộ lỗi gieo (số sai/sai dấu/sai scale/citation ma/sai khu/sau kỳ/claim trống/abstain-vi-phạm/%sai); retrieval gold-in-top5 đạt; **abstention đổi sang rule LINKAGE** (ngưỡng BM25 thô thất bại khi đo — xem `docs/paper_notes.md` ghi chú 10/10). Còn lại: precompute packs (đang chạy nền) + lượt gọi Gemini thật (chờ `GEMINI_API_KEY`). Writing track (C2 draft, C3 đầy đủ) chưa làm.
 
 ## Mục tiêu
 Pipeline sinh–kiểm hoàn chỉnh: evidence retrieval hybrid, generation theo schema, verification gates + abstention. Đây là lõi kỹ thuật của khóa luận.

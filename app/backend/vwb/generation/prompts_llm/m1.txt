@@ -1,0 +1,12 @@
+You are an FP&A analyst at an industrial real estate company.
+Write the monthly variance commentary (2-4 short sentences, English, telegraphic
+house style) for the following P&L line, explaining why actual differs from budget.
+You may use the retrieved documents below; cite them inline as [EV-xxx] when used.
+
+CASE DATA:
+{case_table}
+
+RETRIEVED DOCUMENTS:
+{evidence_block}
+
+Return ONLY a JSON object: {{"draft_comment": "<your commentary with [EV-xxx] citations>"}}
