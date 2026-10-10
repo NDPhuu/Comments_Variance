@@ -59,6 +59,8 @@ Chấm điểm tự động: bao nhiêu **số sai**, bao nhiêu **trích dẫn 
 | **Provenance** | Gốc gác của một con số hay một câu: nó đến từ dòng sổ nào, tài liệu nào |
 | **Abstention** | Sự từ chối có chủ đích: thiếu bằng chứng thì nói thiếu, không bịa |
 | **Mệnh đề nguyên tử** (atomic claim) | Khẳng định nhỏ nhất chỉ nói đúng một điều, kiểm chứng được độc lập — tách câu dài thành các mệnh đề như vậy thì mới biết tin phần nào, sai phần nào (gốc: FActScore) |
+| **Benchmark** | Bộ đề thi chuẩn kèm cách chấm tự động, để các hệ thống khác nhau thi cùng một đề và so được điểm |
+| **Soát xét** (review) | Việc cấp phê duyệt kiểm tra lại báo cáo trước khi dùng — khác "kiểm toán" (cuộc kiểm tra ĐỘC LẬP theo chuẩn mực để đưa ra ý kiến xác nhận, do kiểm toán viên làm). Giải trình chênh lệch thuộc phạm vi soát xét nội bộ |
 | **Evidence corpus** | Kho bằng chứng: tập tài liệu số hóa (hợp đồng, biên bản, email duyệt…) mà hệ thống tìm kiếm trong đó |
 | **BM25** | Thuật toán tìm theo từ khóa — như Ctrl+F thông minh |
 | **Embedding / BGE-M3** | Cách máy "hiểu nghĩa" để tìm tài liệu gần nghĩa dù khác từ; BGE-M3 là model mã nguồn mở, miễn phí, chạy trên máy mình |
