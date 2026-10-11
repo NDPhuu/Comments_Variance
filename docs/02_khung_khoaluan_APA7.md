@@ -110,6 +110,6 @@ Nguyên tắc trình bày quan trọng với hội đồng:
 
 1. **Dòng domain (FP&A/variance):** variance analysis là bài toán gì, quy trình chuẩn ra sao, đã được tự động hóa đến đâu → để chứng minh vấn đề có thật và gap nằm ở khâu giải trình.
 2. **Dòng kỹ thuật (LLM/RAG/numerical reasoning):** vì sao LLM thuần không đáng tin với số liệu tài chính (FinQA/TAT-QA/PoT), các cơ chế grounding hiện có và hạn chế → để biện minh kiến trúc calculate-then-narrate + verification.
-3. **Dòng đánh giá hệ thống sinh văn bản (evaluation):** cách literature RAG/NLP đo grounding, citation và abstention (ALCE, AIS, FActScore, RAGAS) → để chương phương pháp và chương kết quả có chuẩn mực đo lường được thừa nhận, thay vì chỉ là build log.
+3. **Dòng đánh giá hệ thống sinh văn bản (evaluation):** cách literature RAG/NLP đo grounding, citation và abstention (AIS, ALCE, FActScore; abstention: SQuAD 2.0, Kamath, Wen) → để chương phương pháp và chương kết quả có chuẩn mực đo lường được thừa nhận, thay vì chỉ là build log. (RAGAS đã BỎ khỏi C2 theo quyết định 11/10 — không nhắc trong luận; ref Es et al. giữ trong kho làm tư liệu.)
 
 Research gap được phát biểu ở GIAO của 3 dòng: *các cơ chế grounding tổng quát chưa được thiết kế/đánh giá cho tác vụ sinh giải trình variance trong quy trình FP&A thực, nơi mọi con số phải khớp tuyệt đối với sổ sách và mọi nhận định nguyên nhân phải truy vết được về bằng chứng.*
