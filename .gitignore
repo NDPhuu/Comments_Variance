@@ -1,13 +1,12 @@
 # ===== DỮ LIỆU THẬT — TUYỆT ĐỐI KHÔNG COMMIT =====
-Sample_FP&A/
-local_data/
-*.xlsb
-*.xlsx
-*.xls
-*.xlsm
+# Sample_FP&A/
+# local_data/
+# *.xlsb
+# *.xlsx
+# *.xls
+# *.xlsm
 
-thesis/
-
+.env
 
 # Secrets
 .env
@@ -27,9 +26,6 @@ node_modules/
 dist/
 build/
 .vite/
-
-# LLM raw outputs (chỉ commit summary)
-app/experiments/results/raw/
 
 # OS / editor junk
 .DS_Store
@@ -258,11 +254,11 @@ __marimo__/
 .streamlit/secrets.toml
 design.md
 
-# Bao cao ban quyen (CBRE...) - khong redistribute
-materials/*.pdf
+# # Bao cao ban quyen (CBRE...) - khong redistribute
+# materials/*.pdf
 
 # Bản thảo khóa luận - chỉ giữ local, không push
-thesis/
-materials/papers/
-KLTN_Structure.docx
-app/backend/results/raw/
+# thesis/
+# materials/papers/
+# KLTN_Structure.docx
+# app/backend/results/raw/
