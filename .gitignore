@@ -266,3 +266,5 @@ app/backend/results/raw/
 # Công cụ thiết kế và file build của frontend
 app/frontend/.taste-skill/
 app/frontend/tsconfig.tsbuildinfo
+
+*.txt
