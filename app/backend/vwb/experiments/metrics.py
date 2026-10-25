@@ -7,7 +7,6 @@ khong dung LLM lam giam khao (quyet dinh #25).
 from __future__ import annotations
 
 import json
-import random
 import re
 import statistics as st
 
@@ -107,6 +106,21 @@ def _mean_sd(xs: list[float]) -> str:
     return f"{m:.3f}±{sd:.3f}"
 
 
+def _mean_or_none(xs: list[float | None]) -> float | None:
+    """Trung bình trong một lần chạy, bỏ các quan sát không áp dụng."""
+    valid = [x for x in xs if x is not None]
+    return st.mean(valid) if valid else None
+
+
+def _across_repetitions(rows: list[dict], key: str) -> str:
+    """Tính mean ± SD từ các trung bình theo rep, không trộn case dễ/khó với độ dao động LLM."""
+    by_rep: dict[int, list[float | None]] = {}
+    for row in rows:
+        by_rep.setdefault(row["rep"], []).append(row[key])
+    rep_means = [_mean_or_none(by_rep[rep]) for rep in sorted(by_rep)]
+    return _mean_sd(rep_means)
+
+
 def retrieval_pr_at_k(packs: dict, gold_all: dict) -> tuple[float, float]:
     """P@k / R@k co dien (Manning va cong su 2008) tren case co gold evidence."""
     ps, rs = [], []
@@ -131,20 +145,19 @@ def scenario_of(gold: dict) -> str:
 def compute(records: list[dict], gold_all: dict, packs: dict, out_dir,
             docs: list[dict] | None = None) -> dict:
     """records: [{case_id, mode, rep, output, verdict}] -> summary/by_scenario/coverage_risk CSV
-    + kappa_sample.csv (20% menh de cho nguoi cham tay, Cohen 1960)."""
+    ."""
     import csv
 
     out_dir.mkdir(parents=True, exist_ok=True)
     docs_by_id = {d["doc_id"]: d for d in (docs or [])}
     per_mode: dict[str, dict[str, list]] = {}
-    rows_claims = []
     for r in records:
         g = gold_all[r["case_id"]]
         o = r["output"]
         m = per_mode.setdefault(r["mode"], {
             "numeric": [], "cit_p": [], "cit_r": [], "unsup": [],
             "abstain_ok": [], "asserted": [], "risk_bad": [], "prohibited": [],
-            "scenario_rows": [],
+            "scenario_rows": [], "rep_rows": [],
         })
         case = r["case"]
         num = numeric_accuracy(o, case, docs_by_id)
@@ -161,15 +174,15 @@ def compute(records: list[dict], gold_all: dict, packs: dict, out_dir,
             m["abstain_ok"].append(1.0 if not asserted else 0.0)
         if asserted:  # risk: dam neu nguyen nhan tren case bay, hoac dinh claim cam
             m["risk_bad"].append(1.0 if (g["abstain"] or prohibited_hit(o, g)) else 0.0)
-        m["scenario_rows"].append((scenario_of(g), un, num))
-        for c in claims_of(o):
-            rows_claims.append({
-                "mode": r["mode"], "case_id": r["case_id"], "rep": r["rep"],
-                "claim": c["text"][:200], "cited": ";".join(c["cited"]),
-                "auto_supported": bool(set(c["cited"]) & set(g["gold_evidence"])),
-                "human_supported": "",  # nguoi cham tay dien 1/0
-            })
-
+        m["scenario_rows"].append((scenario_of(g), r["case_id"], r["rep"], un, num))
+        m["rep_rows"].append({
+            "rep": r["rep"], "numeric": num, "cit_p": cp, "cit_r": cr,
+            "unsup": un, "prohibited": 1.0 if prohibited_hit(o, g) else 0.0,
+            "abstain_ok": (1.0 if not asserted else 0.0) if g["abstain"] else None,
+            "asserted": 1.0 if asserted else 0.0,
+            "risk_bad": (1.0 if (g["abstain"] or prohibited_hit(o, g)) else 0.0)
+                        if asserted else None,
+        })
     with open(out_dir / "summary.csv", "w", newline="", encoding="utf-8-sig") as f:
         w = csv.writer(f)
         w.writerow(["metric"] + sorted(per_mode))
@@ -181,29 +194,40 @@ def compute(records: list[dict], gold_all: dict, packs: dict, out_dir,
             ("risk_on_asserted", "risk_bad"),
         ]
         for name, key in met_defs:
-            w.writerow([name] + [_mean_sd(per_mode[md][key]) for md in sorted(per_mode)])
+            w.writerow([name] + [
+                _across_repetitions(per_mode[md]["rep_rows"], key)
+                for md in sorted(per_mode)
+            ])
         p5, r5 = retrieval_pr_at_k(packs, gold_all)
         w.writerow([f"retrieval_P@{config.TOP_K_EVIDENCE}", f"{p5:.3f}", "", ""])
         w.writerow([f"retrieval_R@{config.TOP_K_EVIDENCE}", f"{r5:.3f}", "", ""])
+
+    with open(out_dir / "summary_by_rep.csv", "w", newline="", encoding="utf-8-sig") as f:
+        w = csv.writer(f)
+        w.writerow(["mode", "rep", "numeric_accuracy", "citation_precision",
+                    "citation_recall", "unsupported_claim_rate", "prohibited_claim_rate",
+                    "abstain_recall(trap)", "coverage", "risk_on_asserted"])
+        keys = ["numeric", "cit_p", "cit_r", "unsup", "prohibited",
+                "abstain_ok", "asserted", "risk_bad"]
+        for md, m in sorted(per_mode.items()):
+            reps = sorted({row["rep"] for row in m["rep_rows"]})
+            for rep in reps:
+                rows = [row for row in m["rep_rows"] if row["rep"] == rep]
+                vals = [_mean_or_none([row[key] for row in rows]) for key in keys]
+                w.writerow([md, rep] + ["n/a" if v is None else f"{v:.6f}" for v in vals])
 
     with open(out_dir / "by_scenario.csv", "w", newline="", encoding="utf-8-sig") as f:
         w = csv.writer(f)
         w.writerow(["mode", "scenario", "n", "unsupported_rate", "numeric_accuracy"])
         for md, m in sorted(per_mode.items()):
             by: dict[str, list] = {}
-            for sc, un, num in m["scenario_rows"]:
-                by.setdefault(sc, []).append((un, num))
+            for sc, cid, rep, un, num in m["scenario_rows"]:
+                by.setdefault(sc, []).append((cid, rep, un, num))
             for sc, vals in sorted(by.items()):
-                w.writerow([md, sc, len(vals),
-                            _mean_sd([v[0] for v in vals]), _mean_sd([v[1] for v in vals])])
+                reps = sorted({v[1] for v in vals})
+                unsup_rep = [_mean_or_none([v[2] for v in vals if v[1] == rep]) for rep in reps]
+                numeric_rep = [_mean_or_none([v[3] for v in vals if v[1] == rep]) for rep in reps]
+                w.writerow([md, sc, len({v[0] for v in vals}),
+                            _mean_sd(unsup_rep), _mean_sd(numeric_rep)])
 
-    rnd = random.Random(config.SEED)
-    sample = rnd.sample(rows_claims, max(1, len(rows_claims) // 5)) if rows_claims else []
-    with open(out_dir / "kappa_sample.csv", "w", newline="", encoding="utf-8-sig") as f:
-        w = csv.DictWriter(f, fieldnames=["mode", "case_id", "rep", "claim", "cited",
-                                          "auto_supported", "human_supported"])
-        w.writeheader()
-        w.writerows(sample)
-
-    return {"modes": sorted(per_mode), "n_records": len(records),
-            "kappa_sample": len(sample)}
+    return {"modes": sorted(per_mode), "n_records": len(records)}

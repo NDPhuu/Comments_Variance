@@ -14,8 +14,8 @@ Khóa luận là **nghiên cứu ứng dụng**: vận dụng kiến thức RAG/
 |---|---|---|
 | **1. Giới thiệu** | Bối cảnh FP&A; vấn đề (hộp đen — theo `objectives.md`); mục tiêu; câu hỏi nghiên cứu + giả thuyết; phạm vi; đóng góp; cấu trúc khóa luận | Phase 1 ✔ |
 | **2. Tổng quan nghiên cứu** | (a) Variance analysis & quy trình FP&A; (b) LLM, hallucination, RAG, numerical reasoning tài chính; (c) trust in automation & XAI; (d) **gap statement** 1 đoạn kết chương | Phase 2 |
-| **3. Phương pháp nghiên cứu** | **3.1 Dữ liệu** (phân tích 17 giải trình thật → các loại nguyên nhân + khuôn viết; bộ dữ liệu giả lập 5 khu × 12 tháng, 12 loại tình huống gieo sẵn, mỗi tình huống có đáp án: nguyên nhân thật, tài liệu chứng minh, các câu giải thích sai AI hay bịa; bảng mô tả bộ dữ liệu) · **3.2 Mô hình & Kiến trúc** (bài toán vào/ra; 4 khối: tính số bằng code thường → tìm tài liệu đúng khu đúng kỳ, theo từ khóa + theo nghĩa → AI viết theo khuôn kèm trích dẫn → máy soát từng số/trích dẫn, thiếu bằng chứng thì từ chối) · **3.3 Cơ chế đánh giá** (5 thước đo theo chuẩn nghiên cứu trước — §3.5; chấm công bằng: đáp án chốt trước khi AI làm bài, người chấm không biết bài của cấu hình nào, so máy chấm với người chấm tay, mức đạt thống nhất trước với GVHD) · **3.4 Thiết lập** (3 cấu hình cùng model; mỗi tình huống chạy 3 lần lấy trung bình; dữ liệu sinh lại được y hệt; FastAPI + React) — KHUNG CHỐT 07/10 theo người thực hiện | Phase 1–2 |
-| **4. Kết quả nghiên cứu** | **4.1 Kết quả chính** (bảng điểm 3 cấu hình × 5 thước đo + hình; đi trọn một tình huống làm ví dụ) · **4.2 Kiểm định tính vững** (tách kết quả theo loại tình huống; các tình huống cố tình làm khó: không có tài liệu liên quan — xem có dám từ chối không, tài liệu nhiễu trùng từ khóa sai khu, bộ lỗi gieo cố ý; kết quả so máy chấm với người chấm) · **4.3 Thảo luận** (kết quả nói gì về 3 giả thuyết; giống/khác nghiên cứu trước; hạn chế) — KHUNG CHỐT 07/10 | Phase 3–4 |
+| **3. Phương pháp nghiên cứu** | **3.1 Dữ liệu** (phân tích 17 giải trình thật → các loại nguyên nhân + khuôn viết; bộ dữ liệu giả lập 5 khu × 12 tháng, 12 loại tình huống gieo sẵn, mỗi tình huống có đáp án: nguyên nhân thật, tài liệu chứng minh, các câu giải thích sai AI hay bịa; bảng mô tả bộ dữ liệu) · **3.2 Mô hình & Kiến trúc** (bài toán vào/ra; 4 khối: tính số bằng code thường → tìm tài liệu đúng khu đúng kỳ, theo từ khóa + theo nghĩa → AI viết theo khuôn kèm trích dẫn → máy soát từng số/trích dẫn, thiếu bằng chứng thì từ chối) · **3.3 Cơ chế đánh giá** (5 thước đo theo chuẩn nghiên cứu trước — §3.5; đáp án chốt trước khi AI làm bài; mức đạt thống nhất trước với GVHD) · **3.4 Thiết lập** (3 cấu hình cùng model; mỗi tình huống chạy 3 lần; báo mean ± SD của ba điểm trung bình theo lần chạy; dữ liệu sinh lại được y hệt) | Phase 1–2 |
+| **4. Kết quả nghiên cứu** | **4.1 Kết quả chính** (bảng điểm 3 cấu hình × 5 thước đo + hình; đi trọn một tình huống làm ví dụ) · **4.2 Kiểm định tính vững** (tách kết quả theo loại tình huống; các tình huống cố tình làm khó: không có tài liệu liên quan, tài liệu nhiễu trùng từ khóa sai khu và bộ lỗi gieo cố ý) · **4.3 Thảo luận** (kết quả nói gì về 3 giả thuyết; giống/khác nghiên cứu trước; hạn chế) — KHUNG CHỐT 07/10 | Phase 3–4 |
 | **5. Kết luận & Khuyến nghị** | Trả lời từng RQ; đóng góp học thuật & thực tiễn; hạn chế nói thật (synthetic, một bối cảnh, n nhỏ); khuyến nghị triển khai cho doanh nghiệp (gom kho bằng chứng); hướng phát triển | Phase 4–5 |
 
 Nguyên tắc trình bày quan trọng với hội đồng:
@@ -26,7 +26,7 @@ Nguyên tắc trình bày quan trọng với hội đồng:
 ## 2. Quy tắc trích dẫn APA 7th — tóm tắt thực dụng
 
 **In-text:**
-- 1 tác giả: (Cohen, 1960) hoặc "Cohen (1960) cho rằng…"
+- 1 tác giả: (Nguyễn, 2020) hoặc "Nguyễn (2020) cho rằng…"
 - 2 tác giả: (Lee & See, 2004)
 - ≥3 tác giả: (Chen et al., 2021) — dùng "et al." ngay từ lần cite đầu
 - Trích dẫn trực tiếp phải kèm số trang: (Lee & See, 2004, p. 53)
@@ -70,9 +70,7 @@ Nguyên tắc trình bày quan trọng với hội đồng:
 > | Câu có căn cứ | Attribution / AIS; faithfulness; atomic-fact precision | Rashkin et al. (2023); RAGAS (Es et al., 2024); FActScore (Min et al., 2023) |
 > | Tìm đúng tài liệu | Precision@k, Recall@k, MRR, nDCG | Manning et al. (2008) |
 > | Từ chối đúng lúc | Answerability / selective prediction | SQuAD 2.0 (Rajpurkar et al., 2018); Kamath et al. (2020) |
-> | Độ tin của máy chấm | Cohen's κ (đồng thuận máy–người) | Cohen (1960) |
 
-- Cohen, J. (1960). A coefficient of agreement for nominal scales. *Educational and Psychological Measurement, 20*(1), 37–46. https://doi.org/10.1177/001316446002000104
 - Gao, T., Yen, H., Yu, J., & Chen, D. (2023). Enabling large language models to generate text with citations. In *Proceedings of EMNLP 2023*. Association for Computational Linguistics. ✓ <https://aclanthology.org/2023.emnlp-main.398> · arXiv: <https://arxiv.org/abs/2305.14627>
 - Kamath, A., Jia, R., & Liang, P. (2020). Selective question answering under domain shift. In *Proceedings of ACL 2020* (pp. 5684–5696). Association for Computational Linguistics. ✓ <https://aclanthology.org/2020.acl-main.503>
 - Manning, C. D., Raghavan, P., & Schütze, H. (2008). *Introduction to information retrieval*. Cambridge University Press.
