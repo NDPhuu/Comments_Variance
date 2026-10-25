@@ -262,3 +262,7 @@ __marimo__/
 # materials/papers/
 # KLTN_Structure.docx
 app/backend/results/raw/
+
+# Công cụ thiết kế và file build của frontend
+app/frontend/.taste-skill/
+app/frontend/tsconfig.tsbuildinfo
