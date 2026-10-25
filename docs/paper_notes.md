@@ -28,7 +28,7 @@
 ## 5. Selective QA — Kamath, Jia, Liang (ACL 2020) · aclanthology.org/2020.acl-main.503
 
 - Khung **selective prediction**: hệ thống trả (answer, confidence); trả lời khi confidence ≥ ngưỡng, ngược lại từ chối. Đánh giá bằng **risk–coverage**: coverage = % câu dám trả lời; risk = tỷ lệ sai trên phần đã trả lời; model overconfident trên dữ liệu lạ → cần calibrator ngoài.
-- **Ta lấy:** abstention của ta là rule tất định (retrieval_score < ngưỡng → từ chối nêu nguyên nhân) — đóng vai calibrator ngoài. Chương 4.2 báo: abstention accuracy trên trap cases + bảng coverage/risk cho cả 3 cấu hình.
+- **Ta lấy:** abstention của ta là rule tất định (LINKAGE nội dung — xem ghi chú 10/10 bên dưới; ngưỡng BM25 đã bỏ vì không tách được bẫy/thật) — đóng vai calibrator ngoài. Chương 4 báo: recall lớp phải-từ-chối trên trap cases + bảng coverage/risk cho cả 3 cấu hình (KHÔNG dùng tên 'abstention accuracy').
 
 ## 6. SQuAD 2.0 — Rajpurkar, Jia, Liang (ACL 2018) · aclanthology.org/P18-2124
 
@@ -61,6 +61,6 @@ Phương án ngưỡng điểm BM25 thô THẤT BẠI khi đo trên dataset (cas
 | Numerical EM (giữ dấu + scale, khớp theo trường engine) | TAT-QA + FinQA | gold = output engine thay vì đáp án người |
 | Citation precision/recall (statement-level) | ALCE | gold-ID + quote-match thay NLI |
 | Unsupported-claim rate (mục nhận định) | FActScore + AIS | atomic theo schema, chấm rule |
-| Abstention accuracy + coverage/risk | SQuAD 2.0 + Kamath | abstain bằng rule ngưỡng retrieval |
+| Abstain recall (lớp phải-từ-chối, tên do đề tài đặt) + coverage/risk | SQuAD 2.0 + Kamath + Wen 2025 | abstain bằng rule linkage tất định |
 | Retrieval P@5/R@5 | IR chuẩn (Manning 2008) | giữ nguyên |
 | (Phụ) RAGAS faithfulness | RAGAS | chỉ tham khảo, caveat LLM-judge |

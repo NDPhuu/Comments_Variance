@@ -1,0 +1,373 @@
+/* Landing page — hệ thống riêng, không dùng Tailwind.
+   Mọi thứ nằm dưới .lp để không đụng vào các màn hình app. */
+
+.lp {
+  /* Dải xanh BW. Đổi ba biến --blue / --blue-deep / --blue-night là đổi cả trang. */
+  --paper: #ffffff;
+  --mist: #eef3f8;
+  --ink: #0b1420;
+  --muted: #4a5666;
+  --blue: #0f62b3;
+  --blue-text: #0b4f92;
+  --blue-deep: #0a3a6b;
+  --blue-night: #061f3a;
+  --line: #c9d6e4;
+  --on-dark: #ffffff;
+  --on-dark-muted: #a9bed4;
+  --verified: #07734a;
+  --flagged: #c3271c;
+  --abstain: #b26a00;
+
+  /* Năm cỡ chữ, không hơn. */
+  --t-display: clamp(40px, 5.2vw, 72px);
+  --t-head: clamp(26px, 2.4vw, 38px);
+  --t-sub: 22px;
+  --t-body: 18px;
+  --t-small: 14px;
+
+  --margin: 48px;
+  --rhythm: 112px;
+  --toc-h: 56px;
+
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Archivo, system-ui, sans-serif;
+  font-size: var(--t-body);
+  line-height: 1.55;
+}
+
+.lp *,
+.lp *::before,
+.lp *::after { box-sizing: border-box; }
+
+.lp h1, .lp h2, .lp h3, .lp p, .lp ul, .lp figure, .lp dl, .lp dd { margin: 0; }
+.lp ul { list-style: none; padding: 0; }
+.lp a { color: inherit; }
+.lp img { display: block; max-width: 100%; }
+.lp :focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+
+.lp-wrap { max-width: 1240px; margin-inline: auto; padding-inline: var(--margin); }
+
+/* Lớp chuyển động: chỉ dịch, không bao giờ ẩn — nội dung đọc được kể cả khi
+   observer không chạy. */
+.lp [data-rise] {
+  transform: translateY(24px);
+  transition: transform 600ms cubic-bezier(.16,.84,.44,1);
+  transition-delay: var(--d, 0ms);
+}
+.lp [data-rise].is-in { transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .lp [data-rise] { transform: none; transition: none; }
+}
+.lp section { padding-block: var(--rhythm); scroll-margin-top: calc(var(--toc-h) + 16px); }
+
+.lp-sec-head {
+  font-size: var(--t-head);
+  font-weight: 800;
+  letter-spacing: -.02em;
+  line-height: 1.1;
+  max-width: 20ch;
+}
+.lp-lead { font-size: var(--t-sub); color: var(--muted); max-width: 62ch; margin-top: 20px; }
+.lp p { max-width: 62ch; }
+
+.lp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 24px;
+  background: var(--blue-text);
+  color: #fff;
+  font-size: var(--t-small);
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 160ms ease;
+}
+.lp-btn:hover { background: var(--blue); }
+/* `.lp a { color: inherit }` có độ ưu tiên cao hơn `.lp-btn`, nên màu chữ của
+   nút phải được đặt lại ở mức hai lớp. */
+.lp .lp-btn { color: #fff; }
+/* taste-skill-ignore: viền đặc 2px là hình dạng của nút phụ, không phải nét kẻ trang trí */
+.lp .lp-btn-ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+.lp .lp-btn-ghost:hover { background: var(--ink); color: #fff; }
+
+/* ---------------- HERO ---------------- */
+.lp-hero { padding-block: 0; }
+.lp-top { padding-block: 20px; }
+.lp-top-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.lp-mark {
+  font-size: var(--t-small);
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.lp-masthead { height: 46svh; min-height: 300px; overflow: clip; background: var(--blue-night); }
+.lp-masthead img { width: 100%; height: 100%; object-fit: cover; }
+
+.lp-hero-body {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+  padding-block: 56px var(--rhythm);
+}
+.lp-hero-state { grid-column: 1 / span 8; }
+.lp-hero-state h1 {
+  font-size: var(--t-display);
+  font-weight: 800;
+  letter-spacing: -.035em;
+  line-height: .98;
+}
+.lp-hero-side { grid-column: 9 / span 4; align-self: end; }
+.lp-hero-side p { font-size: var(--t-body); color: var(--muted); }
+.lp-hero-cta {
+  grid-column: 1 / span 7;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+/* ---------------- MỤC LỤC DÍNH ---------------- */
+.lp-toc { position: sticky; top: 0; z-index: 20; background: var(--blue-night); color: var(--on-dark); }
+.lp-toc-inner { display: flex; align-items: center; gap: 24px; height: var(--toc-h); }
+.lp-toc-mark {
+  font-size: var(--t-small);
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.lp-toc-list { display: flex; gap: 4px; flex: 1; overflow-x: auto; scrollbar-width: none; }
+.lp-toc-list::-webkit-scrollbar { display: none; }
+.lp-toc-list a {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 14px;
+  font-size: var(--t-small);
+  font-weight: 600;
+  color: var(--on-dark-muted);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.lp-toc-list a:hover { color: #fff; }
+.lp-toc-list a[aria-current="true"] { background: var(--blue); color: #fff; }
+.lp-toc .lp-btn { min-height: 40px; padding: 0 18px; }
+
+/* ---------------- VẤN ĐỀ ---------------- */
+.lp-problem .lp-sec-head { color: var(--blue-text); }
+.lp-pains { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 64px; }
+.lp-pain h3 { font-size: var(--t-sub); font-weight: 700; line-height: 1.25; }
+.lp-pain p { font-size: var(--t-body); color: var(--muted); margin-top: 12px; }
+
+.lp-figure {
+  margin-top: 72px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+  align-items: end;
+}
+.lp-figure img { grid-column: 1 / span 7; width: 100%; }
+.lp-figure figcaption { grid-column: 9 / span 4; font-size: var(--t-small); color: var(--muted); }
+
+/* ---------------- GIẢI PHÁP ---------------- */
+.lp-solution { background: var(--mist); }
+/* taste-skill-ignore: data-ui — mảnh giao diện giữ viền riêng của nó */
+.lp-gates { margin-top: 56px; background: #fff; border: 1px solid var(--line); }
+/* taste-skill-ignore: data-ui */
+.lp-gate {
+  display: grid;
+  grid-template-columns: 200px 1fr 120px;
+  gap: 24px;
+  align-items: baseline;
+  padding: 22px 28px;
+  border-bottom: 1px solid var(--line);
+}
+.lp-gate h3 { font-size: var(--t-body); font-weight: 700; }
+.lp-gate p { font-size: var(--t-body); color: var(--muted); max-width: none; }
+.lp-gate .lp-pass { font-size: var(--t-small); font-weight: 700; color: var(--verified); text-align: right; }
+.lp-gates-foot { padding: 22px 28px; font-size: var(--t-small); color: var(--muted); max-width: none; }
+.lp-gates-foot b { color: var(--ink); }
+
+/* ---------------- HƯỚNG DẪN ---------------- */
+/* taste-skill-ignore: data-ui — đây là thanh tiến trình thật của ứng dụng */
+.lp-steps { display: grid; grid-template-columns: repeat(5, 1fr); margin-top: 56px; border: 1px solid var(--line); }
+/* taste-skill-ignore: data-ui */
+.lp-step { padding: 28px 24px; border-right: 1px solid var(--line); }
+.lp-step:last-child { border-right: 0; }
+.lp-step h3 { font-size: var(--t-body); font-weight: 700; }
+.lp-step p { font-size: var(--t-small); color: var(--muted); margin-top: 10px; }
+
+/* ---------------- THỬ BA CHẾ ĐỘ ---------------- */
+.lp-modes { padding: 0; }
+.lp-chapter { padding-block: var(--rhythm); color: var(--on-dark); }
+.lp-ch-m0 { background: var(--flagged); }
+.lp-ch-m1 { background: var(--blue-deep); }
+.lp-ch-m2 { background: var(--verified); }
+.lp-ch-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; }
+.lp-ch-left { grid-column: 1 / span 4; }
+.lp-ch-left h2 { font-size: var(--t-head); font-weight: 800; line-height: 1.08; letter-spacing: -.02em; }
+.lp-ch-note { font-size: var(--t-body); margin-top: 24px; opacity: .92; }
+.lp-ch-verdict {
+  display: inline-block;
+  margin-top: 28px;
+  background: #fff;
+  color: var(--ink);
+  font-size: var(--t-small);
+  font-weight: 800;
+  padding: 8px 14px;
+}
+.lp-ch-right { grid-column: 6 / span 7; }
+
+.lp-switch { display: flex; gap: 8px; margin-top: 28px; }
+.lp-switch input { position: absolute; opacity: 0; pointer-events: none; }
+/* taste-skill-ignore: viền đặc 2px là hình dạng của nút chọn */
+.lp-switch label {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border: 2px solid #fff;
+  font-size: var(--t-small);
+  font-weight: 700;
+  cursor: pointer;
+}
+.lp-switch input:checked + label { background: #fff; color: var(--ink); }
+.lp-switch input:focus-visible + label { outline: 3px solid #fff; outline-offset: 3px; }
+
+/* taste-skill-ignore: data-ui — thẻ kết quả, viền là của chính giao diện */
+.lp-card { background: #fff; color: var(--ink); border: 1px solid var(--line); }
+/* taste-skill-ignore: data-ui */
+.lp-card-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--line);
+}
+.lp-card-head span { font-size: var(--t-small); font-weight: 700; }
+.lp-card-head .lp-muted { color: var(--muted); font-weight: 500; }
+/* taste-skill-ignore: data-ui */
+.lp-card-nums { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid var(--line); }
+/* taste-skill-ignore: data-ui */
+.lp-card-nums div { padding: 18px 24px; border-right: 1px solid var(--line); }
+.lp-card-nums div:last-child { border-right: 0; }
+.lp-card-nums dt { font-size: var(--t-small); color: var(--muted); }
+.lp-card-nums dd { font-size: var(--t-sub); font-weight: 700; font-variant-numeric: tabular-nums; margin-top: 4px; }
+.lp-card-body { padding: 24px; }
+.lp-card-body p { font-size: var(--t-body); }
+.lp-card-cites { padding: 0 24px 24px; display: flex; gap: 8px; flex-wrap: wrap; }
+.lp-chip {
+  background: var(--mist);
+  color: var(--blue-text);
+  font-size: var(--t-small);
+  font-weight: 700;
+  padding: 6px 10px;
+}
+.lp-chip-bad { background: #fdecea; color: var(--flagged); }
+.lp-card-empty { padding: 24px; color: var(--muted); font-size: var(--t-body); }
+
+.lp-state-weak { display: none; }
+.lp-ch-m2:has(#ev-off:checked) { background: var(--abstain); }
+.lp-ch-m2:has(#ev-off:checked) .lp-state-ok { display: none; }
+.lp-ch-m2:has(#ev-off:checked) .lp-state-weak { display: block; }
+
+/* ---------------- SỐ LIỆU ---------------- */
+.lp-figs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 56px; }
+.lp-fig-n {
+  font-size: var(--t-display);
+  font-weight: 800;
+  color: var(--blue);
+  letter-spacing: -.04em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.lp-figs p { font-size: var(--t-small); color: var(--muted); margin-top: 12px; }
+
+.lp table { width: 100%; border-collapse: collapse; margin-top: 64px; font-variant-numeric: tabular-nums; }
+.lp caption { text-align: left; font-size: var(--t-small); color: var(--muted); padding-bottom: 12px; }
+/* taste-skill-ignore: data-ui — kẻ hàng là cấu trúc của bảng số liệu */
+.lp th, .lp td { padding: 16px 12px; text-align: right; font-size: var(--t-body); border-bottom: 1px solid var(--line); }
+.lp th:first-child, .lp td:first-child { text-align: left; }
+.lp thead th { font-size: var(--t-small); font-weight: 700; color: var(--muted); }
+.lp tbody td:last-child { font-weight: 700; color: var(--blue-text); }
+.lp-lower { font-size: var(--t-small); color: var(--muted); font-weight: 400; }
+
+/* ---------------- HẠN CHẾ ---------------- */
+.lp-limits { background: var(--mist); }
+.lp-lim-row { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; margin-top: 48px; }
+.lp-lim-facts { grid-column: 1 / span 3; }
+.lp-lim-facts div { margin-bottom: 20px; }
+.lp-lim-facts dt { font-size: var(--t-small); color: var(--muted); }
+.lp-lim-facts dd { font-size: var(--t-body); font-weight: 700; }
+.lp-lim-para { grid-column: 5 / span 6; }
+.lp-lim-list { grid-column: 1 / span 7; margin-top: 56px; }
+.lp-lim-list table { margin-top: 0; }
+.lp-lim-list th, .lp-lim-list td { border-bottom-color: #dbe5ef; }
+.lp-lim-list td:last-child { color: var(--muted); font-weight: 400; }
+
+/* ---------------- DẢI CUỐI ---------------- */
+.lp-band { background: var(--blue); color: #fff; display: grid; grid-template-columns: 1fr 1fr; }
+.lp-band img { width: 100%; height: 100%; object-fit: cover; min-height: 360px; }
+/* Chữ trong dải phải thẳng mép trái với phần còn lại của trang, nếu không cả
+   trang đọc như bị lệch sang trái. */
+.lp-band-text {
+  padding-block: 72px;
+  padding-left: calc((100vw - min(1240px, 100vw)) / 2 + var(--margin));
+  padding-right: 56px;
+  align-self: center;
+}
+.lp-band-text h2 {
+  font-size: var(--t-head);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -.02em;
+  max-width: 18ch;
+}
+.lp-band-text p { font-size: var(--t-body); margin-top: 20px; max-width: 46ch; }
+.lp-band-text .lp-btn { background: #fff; color: var(--blue-text); margin-top: 32px; }
+.lp-band-text .lp-btn:hover { background: var(--mist); }
+.lp-band-note { font-size: var(--t-small); margin-top: 24px; opacity: .9; }
+
+/* ---------------- FOOTER ---------------- */
+.lp-footer { background: var(--blue-night); color: var(--on-dark); padding-block: 64px; }
+.lp-foot-links { display: flex; gap: 28px; flex-wrap: wrap; font-size: var(--t-body); font-weight: 600; }
+.lp-foot-links a { text-decoration: none; }
+.lp-foot-links a:hover { text-decoration: underline; }
+.lp-foot-meta { margin-top: 40px; font-size: var(--t-small); color: var(--on-dark-muted); }
+
+/* ---------------- 760px ---------------- */
+@media (max-width: 760px) {
+  .lp {
+    --margin: 20px;
+    --rhythm: 72px;
+    --t-sub: 19px;
+  }
+  .lp-hero-body { grid-template-columns: 1fr; padding-block: 40px 72px; }
+  .lp-hero-state, .lp-hero-side, .lp-hero-cta { grid-column: 1; }
+  .lp-hero-state h1 { font-size: 9vw; }
+  .lp-toc-mark, .lp-toc .lp-btn { display: none; }
+  /* Mục lục xuống dòng thay vì cuộn ngang: một hàng bị cắt ở mép đọc như lỗi. */
+  .lp-toc { position: static; }
+  .lp-toc-inner { height: auto; padding-block: 8px; }
+  .lp-toc-list { flex-wrap: wrap; overflow-x: visible; gap: 2px; }
+  .lp-toc-list a { height: 44px; padding: 0 10px; }
+  .lp-pains, .lp-steps, .lp-figs, .lp-card-nums { grid-template-columns: 1fr; }
+  /* taste-skill-ignore: data-ui — khi xếp dọc, kẻ ngang thay cho kẻ dọc của chính mảnh giao diện */
+  .lp-step { border-right: 0; border-bottom: 1px solid var(--line); }
+  /* taste-skill-ignore: data-ui */
+  .lp-card-nums div { border-right: 0; border-bottom: 1px solid var(--line); }
+  .lp-figure, .lp-ch-grid, .lp-lim-row { grid-template-columns: 1fr; }
+  .lp-figure img, .lp-figure figcaption,
+  .lp-ch-left, .lp-ch-right,
+  .lp-lim-facts, .lp-lim-para, .lp-lim-list { grid-column: 1; }
+  .lp-ch-right { margin-top: 32px; }
+  .lp-gate { grid-template-columns: 1fr; gap: 8px; }
+  .lp-gate .lp-pass { text-align: left; }
+  .lp-band { grid-template-columns: 1fr; }
+  .lp-band img { min-height: 220px; }
+  .lp-band-text { padding: 48px 20px; }
+}

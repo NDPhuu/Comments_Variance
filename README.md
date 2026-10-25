@@ -58,6 +58,9 @@ Chấm điểm tự động: bao nhiêu **số sai**, bao nhiêu **trích dẫn 
 | **Glass-box** | "Hộp kính", ngược với hộp đen: nhìn xuyên được vào trong — mọi số bấm ra sổ, mọi nguyên nhân bấm ra tài liệu |
 | **Provenance** | Gốc gác của một con số hay một câu: nó đến từ dòng sổ nào, tài liệu nào |
 | **Abstention** | Sự từ chối có chủ đích: thiếu bằng chứng thì nói thiếu, không bịa |
+| **Mệnh đề nguyên tử** (atomic claim) | Khẳng định nhỏ nhất chỉ nói đúng một điều, kiểm chứng được độc lập — tách câu dài thành các mệnh đề như vậy thì mới biết tin phần nào, sai phần nào (gốc: FActScore) |
+| **Benchmark** | Bộ đề thi chuẩn kèm cách chấm tự động, để các hệ thống khác nhau thi cùng một đề và so được điểm |
+| **Rà soát / người duyệt** (review / reviewer) | Rà soát: việc cấp quản lý đọc và kiểm tra lại báo cáo trước khi dùng; người duyệt: người làm việc đó (cho qua hoặc yêu cầu sửa) — khác "kiểm toán" (cuộc kiểm tra ĐỘC LẬP theo chuẩn mực để đưa ra ý kiến xác nhận, do kiểm toán viên làm). KHÔNG dùng "soát xét": trong kế toán VN từ này gắn với dịch vụ soát xét có chuẩn mực riêng, quá nặng cho việc duyệt nội bộ. "Phê duyệt" chỉ dùng cho bước ký chấp thuận cuối |
 | **Evidence corpus** | Kho bằng chứng: tập tài liệu số hóa (hợp đồng, biên bản, email duyệt…) mà hệ thống tìm kiếm trong đó |
 | **BM25** | Thuật toán tìm theo từ khóa — như Ctrl+F thông minh |
 | **Embedding / BGE-M3** | Cách máy "hiểu nghĩa" để tìm tài liệu gần nghĩa dù khác từ; BGE-M3 là model mã nguồn mở, miễn phí, chạy trên máy mình |

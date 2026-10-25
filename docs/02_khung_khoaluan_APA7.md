@@ -14,8 +14,8 @@ Khóa luận là **nghiên cứu ứng dụng**: vận dụng kiến thức RAG/
 |---|---|---|
 | **1. Giới thiệu** | Bối cảnh FP&A; vấn đề (hộp đen — theo `objectives.md`); mục tiêu; câu hỏi nghiên cứu + giả thuyết; phạm vi; đóng góp; cấu trúc khóa luận | Phase 1 ✔ |
 | **2. Tổng quan nghiên cứu** | (a) Variance analysis & quy trình FP&A; (b) LLM, hallucination, RAG, numerical reasoning tài chính; (c) trust in automation & XAI; (d) **gap statement** 1 đoạn kết chương | Phase 2 |
-| **3. Phương pháp nghiên cứu** | **3.1 Dữ liệu** (phân tích 17 giải trình thật → các loại nguyên nhân + khuôn viết; bộ dữ liệu giả lập 5 khu × 12 tháng, 12 loại tình huống gieo sẵn, mỗi tình huống có đáp án: nguyên nhân thật, tài liệu chứng minh, các câu giải thích sai AI hay bịa; bảng mô tả bộ dữ liệu) · **3.2 Mô hình & Kiến trúc** (bài toán vào/ra; 4 khối: tính số bằng code thường → tìm tài liệu đúng khu đúng kỳ, theo từ khóa + theo nghĩa → AI viết theo khuôn kèm trích dẫn → máy soát từng số/trích dẫn, thiếu bằng chứng thì từ chối) · **3.3 Cơ chế đánh giá** (5 thước đo theo chuẩn nghiên cứu trước — §3.5; chấm công bằng: đáp án chốt trước khi AI làm bài, người chấm không biết bài của cấu hình nào, so máy chấm với người chấm tay, mức đạt thống nhất trước với GVHD) · **3.4 Thiết lập** (3 cấu hình cùng model; mỗi tình huống chạy 3 lần lấy trung bình; dữ liệu sinh lại được y hệt; FastAPI + React) — KHUNG CHỐT 07/10 theo người thực hiện | Phase 1–2 |
-| **4. Kết quả nghiên cứu** | **4.1 Kết quả chính** (bảng điểm 3 cấu hình × 5 thước đo + hình; đi trọn một tình huống làm ví dụ) · **4.2 Kiểm định tính vững** (tách kết quả theo loại tình huống; các tình huống cố tình làm khó: không có tài liệu liên quan — xem có dám từ chối không, tài liệu nhiễu trùng từ khóa sai khu, bộ lỗi gieo cố ý; kết quả so máy chấm với người chấm) · **4.3 Thảo luận** (kết quả nói gì về 3 giả thuyết; giống/khác nghiên cứu trước; hạn chế) — KHUNG CHỐT 07/10 | Phase 3–4 |
+| **3. Phương pháp nghiên cứu** | **3.1 Dữ liệu** (phân tích 17 giải trình thật → các loại nguyên nhân + khuôn viết; bộ dữ liệu giả lập 5 khu × 12 tháng, 12 loại tình huống gieo sẵn, mỗi tình huống có đáp án: nguyên nhân thật, tài liệu chứng minh, các câu giải thích sai AI hay bịa; bảng mô tả bộ dữ liệu) · **3.2 Mô hình & Kiến trúc** (bài toán vào/ra; 4 khối: tính số bằng code thường → tìm tài liệu đúng khu đúng kỳ, theo từ khóa + theo nghĩa → AI viết theo khuôn kèm trích dẫn → máy soát từng số/trích dẫn, thiếu bằng chứng thì từ chối) · **3.3 Cơ chế đánh giá** (5 thước đo theo chuẩn nghiên cứu trước — §3.5; đáp án chốt trước khi AI làm bài; mức đạt thống nhất trước với GVHD) · **3.4 Thiết lập** (3 cấu hình cùng model; mỗi tình huống chạy 3 lần; báo mean ± SD của ba điểm trung bình theo lần chạy; dữ liệu sinh lại được y hệt) | Phase 1–2 |
+| **4. Kết quả nghiên cứu** | **4.1 Kết quả chính** (bảng điểm 3 cấu hình × 5 thước đo + hình; đi trọn một tình huống làm ví dụ) · **4.2 Kiểm định tính vững** (tách kết quả theo loại tình huống; các tình huống cố tình làm khó: không có tài liệu liên quan, tài liệu nhiễu trùng từ khóa sai khu và bộ lỗi gieo cố ý) · **4.3 Thảo luận** (kết quả nói gì về 3 giả thuyết; giống/khác nghiên cứu trước; hạn chế) — KHUNG CHỐT 07/10 | Phase 3–4 |
 | **5. Kết luận & Khuyến nghị** | Trả lời từng RQ; đóng góp học thuật & thực tiễn; hạn chế nói thật (synthetic, một bối cảnh, n nhỏ); khuyến nghị triển khai cho doanh nghiệp (gom kho bằng chứng); hướng phát triển | Phase 4–5 |
 
 Nguyên tắc trình bày quan trọng với hội đồng:
@@ -26,7 +26,7 @@ Nguyên tắc trình bày quan trọng với hội đồng:
 ## 2. Quy tắc trích dẫn APA 7th — tóm tắt thực dụng
 
 **In-text:**
-- 1 tác giả: (Cohen, 1960) hoặc "Cohen (1960) cho rằng…"
+- 1 tác giả: (Nguyễn, 2020) hoặc "Nguyễn (2020) cho rằng…"
 - 2 tác giả: (Lee & See, 2004)
 - ≥3 tác giả: (Chen et al., 2021) — dùng "et al." ngay từ lần cite đầu
 - Trích dẫn trực tiếp phải kèm số trang: (Lee & See, 2004, p. 53)
@@ -70,9 +70,7 @@ Nguyên tắc trình bày quan trọng với hội đồng:
 > | Câu có căn cứ | Attribution / AIS; faithfulness; atomic-fact precision | Rashkin et al. (2023); RAGAS (Es et al., 2024); FActScore (Min et al., 2023) |
 > | Tìm đúng tài liệu | Precision@k, Recall@k, MRR, nDCG | Manning et al. (2008) |
 > | Từ chối đúng lúc | Answerability / selective prediction | SQuAD 2.0 (Rajpurkar et al., 2018); Kamath et al. (2020) |
-> | Độ tin của máy chấm | Cohen's κ (đồng thuận máy–người) | Cohen (1960) |
 
-- Cohen, J. (1960). A coefficient of agreement for nominal scales. *Educational and Psychological Measurement, 20*(1), 37–46. https://doi.org/10.1177/001316446002000104
 - Gao, T., Yen, H., Yu, J., & Chen, D. (2023). Enabling large language models to generate text with citations. In *Proceedings of EMNLP 2023*. Association for Computational Linguistics. ✓ <https://aclanthology.org/2023.emnlp-main.398> · arXiv: <https://arxiv.org/abs/2305.14627>
 - Kamath, A., Jia, R., & Liang, P. (2020). Selective question answering under domain shift. In *Proceedings of ACL 2020* (pp. 5684–5696). Association for Computational Linguistics. ✓ <https://aclanthology.org/2020.acl-main.503>
 - Manning, C. D., Raghavan, P., & Schütze, H. (2008). *Introduction to information retrieval*. Cambridge University Press.
@@ -98,6 +96,7 @@ Nguyên tắc trình bày quan trọng với hội đồng:
 - ✓ CBRE Việt Nam (2026), *Ho Chi Minh City Real Estate Market Figures Q2 2026*, CBRE Research — nguồn sơ cấp, PDF trong `materials/`. Số dùng: hấp thụ đất KCN miền Nam H1 124 ha (+125% y-o-y); RBF 91%, 5,2 USD/m²/tháng.
 - ✓ Gartner (2025), *Gartner Survey Shows Finance AI Adoption Remains Steady in 2025*, truy cập ngày 04/10/2026, <https://www.gartner.com/en/newsroom/press-releases/2025-11-18-gartner-survey-shows-finance-ai-adoption-remains-steady-in-2025>. Số dùng: 59% (2025) ← 58% (2024) ← 37% (2023), n = 183 CFO.
 - (Dự phòng) McKinsey & Company (2025), *The state of AI*, truy cập ngày 04/10/2026, <https://www.mckinsey.com/featured-insights/charts/ai-at-work-but-not-at-scale>.
+- ✓ Gartner (2024), *Gartner Survey Shows 66% of Finance Leaders Think Generative AI Will Have Most Immediate Impact on Explaining Forecast and Budget Variances*, công bố 27/06/2024, truy cập ngày 11/10/2026, <https://www.gartner.com/en/newsroom/press-releases/2024-06-27-gartner-survey-shows-66-of-finance-leaders-think-generative-ai-will-have-most-immediate-impact-on-explaining-forecast-and-budget-variances1>. Số dùng (C2 §2.1): 66% xếp "giải trình chênh lệch dự báo/ngân sách" vào **top-3** use case GenAI tác động nhất (26% xếp hạng NHẤT — không viết quá thành "đa số chọn hàng đầu"); kế tiếp: phân loại dữ liệu thu/chi 44%, báo cáo quản trị 34%; n = 100 finance leaders, khảo sát 11/2023. Verify 11/10/2026: trang gốc chặn bot (Cloudflare) — xác nhận bằng tiêu đề/URL trên gartner.com + 2 nguồn thứ cấp khớp số (CDO Magazine 28/06/2024; CFO Brew 27/06/2024). Trước khi nộp: tác giả mở link bằng browser đối chiếu nguyên văn lần cuối.
 
 ### 3.8. Trạng thái verify 4 nguồn học thuật đang dùng ở Chương 1 (04/10/2026)
 - ✓ Parasuraman & Riley (1997) — *Human Factors*, 39(2), 230–253.
@@ -109,6 +108,6 @@ Nguyên tắc trình bày quan trọng với hội đồng:
 
 1. **Dòng domain (FP&A/variance):** variance analysis là bài toán gì, quy trình chuẩn ra sao, đã được tự động hóa đến đâu → để chứng minh vấn đề có thật và gap nằm ở khâu giải trình.
 2. **Dòng kỹ thuật (LLM/RAG/numerical reasoning):** vì sao LLM thuần không đáng tin với số liệu tài chính (FinQA/TAT-QA/PoT), các cơ chế grounding hiện có và hạn chế → để biện minh kiến trúc calculate-then-narrate + verification.
-3. **Dòng đánh giá hệ thống sinh văn bản (evaluation):** cách literature RAG/NLP đo grounding, citation và abstention (ALCE, AIS, FActScore, RAGAS) → để chương phương pháp và chương kết quả có chuẩn mực đo lường được thừa nhận, thay vì chỉ là build log.
+3. **Dòng đánh giá hệ thống sinh văn bản (evaluation):** cách literature RAG/NLP đo grounding, citation và abstention (AIS, ALCE, FActScore; abstention: SQuAD 2.0, Kamath, Wen) → để chương phương pháp và chương kết quả có chuẩn mực đo lường được thừa nhận, thay vì chỉ là build log. (RAGAS đã BỎ khỏi C2 theo quyết định 11/10 — không nhắc trong luận; ref Es et al. giữ trong kho làm tư liệu.)
 
 Research gap được phát biểu ở GIAO của 3 dòng: *các cơ chế grounding tổng quát chưa được thiết kế/đánh giá cho tác vụ sinh giải trình variance trong quy trình FP&A thực, nơi mọi con số phải khớp tuyệt đối với sổ sách và mọi nhận định nguyên nhân phải truy vết được về bằng chứng.*

@@ -10,7 +10,6 @@ import sys
 
 from vwb import config
 from vwb.experiments import metrics
-from vwb.retrieval import core as retrieval
 
 RESULTS = config.BASE_DIR / "results"
 
@@ -23,7 +22,7 @@ def main() -> None:
     gold = json.loads((config.DATA_DIR / "gold_labels.json").read_text(encoding="utf-8"))
     packs = json.loads(
         (config.DATA_DIR / config.EVIDENCE_PACKS_FILE).read_text(encoding="utf-8"))
-    docs = retrieval.load_evidence()
+    docs = json.loads((config.DATA_DIR / "evidence.json").read_text(encoding="utf-8"))
     records = []
     for line in raw.read_text(encoding="utf-8").splitlines():
         r = json.loads(line)

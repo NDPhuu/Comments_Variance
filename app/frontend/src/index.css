@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: Archivo, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #0b1420;
+  }
+
+  /* Nền phẳng, cùng màu --mist của landing. */
+  .bg-page {
+    background: #eef3f8;
+  }
+
+  ::selection {
+    background: #d7e5f4;
+    color: #061f3a;
+  }
+}
+
+@layer components {
+  /* `font-mono` không còn đổi phông — nó chỉ bật chữ số đều cột. */
+  .font-mono {
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5
+      text-sm font-bold text-white transition-colors duration-150
+      focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2
+      disabled:opacity-50 disabled:cursor-not-allowed;
+    background: #0f62b3;
+    min-height: 44px;
+  }
+  .btn-primary:hover:not(:disabled) {
+    background: #1272cf;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 border-2 border-ink-900
+      bg-white px-5 py-2.5 text-sm font-bold text-ink-900 transition-colors duration-150
+      hover:bg-ink-900 hover:text-white
+      focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2
+      disabled:opacity-50 disabled:cursor-not-allowed;
+    min-height: 44px;
+  }
+
+  .card {
+    @apply border border-surface-200 bg-white transition-colors duration-150;
+  }
+  .card:hover {
+    @apply border-surface-300;
+  }
+
+  .card-static {
+    @apply border border-surface-200 bg-white;
+  }
+
+  .number {
+    @apply tabular-nums text-right;
+  }
+
+  /* Nhãn nhỏ: chữ thường, cùng kiểu với nhãn trong landing. */
+  .section-title {
+    @apply text-[13px] font-semibold text-surface-500;
+  }
+
+  /* Scrollbar */
+  .custom-scroll::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .custom-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scroll::-webkit-scrollbar-thumb {
+    background: #c9d6e4;
+  }
+  .custom-scroll::-webkit-scrollbar-thumb:hover {
+    background: #8496a9;
+  }
+
+  /* Skeleton loading */
+  .skeleton {
+    @apply animate-pulse bg-surface-200;
+  }
+}
