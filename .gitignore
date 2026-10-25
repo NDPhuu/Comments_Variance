@@ -258,9 +258,9 @@ __marimo__/
 # materials/*.pdf
 
 # Bản thảo khóa luận - chỉ giữ local, không push
-# thesis/
-# materials/papers/
-# KLTN_Structure.docx
+thesis/
+materials/papers/
+KLTN_Structure.docx
 app/backend/results/raw/
 
 # Công cụ thiết kế và file build của frontend
