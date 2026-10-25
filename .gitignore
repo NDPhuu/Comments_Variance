@@ -1,10 +1,10 @@
 # ===== DỮ LIỆU THẬT — TUYỆT ĐỐI KHÔNG COMMIT =====
-# Sample_FP&A/
-# local_data/
-# *.xlsb
-# *.xlsx
-# *.xls
-# *.xlsm
+Sample_FP&A/
+local_data/
+*.xlsb
+*.xlsx
+*.xls
+*.xlsm
 
 .env
 
@@ -252,7 +252,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
-design.md
+# design.md
 
 # # Bao cao ban quyen (CBRE...) - khong redistribute
 # materials/*.pdf
@@ -261,4 +261,4 @@ design.md
 # thesis/
 # materials/papers/
 # KLTN_Structure.docx
-# app/backend/results/raw/
+app/backend/results/raw/
