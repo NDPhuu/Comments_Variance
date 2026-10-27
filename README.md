@@ -339,21 +339,6 @@ Hai thư mục `Sample_FP&A/` và `local_data/` chứa dữ liệu doanh nghiệ
 }
 ```
 
-**Nền tảng học thuật của thiết kế**
-
-- Chen và cộng sự (2021) — *FinQA*: điểm nghẽn suy luận số học trên báo cáo tài chính.
-- Chen và cộng sự (2023) — nguyên lý tách suy luận ngôn ngữ khỏi tính toán số học, cơ sở cho Khối 1.
-- Gao và cộng sự (2023b) — *ALCE*: citation precision và citation recall, cơ sở cho hai thước đo trích dẫn.
-- Min và cộng sự (2023) — *FActScore*: đánh giá theo mệnh đề nguyên tử.
-- Kamath và cộng sự (2020) — cặp chỉ số coverage và empirical risk.
-- Rajpurkar, Jia và Liang (2018) — *SQuAD 2.0*: bài toán câu hỏi không trả lời được.
-- Wen và cộng sự (2025) — tổng quan về abstention, chỉ ra chưa có thước đo chung.
-- Asai và cộng sự (2024); Yan và cộng sự (2024) — *Self-RAG*, *CRAG*: bộ đánh giá dựa trên mạng nơ-ron.
-- Parasuraman và Riley (1997); Lee và See (2004); Doshi-Velez và Kim (2017) — lạm dụng tự động hóa, hiệu chuẩn niềm tin, khả năng giải trình.
-- COSO (2013) — khung kiểm soát nội bộ, yêu cầu bảo toàn dấu vết kiểm toán.
-
-Danh mục đầy đủ: [`thesis/`](thesis/).
-
 ---
 
 <div align="center">
