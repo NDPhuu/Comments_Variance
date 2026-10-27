@@ -11,8 +11,12 @@ dependencies = [
     "rank-bm25 (>=0.2.2,<0.3.0)",
     "google-genai (>=2.29.0,<3.0.0)",
     "python-dotenv (>=1.2.4,<2.0.0)",
-    "flagembedding (>=1.4.2,<2.0.0)",
 ]
+
+[project.optional-dependencies]
+# Dense retrieval (BGE-M3) la tuy chon: keo theo torch (~2.5GB).
+# Khong cai tren Render; cut line la BM25 + metadata filter.
+dense = ["flagembedding (>=1.4.2,<2.0.0)"]
 
 [tool.poetry]
 packages = [{ include = "vwb" }]
